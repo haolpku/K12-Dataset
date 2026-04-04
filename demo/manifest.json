@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1.0",
+  "package": "K12-Dataset demo",
+  "description": "Minimal demo bundle for repository distribution.",
+  "files": [
+    {
+      "type": "kg",
+      "path": "kg/math_7a_rjb.json",
+      "format": "json",
+      "level": "book_kg",
+      "book_prefix": "math_7a_rjb",
+      "subject": "math",
+      "instances": {
+        "nodes": 157,
+        "edges": 285
+      }
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task1_subtask1.jsonl",
+      "format": "jsonl",
+      "task": "task1_subtask1",
+      "subject": "chemistry",
+      "instances": 365
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task1_subtask2.jsonl",
+      "format": "jsonl",
+      "task": "task1_subtask2",
+      "instances": 192
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task2_subtask1.jsonl",
+      "format": "jsonl",
+      "task": "task2_subtask1",
+      "instances": 567
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task2_subtask2.jsonl",
+      "format": "jsonl",
+      "task": "task2_subtask2",
+      "instances": 526
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task3.jsonl",
+      "format": "jsonl",
+      "task": "task3",
+      "instances": 525
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task4_subtask1.jsonl",
+      "format": "jsonl",
+      "task": "task4_subtask1",
+      "instances": 489
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task4_subtask2.jsonl",
+      "format": "jsonl",
+      "task": "task4_subtask2",
+      "instances": 609
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task5_subtask1.jsonl",
+      "format": "jsonl",
+      "task": "task5_subtask1",
+      "instances": 534
+    },
+    {
+      "type": "benchmark",
+      "path": "benchmark/task5_subtask2.jsonl",
+      "format": "jsonl",
+      "task": "task5_subtask2",
+      "instances": 86
+    },
+    {
+      "type": "sft_qa",
+      "path": "sft_qa/math_primary_rjb_node.sample.jsonl",
+      "format": "jsonl",
+      "scope": "math_primary_rjb",
+      "subset": "node",
+      "instances": 577
+    },
+    {
+      "type": "sft_qa",
+      "path": "sft_qa/math_primary_rjb_edge.sample.jsonl",
+      "format": "jsonl",
+      "scope": "math_primary_rjb",
+      "subset": "edge",
+      "instances": 400
+    }
+  ]
+}

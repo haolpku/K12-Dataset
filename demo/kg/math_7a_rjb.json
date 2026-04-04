@@ -1,0 +1,3960 @@
+{
+  "nodes": [
+    {
+      "id": "math_7a_rjb_cpt1",
+      "label": "Concept",
+      "name": "正数",
+      "properties": {
+        "definition": "大于0的数叫做正数。有时为了明确意义，也可以在前面加“+”号。",
+        "importance": "掌握",
+        "examples": [
+          "3",
+          "1.8%",
+          "3.5",
+          "+3",
+          "+0.5"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt2",
+      "label": "Concept",
+      "name": "负数",
+      "properties": {
+        "definition": "在正数前加上“−”号的数叫做负数，用来表示相反意义的量，如减少、亏损等。",
+        "importance": "掌握",
+        "examples": [
+          "-3",
+          "-2.7%",
+          "-4.5",
+          "-1.2"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt3",
+      "label": "Concept",
+      "name": "0",
+      "properties": {
+        "definition": "0既不是正数，也不是负数，用来表示没有变化或数量为零。",
+        "importance": "了解",
+        "examples": [
+          "体重增长0kg",
+          "增长率为0"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt4",
+      "label": "Concept",
+      "name": "符号（+/-）",
+      "properties": {
+        "definition": "一个数前面的“+”“−”号叫做它的符号，用于表示量的方向或意义。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt5",
+      "label": "Concept",
+      "name": "相反意义的量",
+      "properties": {
+        "definition": "在一个问题中出现方向或意义相反的量时，可用正数和负数分别表示这些量。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl1",
+      "label": "Skill",
+      "name": "用正负数表示实际问题中的相反量",
+      "properties": {
+        "description": "根据量的方向或意义（如增减、收入支出、上升下降）选择用正数或负数表达。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe1",
+      "label": "Exercise",
+      "name": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+      "properties": {
+        "stem": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+        "answer": "小明：2kg；小华：-1kg；小强：0kg。",
+        "difficulty": 1,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe2",
+      "label": "Exercise",
+      "name": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+      "properties": {
+        "stem": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+        "answer": "美国-6.4%，德国1.3%，法国-2.4%，英国-3.5%，意大利0.2%，中国7.5%。",
+        "difficulty": 1,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt6",
+      "label": "Concept",
+      "name": "有理数",
+      "properties": {
+        "definition": "整数和分数统称为有理数，包括正整数、零、负整数以及正分数、负分数。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt7",
+      "label": "Concept",
+      "name": "整数",
+      "properties": {
+        "definition": "正整数、0、负整数统称为整数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt8",
+      "label": "Concept",
+      "name": "分数",
+      "properties": {
+        "definition": "正分数和负分数统称为分数，小数可以化为分数，因此也视为分数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt9",
+      "label": "Concept",
+      "name": "数轴",
+      "properties": {
+        "definition": "用一条直线表示数的大小和顺序的工具，规定原点、方向和单位长度。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt10",
+      "label": "Concept",
+      "name": "原点",
+      "properties": {
+        "definition": "数轴上表示0的点，是数轴的基准点。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt11",
+      "label": "Concept",
+      "name": "相反数",
+      "properties": {
+        "definition": "互为相反的两个数，它们的数轴位置关于原点对称，如a与-a。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt12",
+      "label": "Concept",
+      "name": "绝对值",
+      "properties": {
+        "definition": "数轴上表示一个数的点到原点的距离，记作|a|。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt13",
+      "label": "Concept",
+      "name": "有理数的大小比较",
+      "properties": {
+        "definition": "在数轴上左边的数小于右边的数；正数>0>负数；比较负数大小时绝对值大的反而小。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl2",
+      "label": "Skill",
+      "name": "在数轴上表示数",
+      "properties": {
+        "description": "根据原点、方向和单位长度，将正数、负数、分数、小数准确定位到数轴上。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl3",
+      "label": "Skill",
+      "name": "比较有理数大小",
+      "properties": {
+        "description": "通过数轴、符号、绝对值等方法，对有理数进行大小比较。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe3",
+      "label": "Exercise",
+      "name": "利用数轴判断，-3 和 -5 哪个数更大？",
+      "properties": {
+        "stem": "利用数轴判断，-3 和 -5 哪个数更大？",
+        "answer": "-3 > -5",
+        "difficulty": 2,
+        "type": "简答题",
+        "analysis": "两个负数比较大小，绝对值大的反而小，因为 |-5| > |-3|，所以 -5 < -3。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe4",
+      "label": "Exercise",
+      "name": "求 |-7| 与 |3| 的值，并比较大小。",
+      "properties": {
+        "stem": "求 |-7| 与 |3| 的值，并比较大小。",
+        "answer": "|-7| = 7, |3| = 3, 因此 7 > 3",
+        "difficulty": 2,
+        "type": "简答题",
+        "analysis": "正数绝对值为其本身，负数绝对值为相反数。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt14",
+      "label": "Concept",
+      "name": "有理数的加法",
+      "properties": {
+        "definition": "在有理数范围内，根据数的符号和绝对值进行的加法运算，包括同号相加、异号相加、与0相加等情况。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt15",
+      "label": "Concept",
+      "name": "同号两数相加法则",
+      "properties": {
+        "definition": "两个符号相同的有理数相加，结果符号不变，绝对值相加。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt16",
+      "label": "Concept",
+      "name": "异号两数相加法则",
+      "properties": {
+        "definition": "两个符号相反的有理数相加，结果的符号与绝对值较大的加数相同，绝对值为两数绝对值之差。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt17",
+      "label": "Concept",
+      "name": "相反数相加为零",
+      "properties": {
+        "definition": "互为相反数的两个数相加，结果等于0。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt18",
+      "label": "Concept",
+      "name": "加法交换律",
+      "properties": {
+        "definition": "两个数相加，交换加数的位置，和不变，即 a + b = b + a。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt19",
+      "label": "Concept",
+      "name": "加法结合律",
+      "properties": {
+        "definition": "三个数相加，先加哪两个结果都不变，即 (a + b) + c = a + (b + c)。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt20",
+      "label": "Concept",
+      "name": "有理数的减法法则",
+      "properties": {
+        "definition": "减去一个数等于加上这个数的相反数，即 a - b = a + (-b)。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt21",
+      "label": "Concept",
+      "name": "加减混合运算的统一",
+      "properties": {
+        "definition": "通过引入相反数，有理数的加减混合运算可以统一为加法运算。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl4",
+      "label": "Skill",
+      "name": "利用数轴理解加减法",
+      "properties": {
+        "description": "通过在数轴上表示运动方向与对应数值变化，理解有理数加减运算的意义。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe5",
+      "label": "Exercise",
+      "name": "计算：(-3) + (-9)",
+      "properties": {
+        "stem": "计算：(-3) + (-9)",
+        "answer": "-12",
+        "difficulty": 1,
+        "type": "填空题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt22",
+      "label": "Concept",
+      "name": "有理数乘法法则",
+      "properties": {
+        "definition": "两数相乘，同号得正，异号得负，并把绝对值相乘；任何数与0相乘都得0。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt23",
+      "label": "Concept",
+      "name": "负数乘负数",
+      "properties": {
+        "definition": "负数乘负数，积为正数，积的绝对值等于各乘数绝对值的积。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt24",
+      "label": "Concept",
+      "name": "倒数",
+      "properties": {
+        "definition": "乘积是1的两个数互为倒数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt25",
+      "label": "Concept",
+      "name": "负因数个数与积的符号的关系",
+      "properties": {
+        "definition": "几个不是0的数相乘，负因数的个数是偶数时，积是正数；负因数的个数是奇数时，积是负数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt26",
+      "label": "Concept",
+      "name": "有理数除法法则",
+      "properties": {
+        "definition": "除以一个不等于0的数，等于乘这个数的倒数。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt27",
+      "label": "Concept",
+      "name": "乘法交换律",
+      "properties": {
+        "definition": "在有理数中，ab=ba。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt28",
+      "label": "Concept",
+      "name": "乘法结合律",
+      "properties": {
+        "definition": "(ab)c = a(bc)。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt29",
+      "label": "Concept",
+      "name": "乘法分配律",
+      "properties": {
+        "definition": "a(b+c)=ab+ac。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl5",
+      "label": "Skill",
+      "name": "利用符号与绝对值分离进行运算",
+      "properties": {
+        "description": "先判断积或商的符号，再运算绝对值部分。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl6",
+      "label": "Skill",
+      "name": "运算律综合应用",
+      "properties": {
+        "description": "在乘法和加法混合运算中合理使用交换律、结合律、分配律以简化计算。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe6",
+      "label": "Exercise",
+      "name": "计算 (-3)×9。",
+      "properties": {
+        "stem": "计算 (-3)×9。",
+        "answer": "-27",
+        "difficulty": 1,
+        "type": "计算题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe7",
+      "label": "Exercise",
+      "name": "计算 (-36) ÷ 9。",
+      "properties": {
+        "stem": "计算 (-36) ÷ 9。",
+        "answer": "-4",
+        "difficulty": 1,
+        "type": "计算题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt30",
+      "label": "Concept",
+      "name": "乘方",
+      "properties": {
+        "definition": "求 n 个相同因数的积的运算叫做乘方，记作 a^n。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt31",
+      "label": "Concept",
+      "name": "幂",
+      "properties": {
+        "definition": "乘方运算得到的结果叫做幂，如 a^n 表示 a 的 n 次幂。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt32",
+      "label": "Concept",
+      "name": "底数",
+      "properties": {
+        "definition": "在 a^n 中，a 叫做底数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt33",
+      "label": "Concept",
+      "name": "指数",
+      "properties": {
+        "definition": "在 a^n 中，n 叫做指数，表示因数 a 出现的个数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt34",
+      "label": "Concept",
+      "name": "负数幂的奇偶性规律",
+      "properties": {
+        "definition": "负数的奇次幂是负数，负数的偶次幂是正数。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt35",
+      "label": "Concept",
+      "name": "科学记数法",
+      "properties": {
+        "definition": "把一个大于等于1且小于10的数 a 与 10^n 相乘来表示大数或小数的书写方式。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt36",
+      "label": "Concept",
+      "name": "近似数",
+      "properties": {
+        "definition": "与准确数接近但不完全相同的数，用于表达估计值。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt37",
+      "label": "Concept",
+      "name": "精确度",
+      "properties": {
+        "definition": "近似数与准确数之间接近程度的度量，如精确到某一位。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl7",
+      "label": "Skill",
+      "name": "四舍五入法",
+      "properties": {
+        "description": "根据指定位数，对数字进行四舍五入以得到近似数的方法。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe8",
+      "label": "Exercise",
+      "name": "计算 (-4)^3。",
+      "properties": {
+        "stem": "计算 (-4)^3。",
+        "answer": "-64",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "根据乘方定义，(-4)^3 = (-4)×(-4)×(-4)，奇次幂为负。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt38",
+      "label": "Concept",
+      "name": "单项式",
+      "properties": {
+        "definition": "由数或字母的积组成的代数式，单独一个数或一个字母也属于单项式。",
+        "importance": "重要",
+        "examples": [
+          "100t",
+          "0.8p",
+          "mn",
+          "a^2h",
+          "-n"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt39",
+      "label": "Concept",
+      "name": "单项式的系数",
+      "properties": {
+        "definition": "单项式中数字因数叫做这个单项式的系数。",
+        "importance": "掌握",
+        "examples": [
+          "100t 的系数是 100",
+          "a^2h 的系数是 1",
+          "-n 的系数是 -1"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt40",
+      "label": "Concept",
+      "name": "单项式的次数",
+      "properties": {
+        "definition": "单项式中所有字母的指数的和称为该单项式的次数；非零常数的次数规定为0。",
+        "importance": "掌握",
+        "examples": [
+          "100t 的次数是 1",
+          "a^2h 的次数是 3"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt41",
+      "label": "Concept",
+      "name": "多项式",
+      "properties": {
+        "definition": "几个单项式的和叫做多项式。",
+        "importance": "重要",
+        "examples": [
+          "v-2.5",
+          "3x+5y+2z",
+          "x^2+2x+18"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt42",
+      "label": "Concept",
+      "name": "多项式的项与常数项",
+      "properties": {
+        "definition": "多项式中每个单项式叫做项，不含字母的项叫做常数项。",
+        "importance": "掌握",
+        "examples": [
+          "v-2.5 的项为 v 和 -2.5，其中 -2.5 是常数项"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt43",
+      "label": "Concept",
+      "name": "多项式的次数",
+      "properties": {
+        "definition": "多项式里次数最高项的次数叫做这个多项式的次数。",
+        "importance": "掌握",
+        "examples": [
+          "v-2.5 的次数为 1",
+          "x^2+2x+18 的次数为 2"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt44",
+      "label": "Concept",
+      "name": "整式",
+      "properties": {
+        "definition": "单项式与多项式统称为整式。",
+        "importance": "重要",
+        "examples": [
+          "100t",
+          "a^2h",
+          "v+2.5",
+          "3x+5y+2z"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl8",
+      "label": "Skill",
+      "name": "用字母表示数量关系",
+      "properties": {
+        "description": "根据实际情境将数量关系转化为含字母的代数式。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe9",
+      "label": "Exercise",
+      "name": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+      "properties": {
+        "stem": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+        "answer": "面积为 πR²−πr²；代入得 392.5 cm²",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "由外圆面积减内圆面积得到面积公式 πR²−πr²。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt45",
+      "label": "Concept",
+      "name": "同类项",
+      "properties": {
+        "definition": "所含字母相同且相同字母的指数也相同的项叫做同类项，几个常数项也是同类项。",
+        "importance": "重要",
+        "examples": [
+          "100t 和 -252t",
+          "3x^2 和 2x^2",
+          "3ab^2 和 -4ab^2"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt46",
+      "label": "Concept",
+      "name": "合并同类项",
+      "properties": {
+        "definition": "把多项式中的同类项合并成一项，所得项的系数是合并前各同类项的系数的和，字母及其指数保持不变。",
+        "importance": "重要",
+        "examples": [
+          "4x^2 + 2x + 7 + 3x - 8x^2 - 2 = -4x^2 + 5x + 5"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt47",
+      "label": "Concept",
+      "name": "分配律在整式中的应用",
+      "properties": {
+        "definition": "整式中由于字母表示数，因此可以使用分配律进行化简，如合并同类项与去括号。",
+        "importance": "掌握",
+        "examples": [
+          "100t + 252t = (100+252)t"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl9",
+      "label": "Skill",
+      "name": "利用同类项化简多项式",
+      "properties": {
+        "description": "通过识别同类项并运用分配律，合并多项式中的同类项以化简表达式。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl10",
+      "label": "Skill",
+      "name": "多项式求值",
+      "properties": {
+        "description": "将字母的值代入多项式，常先化简后求值以简化计算。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe10",
+      "label": "Exercise",
+      "name": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+      "properties": {
+        "stem": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+        "answer": "4/5 xy^2",
+        "difficulty": 2,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe11",
+      "label": "Exercise",
+      "name": "求多项式 2x^2 - 5x + x^2 + 4x - 3x^2 - 2 在 x=1/2 时的值。",
+      "properties": {
+        "stem": "求多项式 2x^2 - 5x + x^2 + 4x - 3x^2 - 2 在 x=1/2 时的值。",
+        "answer": "-5/2",
+        "difficulty": 2,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt48",
+      "label": "Concept",
+      "name": "方程",
+      "properties": {
+        "definition": "含有未知数的等式，由已知数与用字母表示的未知数组成，表达数量之间的相等关系。",
+        "importance": "重要",
+        "aliases": [
+          "equation"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt49",
+      "label": "Concept",
+      "name": "一元一次方程",
+      "properties": {
+        "definition": "只含有一个未知数，且未知数的次数为1的方程，通常可通过一系列等式变形步骤将其化为 x = a 的形式。",
+        "importance": "重要",
+        "aliases": [
+          "linear equation in one unknown"
+        ],
+        "examples": [
+          "2x + 3 = 7",
+          "6x + 6(x - 2000) = 150000",
+          "ax + b = 0"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt50",
+      "label": "Concept",
+      "name": "未知数",
+      "properties": {
+        "definition": "用字母表示的、不确定其具体数值的量。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt51",
+      "label": "Concept",
+      "name": "方程的解",
+      "properties": {
+        "definition": "使方程左右两边相等的未知数的值。",
+        "importance": "重要",
+        "aliases": [
+          "solution"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt52",
+      "label": "Concept",
+      "name": "等式",
+      "properties": {
+        "definition": "表示两个表达式相等的数学式子，可写成 a = b 的形式。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt53",
+      "label": "Concept",
+      "name": "等式的性质1",
+      "properties": {
+        "definition": "等式两边加或减同一个数（或式子），结果仍相等。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt54",
+      "label": "Concept",
+      "name": "等式的性质2",
+      "properties": {
+        "definition": "等式两边乘同一个数，或除以同一个不为0的数，结果仍相等。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl11",
+      "label": "Skill",
+      "name": "列方程解决实际问题",
+      "properties": {
+        "description": "从实际问题中分析数量关系，根据相等关系设未知数并列出方程。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl12",
+      "label": "Skill",
+      "name": "利用等式的性质解方程",
+      "properties": {
+        "description": "根据等式的性质，通过加减乘除逐步把方程化为 x = a 的形式，从而求解未知数。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe12",
+      "label": "Exercise",
+      "name": "解方程：x + 7 = 26。",
+      "properties": {
+        "stem": "解方程：x + 7 = 26。",
+        "type": "应用题",
+        "difficulty": 1,
+        "answer": "x = 19",
+        "analysis": "根据等式的性质1，两边减7，得到 x = 19。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt55",
+      "label": "Concept",
+      "name": "移项",
+      "properties": {
+        "definition": "根据等式性质，将方程中某项从方程一边移到另一边，同时改变符号。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt56",
+      "label": "Concept",
+      "name": "等式的基本性质",
+      "properties": {
+        "definition": "等式两边加减同一个数或同一个代数式，等式仍然成立。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt57",
+      "label": "Concept",
+      "name": "无限循环小数化分数",
+      "properties": {
+        "definition": "利用设未知数并通过适当倍乘使循环部分对齐，进而列方程求解，将循环小数转化为分数。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl13",
+      "label": "Skill",
+      "name": "解一元一次方程的基本流程",
+      "properties": {
+        "description": "通过合并同类项、移项、系数化为1等步骤，逐步把方程化为 x = a 的形式。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl14",
+      "label": "Skill",
+      "name": "从数量关系建立方程",
+      "properties": {
+        "description": "根据“总量=部分量之和”或“两个表示同一量的式子相等”等相等关系列出方程。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe13",
+      "label": "Exercise",
+      "name": "解方程：3x + 7 = 32 - 2x.",
+      "properties": {
+        "stem": "解方程：3x + 7 = 32 - 2x.",
+        "answer": "x = 5",
+        "difficulty": 2,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe14",
+      "label": "Exercise",
+      "name": "把无限循环小数 0.7̇ 写成分数形式。",
+      "properties": {
+        "stem": "把无限循环小数 0.7̇ 写成分数形式。",
+        "answer": "7/9",
+        "difficulty": 2,
+        "type": "填空题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt58",
+      "label": "Concept",
+      "name": "去括号",
+      "properties": {
+        "definition": "利用乘法分配律将括号内的式子展开，以简化方程形式。",
+        "importance": "掌握",
+        "examples": [
+          "2(x+1) → 2x + 2",
+          "6(x - 2000) → 6x - 12000"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt59",
+      "label": "Concept",
+      "name": "去分母",
+      "properties": {
+        "definition": "通过将方程两边乘以分母的最小公倍数以消去分式，使方程化为整式方程。",
+        "importance": "掌握",
+        "examples": [
+          "(x+1)/2 - 1 = 2 + (2-x)/4 两边乘4"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt60",
+      "label": "Concept",
+      "name": "系数化为1",
+      "properties": {
+        "definition": "通过将方程两边同时除以未知数的系数使其变为1，从而解得未知数。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl15",
+      "label": "Skill",
+      "name": "一元一次方程求解流程",
+      "properties": {
+        "description": "按照去分母、去括号、移项、合并同类项、系数化为1等步骤依次化简方程，最终求得未知数。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe15",
+      "label": "Exercise",
+      "name": "解方程：(1) 2x - (x + 10) = 5x + 2(x - 1)",
+      "properties": {
+        "stem": "解方程：(1) 2x - (x + 10) = 5x + 2(x - 1)",
+        "answer": "x = -4/3",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "通过去括号、移项、合并同类项、系数化为1求得解。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe16",
+      "label": "Exercise",
+      "name": "解方程：(2) 3x - 7(x - 1) = 3 - 2(x + 3)",
+      "properties": {
+        "stem": "解方程：(2) 3x - 7(x - 1) = 3 - 2(x + 3)",
+        "answer": "x = 5",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "使用去括号、移项、合并同类项等步骤。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt61",
+      "label": "Concept",
+      "name": "工作量=效率×人数×时间",
+      "properties": {
+        "definition": "解决工程问题常用的数量关系，可用于建立一元一次方程。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt62",
+      "label": "Concept",
+      "name": "配套数量关系",
+      "properties": {
+        "definition": "在实际问题中，相关物品之间存在固定数量比例，可作为列方程依据。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt63",
+      "label": "Concept",
+      "name": "方程建模步骤",
+      "properties": {
+        "definition": "用一元一次方程解决实际问题一般包括设、列、解、检、答五个步骤。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt64",
+      "label": "Concept",
+      "name": "相等关系",
+      "properties": {
+        "definition": "实际问题中用于列方程的核心依据，表示两个量在特定条件下相等。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl16",
+      "label": "Skill",
+      "name": "将实际问题转化为方程",
+      "properties": {
+        "description": "通过分析数量关系、设未知数、找出相等关系来列出方程，把实际问题转化为数学问题。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl17",
+      "label": "Skill",
+      "name": "解一元一次方程",
+      "properties": {
+        "description": "利用等式性质和运算律，通过移项、化简等步骤将方程化为 x=a 的形式。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe17",
+      "label": "Exercise",
+      "name": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+      "properties": {
+        "stem": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+        "answer": "螺柱工人10名，螺母工人12名。",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "利用螺母数量应为螺柱数量2倍建立方程 2000(22−x)=2×1200x。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe18",
+      "label": "Exercise",
+      "name": "例2：整理图书工作……应先安排多少人工作？",
+      "properties": {
+        "stem": "例2：整理图书工作……应先安排多少人工作？",
+        "answer": "先安排2人。",
+        "difficulty": 2,
+        "type": "应用题",
+        "analysis": "运用工作量=效率×人数×时间，列方程 4x/40 + 8(x+2)/40 = 1。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt65",
+      "label": "Concept",
+      "name": "几何图形",
+      "properties": {
+        "definition": "物体的形状、大小和位置关系的抽象，是数学研究的主要对象之一。",
+        "importance": "重要",
+        "aliases": [
+          "geometric figure"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt66",
+      "label": "Concept",
+      "name": "立体图形",
+      "properties": {
+        "definition": "各部分不都在同一平面内的几何图形，如长方体、正方体、圆柱、圆锥、球等。",
+        "importance": "重要",
+        "aliases": [
+          "solid figure"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt67",
+      "label": "Concept",
+      "name": "平面图形",
+      "properties": {
+        "definition": "各部分都在同一平面内的几何图形，如线段、角、三角形、长方形、圆等。",
+        "importance": "重要",
+        "aliases": [
+          "plane figure"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt68",
+      "label": "Concept",
+      "name": "展开图",
+      "properties": {
+        "definition": "将立体图形表面的各个面沿棱展开并在平面上铺开的图形。",
+        "importance": "掌握",
+        "aliases": [
+          "developing drawing"
+        ],
+        "examples": [
+          "拆开包装盒后得到的平面形状"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt69",
+      "label": "Concept",
+      "name": "点",
+      "properties": {
+        "definition": "几何中最基本的元素之一，线和线相交的地方是点。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt70",
+      "label": "Concept",
+      "name": "线",
+      "properties": {
+        "definition": "面与面相交形成线，线和线相交形成点；直线、曲线均属于线。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt71",
+      "label": "Concept",
+      "name": "面",
+      "properties": {
+        "definition": "包围体的是面，包括平面与曲面两种。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt72",
+      "label": "Concept",
+      "name": "体",
+      "properties": {
+        "definition": "几何体，由面围成，是立体图形的具体体现。",
+        "importance": "掌握",
+        "aliases": [
+          "solid"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt73",
+      "label": "Concept",
+      "name": "直线",
+      "properties": {
+        "definition": "没有端点、无限延伸的线。可用小写字母或线上两点表示。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt74",
+      "label": "Concept",
+      "name": "射线",
+      "properties": {
+        "definition": "从一个端点开始向一方向无限延伸的线，是直线的一部分。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt75",
+      "label": "Concept",
+      "name": "线段",
+      "properties": {
+        "definition": "由两个端点确定、具有固定长度的线，是直线的一部分。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt76",
+      "label": "Concept",
+      "name": "两点确定一条直线",
+      "properties": {
+        "definition": "经过两点有一条直线，并且只有一条。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt77",
+      "label": "Concept",
+      "name": "直线的相交与交点",
+      "properties": {
+        "definition": "两条不同的直线若有一个公共点，则这两条直线相交，该公共点称为交点。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt78",
+      "label": "Concept",
+      "name": "线段比较",
+      "properties": {
+        "definition": "比较两条线段长短，可用测量或重合比较。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt79",
+      "label": "Concept",
+      "name": "线段的加减",
+      "properties": {
+        "definition": "在同一直线上可以作线段的和与差，如 AC = a + b。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt80",
+      "label": "Concept",
+      "name": "线段中点",
+      "properties": {
+        "definition": "把线段分成相等两部分的点叫做线段的中点。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt81",
+      "label": "Concept",
+      "name": "两点之间线段最短",
+      "properties": {
+        "definition": "连接两点的所有连线中，线段最短。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt82",
+      "label": "Concept",
+      "name": "两点的距离",
+      "properties": {
+        "definition": "连接两点的线段长度叫做两点的距离。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt83",
+      "label": "Concept",
+      "name": "长度单位",
+      "properties": {
+        "definition": "用于测量长度的标准单位体系，包括米、千米、厘米、毫米、英寸等。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl18",
+      "label": "Skill",
+      "name": "长度测量技能",
+      "properties": {
+        "description": "使用测量工具（刻度尺、卷尺、卡尺等）测量物体的长度，或用估测方法近似判断。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt84",
+      "label": "Concept",
+      "name": "角",
+      "properties": {
+        "definition": "有公共端点的两条射线组成的图形叫做角，这个公共端点是角的顶点，这两条射线是角的两条边。",
+        "importance": "重要",
+        "aliases": [
+          "angle"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt85",
+      "label": "Concept",
+      "name": "角的度量单位（度、分、秒）",
+      "properties": {
+        "definition": "把一个周角360等分，每一份是1度；1度分为60分；1分分为60秒。",
+        "importance": "掌握",
+        "formula": "1°=60′, 1′=60″"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt86",
+      "label": "Concept",
+      "name": "角度制",
+      "properties": {
+        "definition": "以度、分、秒为单位的角的度量制。",
+        "importance": "了解"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt87",
+      "label": "Concept",
+      "name": "角的比较",
+      "properties": {
+        "definition": "通过量角器测量度数或将一条边重合比较另一条边的位置来判断角的大小。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt88",
+      "label": "Concept",
+      "name": "角的加法和减法",
+      "properties": {
+        "definition": "一个角可以表示为两个角的和或差，角的加减需分别对度、分、秒进行运算。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt89",
+      "label": "Concept",
+      "name": "角的平分线",
+      "properties": {
+        "definition": "从一个角的顶点出发，把这个角分成两个相等角的射线。",
+        "importance": "重要",
+        "aliases": [
+          "angular bisector"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt90",
+      "label": "Concept",
+      "name": "余角",
+      "properties": {
+        "definition": "两个角的和等于90°时，两个角互为余角。",
+        "importance": "重要",
+        "aliases": [
+          "complementary angle"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt91",
+      "label": "Concept",
+      "name": "补角",
+      "properties": {
+        "definition": "两个角的和等于180°时，两个角互为补角。",
+        "importance": "重要",
+        "aliases": [
+          "supplementary angle"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl19",
+      "label": "Skill",
+      "name": "用量角器测量角",
+      "properties": {
+        "description": "使用量角器读取角的度数，完成角大小的测量。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl20",
+      "label": "Skill",
+      "name": "作角平分线",
+      "properties": {
+        "description": "通过折纸或几何作图方法构造角的平分线。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe19",
+      "label": "Exercise",
+      "name": "如图，O 是直线 AB 上一点，∠AOC = 53°17′，求 ∠BOC 的度数。",
+      "properties": {
+        "stem": "如图，O 是直线 AB 上一点，∠AOC = 53°17′，求 ∠BOC 的度数。",
+        "answer": "126°43′",
+        "difficulty": 2,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe20",
+      "label": "Exercise",
+      "name": "把一个周角7等分，每一份是多少度的角（精确到分）？",
+      "properties": {
+        "stem": "把一个周角7等分，每一份是多少度的角（精确到分）？",
+        "answer": "51°26′",
+        "difficulty": 3,
+        "type": "应用题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_exe21",
+      "label": "Exercise",
+      "name": "互余且相等的两个角，各是多少度？",
+      "properties": {
+        "stem": "互余且相等的两个角，各是多少度？",
+        "answer": "各为45°",
+        "difficulty": 1,
+        "type": "简答题"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt92",
+      "label": "Concept",
+      "name": "长方体",
+      "properties": {
+        "definition": "由六个长方形围成的立体图形，具有相对的面相等、相邻的面垂直等特征。",
+        "importance": "重要",
+        "examples": [
+          "粉笔盒、文具盒、牙膏盒等包装盒"
+        ]
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt93",
+      "label": "Concept",
+      "name": "长方体的展开图",
+      "properties": {
+        "definition": "长方体六个面的平面展开组合图，通过折叠可恢复成长方体。",
+        "importance": "重要"
+      }
+    },
+    {
+      "id": "math_7a_rjb_cpt94",
+      "label": "Concept",
+      "name": "平面图形与立体图形的相互转化",
+      "properties": {
+        "definition": "通过展开、折叠等方式在平面图形与立体图形之间进行结构对应和转换。",
+        "importance": "掌握"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl21",
+      "label": "Skill",
+      "name": "通过展开图构建立体图形",
+      "properties": {
+        "description": "根据已知展开图进行折叠、拼合，判断图形是否能构成立体形状。"
+      }
+    },
+    {
+      "id": "math_7a_rjb_skl22",
+      "label": "Skill",
+      "name": "拆解与分析立体图形结构",
+      "properties": {
+        "description": "通过拆开立体物体并观察其面、棱关系，分析其几何结构和相等关系。"
+      }
+    },
+    {
+      "id": "math_7a_rjb",
+      "label": "Book",
+      "name": "七年级上册",
+      "properties": {
+        "subject": "数学",
+        "grade": "七年级上册",
+        "publisher": "人教版-人民教育出版社"
+      }
+    },
+    {
+      "id": "math_7a_rjb_ch1_s1",
+      "label": "Section",
+      "name": "第一节 正数和负数"
+    },
+    {
+      "id": "math_7a_rjb_ch1_s2",
+      "label": "Section",
+      "name": "第二节 有理数"
+    },
+    {
+      "id": "math_7a_rjb_ch1_s3",
+      "label": "Section",
+      "name": "第三节 有理数的加减法"
+    },
+    {
+      "id": "math_7a_rjb_ch1_s4",
+      "label": "Section",
+      "name": "第四节 有理数的乘除法"
+    },
+    {
+      "id": "math_7a_rjb_ch1_s5",
+      "label": "Section",
+      "name": "第五节 有理数的乘方"
+    },
+    {
+      "id": "math_7a_rjb_ch2_s1",
+      "label": "Section",
+      "name": "第一节 整式"
+    },
+    {
+      "id": "math_7a_rjb_ch2_s2",
+      "label": "Section",
+      "name": "第二节 整式的加减"
+    },
+    {
+      "id": "math_7a_rjb_ch3_s1",
+      "label": "Section",
+      "name": "第一节 从算式到方程"
+    },
+    {
+      "id": "math_7a_rjb_ch3_s2",
+      "label": "Section",
+      "name": "第二节 解一元一次方程(一)合并同类项与移项"
+    },
+    {
+      "id": "math_7a_rjb_ch3_s3",
+      "label": "Section",
+      "name": "第三节 解一元一次方程(二)"
+    },
+    {
+      "id": "math_7a_rjb_ch3_s4",
+      "label": "Section",
+      "name": "第四节 实际问题与一元一次方程"
+    },
+    {
+      "id": "math_7a_rjb_ch4_s1",
+      "label": "Section",
+      "name": "第一节 几何图形"
+    },
+    {
+      "id": "math_7a_rjb_ch4_s2",
+      "label": "Section",
+      "name": "第二节 直线、射线、线段"
+    },
+    {
+      "id": "math_7a_rjb_ch4_s3",
+      "label": "Section",
+      "name": "第三节 角"
+    },
+    {
+      "id": "math_7a_rjb_ch4_s4",
+      "label": "Section",
+      "name": "第四节 课题学习 设计制作长方体形状的包装纸盒"
+    },
+    {
+      "id": "math_7a_rjb_ch1",
+      "label": "Chapter",
+      "name": "第一章 有理数"
+    },
+    {
+      "id": "math_7a_rjb_ch2",
+      "label": "Chapter",
+      "name": "第二章 整式的加减"
+    },
+    {
+      "id": "math_7a_rjb_ch3",
+      "label": "Chapter",
+      "name": "第三章 一元一次方程"
+    },
+    {
+      "id": "math_7a_rjb_ch4",
+      "label": "Chapter",
+      "name": "第四章 几何图形初步"
+    }
+  ],
+  "edges": [
+    {
+      "source": "math_7a_rjb_cpt1",
+      "source_name": "正数",
+      "target": "math_7a_rjb_cpt2",
+      "target_name": "负数",
+      "type": "relates_to",
+      "properties": {
+        "relations": "正数与负数是相对的概念",
+        "evidence": "“负”与“正”相对."
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt1",
+      "source_name": "正数",
+      "target": "math_7a_rjb_cpt4",
+      "target_name": "符号（+/-）",
+      "type": "relates_to",
+      "properties": {
+        "relations": "正数常用“+”符号表示",
+        "evidence": "“有时，为了明确表达意义，在正数前面也加上‘+’号。”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt2",
+      "source_name": "负数",
+      "target": "math_7a_rjb_cpt4",
+      "target_name": "符号（+/-）",
+      "type": "relates_to",
+      "properties": {
+        "relations": "负数由在数前加‘−’表示",
+        "evidence": "“在正数前加上符号‘一’（负）的数叫做负数。”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt1",
+      "source_name": "正数",
+      "target": "math_7a_rjb_cpt5",
+      "target_name": "相反意义的量",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "“如果一个问题中出现相反意义的量，我们可以用正数和负数分别表示它们.”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt2",
+      "source_name": "负数",
+      "target": "math_7a_rjb_cpt5",
+      "target_name": "相反意义的量",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "“如果一个问题中出现相反意义的量，我们可以用正数和负数分别表示它们.”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt7",
+      "source_name": "整数",
+      "target": "math_7a_rjb_cpt6",
+      "target_name": "有理数",
+      "type": "is_a",
+      "properties": {
+        "evidence": "整数和分数统称为有理数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt8",
+      "source_name": "分数",
+      "target": "math_7a_rjb_cpt6",
+      "target_name": "有理数",
+      "type": "is_a",
+      "properties": {
+        "evidence": "整数和分数统称为有理数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt9",
+      "source_name": "数轴",
+      "target": "math_7a_rjb_cpt10",
+      "target_name": "原点",
+      "type": "relates_to",
+      "properties": {
+        "relations": "数轴通过原点表示0，原点是数轴的基准点。",
+        "evidence": "原点是数轴的“基准点”。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt9",
+      "source_name": "数轴",
+      "target": "math_7a_rjb_cpt11",
+      "target_name": "相反数",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "相反数定义依赖数轴上的对称位置。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt11",
+      "source_name": "相反数",
+      "target": "math_7a_rjb_cpt12",
+      "target_name": "绝对值",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "绝对值定义中包含相反数：负数的绝对值是它的相反数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt12",
+      "source_name": "绝对值",
+      "target": "math_7a_rjb_cpt13",
+      "target_name": "有理数的大小比较",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "比较负数大小需要先求绝对值。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt15",
+      "source_name": "同号两数相加法则",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "is_a",
+      "properties": {
+        "evidence": {
+          "text": "符号相同的两个数相加…"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt16",
+      "source_name": "异号两数相加法则",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "is_a",
+      "properties": {
+        "evidence": {
+          "text": "符号相反的两个数相加…"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt17",
+      "source_name": "相反数相加为零",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "is_a",
+      "properties": {
+        "evidence": {
+          "text": "互为相反数的两个数相加得0。"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt18",
+      "source_name": "加法交换律",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "relates_to",
+      "properties": {
+        "relations": "加法运算的结构性质",
+        "evidence": {
+          "text": "有理数的加法中…加法交换律"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt19",
+      "source_name": "加法结合律",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "relates_to",
+      "properties": {
+        "relations": "加法运算的结构性质",
+        "evidence": {
+          "text": "有理数的加法中…加法结合律"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt14",
+      "source_name": "有理数的加法",
+      "target": "math_7a_rjb_cpt20",
+      "target_name": "有理数的减法法则",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": {
+          "text": "减法可以转化为加法… a - b = a + (-b)"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt20",
+      "source_name": "有理数的减法法则",
+      "target": "math_7a_rjb_cpt21",
+      "target_name": "加减混合运算的统一",
+      "type": "relates_to",
+      "properties": {
+        "relations": "减法可转化为加法，统一运算形式",
+        "evidence": {
+          "text": "加减混合运算可以统一为加法运算"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl4",
+      "source_name": "利用数轴理解加减法",
+      "target": "math_7a_rjb_cpt14",
+      "target_name": "有理数的加法",
+      "type": "relates_to",
+      "properties": {
+        "relations": "数轴帮助理解加法意义",
+        "evidence": {
+          "text": "可用数轴表示为图1.3-1"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl4",
+      "source_name": "利用数轴理解加减法",
+      "target": "math_7a_rjb_cpt20",
+      "target_name": "有理数的减法法则",
+      "type": "relates_to",
+      "properties": {
+        "relations": "数轴可帮助理解减法与加相反数的关系",
+        "evidence": {
+          "text": "你能看出3°C比-3°C高多少…"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt22",
+      "source_name": "有理数乘法法则",
+      "target": "math_7a_rjb_cpt23",
+      "target_name": "负数乘负数",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "“负数乘负数，积为正数”基于有理数乘法法则。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt22",
+      "source_name": "有理数乘法法则",
+      "target": "math_7a_rjb_cpt25",
+      "target_name": "负因数个数与积的符号的关系",
+      "type": "relates_to",
+      "properties": {
+        "relations": "符号判定都基于因数符号组合",
+        "evidence": "“几个不是0的数相乘，负因数个数…决定积的符号。”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt24",
+      "source_name": "倒数",
+      "target": "math_7a_rjb_cpt26",
+      "target_name": "有理数除法法则",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "除以一个数等于乘其倒数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt27",
+      "source_name": "乘法交换律",
+      "target": "math_7a_rjb_skl6",
+      "target_name": "运算律综合应用",
+      "type": "is_a",
+      "properties": {
+        "evidence": "交换律是综合运算技能的一部分。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt28",
+      "source_name": "乘法结合律",
+      "target": "math_7a_rjb_skl6",
+      "target_name": "运算律综合应用",
+      "type": "is_a",
+      "properties": {
+        "evidence": "结合律用于简化计算。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt29",
+      "source_name": "乘法分配律",
+      "target": "math_7a_rjb_skl6",
+      "target_name": "运算律综合应用",
+      "type": "is_a",
+      "properties": {
+        "evidence": "分配律用于分解复杂运算。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt31",
+      "source_name": "幂",
+      "target": "math_7a_rjb_cpt30",
+      "target_name": "乘方",
+      "type": "is_a",
+      "properties": {
+        "evidence": "乘方的结果叫做幂。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt30",
+      "source_name": "乘方",
+      "target": "math_7a_rjb_cpt34",
+      "target_name": "负数幂的奇偶性规律",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "因为 a^n 就是 n 个 a 相乘，所以可利用有理数乘法得出负数幂的符号规律。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt32",
+      "source_name": "底数",
+      "target": "math_7a_rjb_cpt33",
+      "target_name": "指数",
+      "type": "relates_to",
+      "properties": {
+        "relations": "底数与指数共同构成乘方 a^n 的结构。",
+        "evidence": "在 a^n 中，a 叫底数，n 叫指数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt30",
+      "source_name": "乘方",
+      "target": "math_7a_rjb_cpt35",
+      "target_name": "科学记数法",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "科学记数法依赖 10 的乘方表示大数与小数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl7",
+      "source_name": "四舍五入法",
+      "target": "math_7a_rjb_cpt36",
+      "target_name": "近似数",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "四舍五入法用于取得近似数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt39",
+      "source_name": "单项式的系数",
+      "target": "math_7a_rjb_cpt38",
+      "target_name": "单项式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "单项式中的数字因数叫做这个单项式的系数。（2.1 整式）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt40",
+      "source_name": "单项式的次数",
+      "target": "math_7a_rjb_cpt38",
+      "target_name": "单项式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "一个单项式中，所有字母的指数的和叫做这个单项式的次数。（2.1 整式）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt42",
+      "source_name": "多项式的项与常数项",
+      "target": "math_7a_rjb_cpt41",
+      "target_name": "多项式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "其中，每个单项式叫做多项式的项，不含字母的项叫做常数项。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt43",
+      "source_name": "多项式的次数",
+      "target": "math_7a_rjb_cpt41",
+      "target_name": "多项式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "多项式里，次数最高项的次数叫做这个多项式的次数。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt38",
+      "source_name": "单项式",
+      "target": "math_7a_rjb_cpt44",
+      "target_name": "整式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "单项式与多项式统称整式。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt41",
+      "source_name": "多项式",
+      "target": "math_7a_rjb_cpt44",
+      "target_name": "整式",
+      "type": "is_a",
+      "properties": {
+        "evidence": "单项式与多项式统称整式。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt38",
+      "source_name": "单项式",
+      "target": "math_7a_rjb_cpt41",
+      "target_name": "多项式",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "多项式定义依赖于单项式：几个单项式的和叫做多项式。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt45",
+      "source_name": "同类项",
+      "target": "math_7a_rjb_cpt46",
+      "target_name": "合并同类项",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": {
+          "text": "因为多项式中的字母表示的是数，所以我们也可以运用交换律、结合律、分配律把多项式中的同类项进行合并。"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt47",
+      "source_name": "分配律在整式中的应用",
+      "target": "math_7a_rjb_cpt46",
+      "target_name": "合并同类项",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": {
+          "text": "利用分配律可以合并同类项"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl9",
+      "source_name": "利用同类项化简多项式",
+      "target": "math_7a_rjb_cpt46",
+      "target_name": "合并同类项",
+      "type": "is_a",
+      "properties": {
+        "evidence": {
+          "text": "合并同类项后……"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl9",
+      "source_name": "利用同类项化简多项式",
+      "target": "math_7a_rjb_skl10",
+      "target_name": "多项式求值",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": {
+          "text": "在求多项式的值时，可以先将多项式中的同类项合并，然后再求值"
+        }
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_cpt48",
+      "target_name": "方程",
+      "type": "is_a",
+      "properties": {
+        "evidence": "上面各方程都只含有一个未知数（元），未知数的次数都是1…这样的方程叫做一元一次方程。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt52",
+      "source_name": "等式",
+      "target": "math_7a_rjb_cpt48",
+      "target_name": "方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "方程是含有未知数的等式。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt48",
+      "source_name": "方程",
+      "target": "math_7a_rjb_cpt49",
+      "target_name": "一元一次方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "这样的方程叫做一元一次方程。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt48",
+      "source_name": "方程",
+      "target": "math_7a_rjb_cpt51",
+      "target_name": "方程的解",
+      "type": "relates_to",
+      "properties": {
+        "relations": "方程的解是使方程等号两边相等的未知数的值。",
+        "evidence": "解方程就是求出使方程中等号左右两边相等的未知数的值。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt53",
+      "source_name": "等式的性质1",
+      "target": "math_7a_rjb_skl12",
+      "target_name": "利用等式的性质解方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "利用等式的性质1，方程两边减7就得出 x 的值。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt54",
+      "source_name": "等式的性质2",
+      "target": "math_7a_rjb_skl12",
+      "target_name": "利用等式的性质解方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "两边除以 -5 得…表示利用等式的性质2 解方程。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl11",
+      "source_name": "列方程解决实际问题",
+      "target": "math_7a_rjb_cpt49",
+      "target_name": "一元一次方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "列方程是解决问题的重要方法。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt56",
+      "source_name": "等式的基本性质",
+      "target": "math_7a_rjb_cpt55",
+      "target_name": "移项",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "把某项从等式一边移到另一边时，要变号，是基于等式的性质1。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt56",
+      "source_name": "等式的基本性质",
+      "target": "math_7a_rjb_cpt46",
+      "target_name": "合并同类项",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "利用等式的基本性质可以解简单的方程，本节重点讨论合并同类项。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_skl13",
+      "target_name": "解一元一次方程的基本流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "解方程经常要合并同类项。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt55",
+      "source_name": "移项",
+      "target": "math_7a_rjb_skl13",
+      "target_name": "解一元一次方程的基本流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "解方程经常要移项。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_skl13",
+      "target_name": "解一元一次方程的基本流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "本节探讨如何解一元一次方程。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_cpt57",
+      "target_name": "无限循环小数化分数",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "将循环小数设为 x，并列方程求解，属于用一元一次方程求值。 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_cpt55",
+      "target_name": "移项",
+      "type": "relates_to",
+      "properties": {
+        "relations": "都是解一元一次方程的核心变形方法",
+        "evidence": "“解方程时经常要‘合并同类项’和‘移项’。” 页码略"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt58",
+      "source_name": "去括号",
+      "target": "math_7a_rjb_skl15",
+      "target_name": "一元一次方程求解流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "方程中有带括号的式子时，去括号是常用的化简步骤。（3.3）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt59",
+      "source_name": "去分母",
+      "target": "math_7a_rjb_skl15",
+      "target_name": "一元一次方程求解流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "解一元一次方程的一般步骤包括：去分母、去括号…（3.3）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt55",
+      "source_name": "移项",
+      "target": "math_7a_rjb_skl15",
+      "target_name": "一元一次方程求解流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "解一元一次方程的一般步骤包括：去分母、去括号、移项…（3.3）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_skl15",
+      "target_name": "一元一次方程求解流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "…移项、合并同类项、系数化为1等。（3.3）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt60",
+      "source_name": "系数化为1",
+      "target": "math_7a_rjb_skl15",
+      "target_name": "一元一次方程求解流程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "…合并同类项、系数化为1等。（3.3）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt64",
+      "source_name": "相等关系",
+      "target": "math_7a_rjb_cpt63",
+      "target_name": "方程建模步骤",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "正确分析问题中的相等关系是列方程的基础。（归纳）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_skl17",
+      "target_name": "解一元一次方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "解方程就是求出方程中的未知数。（小结）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt64",
+      "source_name": "相等关系",
+      "target": "math_7a_rjb_skl16",
+      "target_name": "将实际问题转化为方程",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "关键是要找出相等关系，由此设未知数、列方程。（小结）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt61",
+      "source_name": "工作量=效率×人数×时间",
+      "target": "math_7a_rjb_cpt64",
+      "target_name": "相等关系",
+      "type": "relates_to",
+      "properties": {
+        "relations": "工作量公式提供用于列方程的相等关系",
+        "evidence": "两个时段的工作量之和应等于总工作量。（例2）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt62",
+      "source_name": "配套数量关系",
+      "target": "math_7a_rjb_cpt64",
+      "target_name": "相等关系",
+      "type": "relates_to",
+      "properties": {
+        "relations": "配套关系提供方程依据",
+        "evidence": "螺母数量应是螺柱数量2倍，列出方程。（例1）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt66",
+      "source_name": "立体图形",
+      "target": "math_7a_rjb_cpt65",
+      "target_name": "几何图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "长方体、正方体、圆柱、圆锥、球等…都是几何图形。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt67",
+      "source_name": "平面图形",
+      "target": "math_7a_rjb_cpt65",
+      "target_name": "几何图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "线段、角、三角形、长方形、圆等…都是几何图形。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt66",
+      "source_name": "立体图形",
+      "target": "math_7a_rjb_cpt67",
+      "target_name": "平面图形",
+      "type": "relates_to",
+      "properties": {
+        "relations": "立体图形中某些部分是平面图形，例如长方体的侧面是长方形。",
+        "evidence": "虽然立体图形与平面图形是两类不同的几何图形，但它们是互相联系的。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt67",
+      "source_name": "平面图形",
+      "target": "math_7a_rjb_cpt68",
+      "target_name": "展开图",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "有些立体图形是由一些平面图形围成的，将它们的表面适当剪开，可以展开成平面图形。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt69",
+      "source_name": "点",
+      "target": "math_7a_rjb_cpt67",
+      "target_name": "平面图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "点…都是平面图形的基本元素。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt70",
+      "source_name": "线",
+      "target": "math_7a_rjb_cpt67",
+      "target_name": "平面图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "线段、角等平面图形包含线。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt71",
+      "source_name": "面",
+      "target": "math_7a_rjb_cpt66",
+      "target_name": "立体图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "包围着体的是面。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt72",
+      "source_name": "体",
+      "target": "math_7a_rjb_cpt66",
+      "target_name": "立体图形",
+      "type": "is_a",
+      "properties": {
+        "evidence": "长方体、正方体、圆柱…等都是几何体。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt74",
+      "source_name": "射线",
+      "target": "math_7a_rjb_cpt73",
+      "target_name": "直线",
+      "type": "is_a",
+      "properties": {
+        "evidence": "“射线和线段都是直线的一部分” 图4.2-5"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt75",
+      "source_name": "线段",
+      "target": "math_7a_rjb_cpt73",
+      "target_name": "直线",
+      "type": "is_a",
+      "properties": {
+        "evidence": "“射线和线段都是直线的一部分” 图4.2-5"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt73",
+      "source_name": "直线",
+      "target": "math_7a_rjb_cpt76",
+      "target_name": "两点确定一条直线",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "“经过两点有一条直线… 两点确定一条直线”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt75",
+      "source_name": "线段",
+      "target": "math_7a_rjb_cpt78",
+      "target_name": "线段比较",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "比较线段长短需要先理解线段的定义"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt78",
+      "source_name": "线段比较",
+      "target": "math_7a_rjb_cpt79",
+      "target_name": "线段的加减",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "线段加减基于对线段长度比较和测量的理解"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt81",
+      "source_name": "两点之间线段最短",
+      "target": "math_7a_rjb_cpt82",
+      "target_name": "两点的距离",
+      "type": "relates_to",
+      "properties": {
+        "relations": "最短线段的长度即为两点的距离",
+        "evidence": "“连接两点间的线段的长度，叫做两点的距离”"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt83",
+      "source_name": "长度单位",
+      "target": "math_7a_rjb_skl18",
+      "target_name": "长度测量技能",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "测量长度需要掌握长度单位"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt84",
+      "source_name": "角",
+      "target": "math_7a_rjb_cpt87",
+      "target_name": "角的比较",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "怎样比较两个角的大小呢？"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt85",
+      "source_name": "角的度量单位（度、分、秒）",
+      "target": "math_7a_rjb_cpt88",
+      "target_name": "角的加法和减法",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "这里的加与减，要将度与度、分与分、秒与秒分别相加、减。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt90",
+      "source_name": "余角",
+      "target": "math_7a_rjb_cpt91",
+      "target_name": "补角",
+      "type": "relates_to",
+      "properties": {
+        "relations": "余角与补角均描述两个角的和的特定关系。",
+        "evidence": "两个角互余…两个角互补。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt89",
+      "source_name": "角的平分线",
+      "target": "math_7a_rjb_cpt90",
+      "target_name": "余角",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "利用平分线可求得余角关系中的部分角大小。"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt93",
+      "source_name": "长方体的展开图",
+      "target": "math_7a_rjb_cpt68",
+      "target_name": "展开图",
+      "type": "is_a",
+      "properties": {
+        "evidence": "“拆开盒子，把它铺平，得到展开图；…找出对应长方体各面的相应部分。”（4.4）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt68",
+      "source_name": "展开图",
+      "target": "math_7a_rjb_cpt94",
+      "target_name": "平面图形与立体图形的相互转化",
+      "type": "relates_to",
+      "properties": {
+        "relations": "展开图是实现平面与立体相互转化的重要形式",
+        "evidence": "“进一步体会立体图形与平面图形之间的相互转化。”（4.4）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt68",
+      "source_name": "展开图",
+      "target": "math_7a_rjb_cpt93",
+      "target_name": "长方体的展开图",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "需要理解展开图的概念才能认识长方体的展开图。（4.4）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_cpt93",
+      "source_name": "长方体的展开图",
+      "target": "math_7a_rjb_skl21",
+      "target_name": "通过展开图构建立体图形",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "“在硬纸板上…画好包装盒的展开图…折叠并粘好黏合处，得到长方体包装盒。”（4.4）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_skl22",
+      "source_name": "拆解与分析立体图形结构",
+      "target": "math_7a_rjb_cpt94",
+      "target_name": "平面图形与立体图形的相互转化",
+      "type": "prerequisites_for",
+      "properties": {
+        "evidence": "通过拆解和观察立体结构理解平面与立体的联系。（4.4）"
+      }
+    },
+    {
+      "source": "math_7a_rjb_exe1",
+      "source_stem": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt1",
+          "target_name": "正数"
+        },
+        {
+          "target": "math_7a_rjb_cpt2",
+          "target_name": "负数"
+        },
+        {
+          "target": "math_7a_rjb_cpt3",
+          "target_name": "0"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe1",
+      "source_stem": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl1",
+          "target_name": "用正负数表示实际问题中的相反量"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe2",
+      "source_stem": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt1",
+          "target_name": "正数"
+        },
+        {
+          "target": "math_7a_rjb_cpt2",
+          "target_name": "负数"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe2",
+      "source_stem": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl1",
+          "target_name": "用正负数表示实际问题中的相反量"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe3",
+      "source_stem": "利用数轴判断，-3 和 -5 哪个数更大？",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt13",
+          "target_name": "有理数的大小比较"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe4",
+      "source_stem": "求 |-7| 与 |3| 的值，并比较大小。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt12",
+          "target_name": "绝对值"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe3",
+      "source_stem": "利用数轴判断，-3 和 -5 哪个数更大？",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl3",
+          "target_name": "比较有理数大小"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe4",
+      "source_stem": "求 |-7| 与 |3| 的值，并比较大小。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl3",
+          "target_name": "比较有理数大小"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe5",
+      "source_stem": "计算：(-3) + (-9)",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt15",
+          "target_name": "同号两数相加法则"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe6",
+      "source_stem": "计算 (-3)×9。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt22",
+          "target_name": "有理数乘法法则"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe7",
+      "source_stem": "计算 (-36) ÷ 9。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt26",
+          "target_name": "有理数除法法则"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe8",
+      "source_stem": "计算 (-4)^3。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt30",
+          "target_name": "乘方"
+        },
+        {
+          "target": "math_7a_rjb_cpt34",
+          "target_name": "负数幂的奇偶性规律"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe9",
+      "source_stem": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt41",
+          "target_name": "多项式"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe9",
+      "source_stem": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl8",
+          "target_name": "用字母表示数量关系"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe10",
+      "source_stem": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt46",
+          "target_name": "合并同类项"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe10",
+      "source_stem": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl9",
+          "target_name": "利用同类项化简多项式"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe11",
+      "source_stem": "求多项式 2x^2 - 5x + x^2 + 4x - 3x^2 - 2 在 x=1/2 时的值。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl10",
+          "target_name": "多项式求值"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe12",
+      "source_stem": "解方程：x + 7 = 26。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt53",
+          "target_name": "等式的性质1"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe12",
+      "source_stem": "解方程：x + 7 = 26。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl12",
+          "target_name": "利用等式的性质解方程"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe13",
+      "source_stem": "解方程：3x + 7 = 32 - 2x.",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt55",
+          "target_name": "移项"
+        },
+        {
+          "target": "math_7a_rjb_cpt46",
+          "target_name": "合并同类项"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe13",
+      "source_stem": "解方程：3x + 7 = 32 - 2x.",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl13",
+          "target_name": "解一元一次方程的基本流程"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe14",
+      "source_stem": "把无限循环小数 0.7̇ 写成分数形式。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt57",
+          "target_name": "无限循环小数化分数"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe14",
+      "source_stem": "把无限循环小数 0.7̇ 写成分数形式。",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl13",
+          "target_name": "解一元一次方程的基本流程"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe15",
+      "source_stem": "解方程：(1) 2x - (x + 10) = 5x + 2(x - 1)",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt58",
+          "target_name": "去括号"
+        },
+        {
+          "target": "math_7a_rjb_cpt55",
+          "target_name": "移项"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe16",
+      "source_stem": "解方程：(2) 3x - 7(x - 1) = 3 - 2(x + 3)",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt58",
+          "target_name": "去括号"
+        },
+        {
+          "target": "math_7a_rjb_cpt46",
+          "target_name": "合并同类项"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe17",
+      "source_stem": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt62",
+          "target_name": "配套数量关系"
+        },
+        {
+          "target": "math_7a_rjb_cpt64",
+          "target_name": "相等关系"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe17",
+      "source_stem": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl16",
+          "target_name": "将实际问题转化为方程"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe18",
+      "source_stem": "例2：整理图书工作……应先安排多少人工作？",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt61",
+          "target_name": "工作量=效率×人数×时间"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe18",
+      "source_stem": "例2：整理图书工作……应先安排多少人工作？",
+      "type": "tests_skill",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_skl16",
+          "target_name": "将实际问题转化为方程"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe19",
+      "source_stem": "如图，O 是直线 AB 上一点，∠AOC = 53°17′，求 ∠BOC 的度数。",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt88",
+          "target_name": "角的加法和减法"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe20",
+      "source_stem": "把一个周角7等分，每一份是多少度的角（精确到分）？",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt85",
+          "target_name": "角的度量单位（度、分、秒）"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_exe21",
+      "source_stem": "互余且相等的两个角，各是多少度？",
+      "type": "tests_concept",
+      "target_name_to_ids": [
+        {
+          "target": "math_7a_rjb_cpt90",
+          "target_name": "余角"
+        }
+      ]
+    },
+    {
+      "source": "math_7a_rjb_ch1_s1",
+      "source_name": "第一节 正数和负数",
+      "target": "math_7a_rjb_ch1",
+      "target_name": "第一章 有理数",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch1_s2",
+      "source_name": "第二节 有理数",
+      "target": "math_7a_rjb_ch1",
+      "target_name": "第一章 有理数",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch1_s3",
+      "source_name": "第三节 有理数的加减法",
+      "target": "math_7a_rjb_ch1",
+      "target_name": "第一章 有理数",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch1_s4",
+      "source_name": "第四节 有理数的乘除法",
+      "target": "math_7a_rjb_ch1",
+      "target_name": "第一章 有理数",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch1_s5",
+      "source_name": "第五节 有理数的乘方",
+      "target": "math_7a_rjb_ch1",
+      "target_name": "第一章 有理数",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch2_s1",
+      "source_name": "第一节 整式",
+      "target": "math_7a_rjb_ch2",
+      "target_name": "第二章 整式的加减",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch2_s2",
+      "source_name": "第二节 整式的加减",
+      "target": "math_7a_rjb_ch2",
+      "target_name": "第二章 整式的加减",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch3_s1",
+      "source_name": "第一节 从算式到方程",
+      "target": "math_7a_rjb_ch3",
+      "target_name": "第三章 一元一次方程",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch3_s2",
+      "source_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "target": "math_7a_rjb_ch3",
+      "target_name": "第三章 一元一次方程",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch3_s3",
+      "source_name": "第三节 解一元一次方程(二)",
+      "target": "math_7a_rjb_ch3",
+      "target_name": "第三章 一元一次方程",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch3_s4",
+      "source_name": "第四节 实际问题与一元一次方程",
+      "target": "math_7a_rjb_ch3",
+      "target_name": "第三章 一元一次方程",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch4_s1",
+      "source_name": "第一节 几何图形",
+      "target": "math_7a_rjb_ch4",
+      "target_name": "第四章 几何图形初步",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch4_s2",
+      "source_name": "第二节 直线、射线、线段",
+      "target": "math_7a_rjb_ch4",
+      "target_name": "第四章 几何图形初步",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch4_s3",
+      "source_name": "第三节 角",
+      "target": "math_7a_rjb_ch4",
+      "target_name": "第四章 几何图形初步",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch4_s4",
+      "source_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "target": "math_7a_rjb_ch4",
+      "target_name": "第四章 几何图形初步",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch1",
+      "source_name": "第一章 有理数",
+      "target": "math_7a_rjb",
+      "target_name": "七年级上册",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch2",
+      "source_name": "第二章 整式的加减",
+      "target": "math_7a_rjb",
+      "target_name": "七年级上册",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch3",
+      "source_name": "第三章 一元一次方程",
+      "target": "math_7a_rjb",
+      "target_name": "七年级上册",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_ch4",
+      "source_name": "第四章 几何图形初步",
+      "target": "math_7a_rjb",
+      "target_name": "七年级上册",
+      "type": "is_part_of"
+    },
+    {
+      "source": "math_7a_rjb_cpt1",
+      "source_name": "正数",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt2",
+      "source_name": "负数",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt3",
+      "source_name": "0",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt4",
+      "source_name": "符号（+/-）",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt5",
+      "source_name": "相反意义的量",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl1",
+      "source_name": "用正负数表示实际问题中的相反量",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe1",
+      "source_stem": "一个月内，小明体重增加2kg，小华体重减少1kg，小强体重无变化，写出他们这个月的体重增长值。",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe2",
+      "source_stem": "某年，美国减少6.4%，德国增长1.3%，法国减少2.4%，英国减少3.5%，意大利增长0.2%，中国增长7.5%。写出它们的进出口总额增长率。",
+      "target": "math_7a_rjb_ch1_s1",
+      "target_name": "第一节 正数和负数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt6",
+      "source_name": "有理数",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt7",
+      "source_name": "整数",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt8",
+      "source_name": "分数",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt9",
+      "source_name": "数轴",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt10",
+      "source_name": "原点",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt11",
+      "source_name": "相反数",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt12",
+      "source_name": "绝对值",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt13",
+      "source_name": "有理数的大小比较",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl2",
+      "source_name": "在数轴上表示数",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl3",
+      "source_name": "比较有理数大小",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe3",
+      "source_stem": "利用数轴判断，-3 和 -5 哪个数更大？",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe4",
+      "source_stem": "求 |-7| 与 |3| 的值，并比较大小。",
+      "target": "math_7a_rjb_ch1_s2",
+      "target_name": "第二节 有理数",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt14",
+      "source_name": "有理数的加法",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt15",
+      "source_name": "同号两数相加法则",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt16",
+      "source_name": "异号两数相加法则",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt17",
+      "source_name": "相反数相加为零",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt18",
+      "source_name": "加法交换律",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt19",
+      "source_name": "加法结合律",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt20",
+      "source_name": "有理数的减法法则",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt21",
+      "source_name": "加减混合运算的统一",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl4",
+      "source_name": "利用数轴理解加减法",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe5",
+      "source_stem": "计算：(-3) + (-9)",
+      "target": "math_7a_rjb_ch1_s3",
+      "target_name": "第三节 有理数的加减法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt22",
+      "source_name": "有理数乘法法则",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt23",
+      "source_name": "负数乘负数",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt24",
+      "source_name": "倒数",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt25",
+      "source_name": "负因数个数与积的符号的关系",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt26",
+      "source_name": "有理数除法法则",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt27",
+      "source_name": "乘法交换律",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt28",
+      "source_name": "乘法结合律",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt29",
+      "source_name": "乘法分配律",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl5",
+      "source_name": "利用符号与绝对值分离进行运算",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl6",
+      "source_name": "运算律综合应用",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe6",
+      "source_stem": "计算 (-3)×9。",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe7",
+      "source_stem": "计算 (-36) ÷ 9。",
+      "target": "math_7a_rjb_ch1_s4",
+      "target_name": "第四节 有理数的乘除法",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt30",
+      "source_name": "乘方",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt31",
+      "source_name": "幂",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt32",
+      "source_name": "底数",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt33",
+      "source_name": "指数",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt34",
+      "source_name": "负数幂的奇偶性规律",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt35",
+      "source_name": "科学记数法",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt36",
+      "source_name": "近似数",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt37",
+      "source_name": "精确度",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl7",
+      "source_name": "四舍五入法",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe8",
+      "source_stem": "计算 (-4)^3。",
+      "target": "math_7a_rjb_ch1_s5",
+      "target_name": "第五节 有理数的乘方",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt38",
+      "source_name": "单项式",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt39",
+      "source_name": "单项式的系数",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt40",
+      "source_name": "单项式的次数",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt41",
+      "source_name": "多项式",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt42",
+      "source_name": "多项式的项与常数项",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt43",
+      "source_name": "多项式的次数",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt44",
+      "source_name": "整式",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl8",
+      "source_name": "用字母表示数量关系",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe9",
+      "source_stem": "如图2.1-3，写出圆环的面积表达式，并当 R=15cm，r=10cm（π取3.14）时求面积。",
+      "target": "math_7a_rjb_ch2_s1",
+      "target_name": "第一节 整式",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt45",
+      "source_name": "同类项",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt47",
+      "source_name": "分配律在整式中的应用",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl9",
+      "source_name": "利用同类项化简多项式",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl10",
+      "source_name": "多项式求值",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe10",
+      "source_stem": "合并下列各式的同类项：xy^2 - 1/5 xy^2",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe11",
+      "source_stem": "求多项式 2x^2 - 5x + x^2 + 4x - 3x^2 - 2 在 x=1/2 时的值。",
+      "target": "math_7a_rjb_ch2_s2",
+      "target_name": "第二节 整式的加减",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt48",
+      "source_name": "方程",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt50",
+      "source_name": "未知数",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt51",
+      "source_name": "方程的解",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt52",
+      "source_name": "等式",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt53",
+      "source_name": "等式的性质1",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt54",
+      "source_name": "等式的性质2",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl11",
+      "source_name": "列方程解决实际问题",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl12",
+      "source_name": "利用等式的性质解方程",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe12",
+      "source_stem": "解方程：x + 7 = 26。",
+      "target": "math_7a_rjb_ch3_s1",
+      "target_name": "第一节 从算式到方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt55",
+      "source_name": "移项",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt56",
+      "source_name": "等式的基本性质",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt57",
+      "source_name": "无限循环小数化分数",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl13",
+      "source_name": "解一元一次方程的基本流程",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl14",
+      "source_name": "从数量关系建立方程",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe13",
+      "source_stem": "解方程：3x + 7 = 32 - 2x.",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe14",
+      "source_stem": "把无限循环小数 0.7̇ 写成分数形式。",
+      "target": "math_7a_rjb_ch3_s2",
+      "target_name": "第二节 解一元一次方程(一)合并同类项与移项",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt58",
+      "source_name": "去括号",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt59",
+      "source_name": "去分母",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt55",
+      "source_name": "移项",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt46",
+      "source_name": "合并同类项",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt60",
+      "source_name": "系数化为1",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl15",
+      "source_name": "一元一次方程求解流程",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe15",
+      "source_stem": "解方程：(1) 2x - (x + 10) = 5x + 2(x - 1)",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe16",
+      "source_stem": "解方程：(2) 3x - 7(x - 1) = 3 - 2(x + 3)",
+      "target": "math_7a_rjb_ch3_s3",
+      "target_name": "第三节 解一元一次方程(二)",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt49",
+      "source_name": "一元一次方程",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt61",
+      "source_name": "工作量=效率×人数×时间",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt62",
+      "source_name": "配套数量关系",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt63",
+      "source_name": "方程建模步骤",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt64",
+      "source_name": "相等关系",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl16",
+      "source_name": "将实际问题转化为方程",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl17",
+      "source_name": "解一元一次方程",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe17",
+      "source_stem": "例1：某车间有22名工人……应安排生产螺柱和螺母的工人各多少名？",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe18",
+      "source_stem": "例2：整理图书工作……应先安排多少人工作？",
+      "target": "math_7a_rjb_ch3_s4",
+      "target_name": "第四节 实际问题与一元一次方程",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt65",
+      "source_name": "几何图形",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt66",
+      "source_name": "立体图形",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt67",
+      "source_name": "平面图形",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt68",
+      "source_name": "展开图",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt69",
+      "source_name": "点",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt70",
+      "source_name": "线",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt71",
+      "source_name": "面",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt72",
+      "source_name": "体",
+      "target": "math_7a_rjb_ch4_s1",
+      "target_name": "第一节 几何图形",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt73",
+      "source_name": "直线",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt74",
+      "source_name": "射线",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt75",
+      "source_name": "线段",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt76",
+      "source_name": "两点确定一条直线",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt77",
+      "source_name": "直线的相交与交点",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt78",
+      "source_name": "线段比较",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt79",
+      "source_name": "线段的加减",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt80",
+      "source_name": "线段中点",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt81",
+      "source_name": "两点之间线段最短",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt82",
+      "source_name": "两点的距离",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt83",
+      "source_name": "长度单位",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl18",
+      "source_name": "长度测量技能",
+      "target": "math_7a_rjb_ch4_s2",
+      "target_name": "第二节 直线、射线、线段",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt84",
+      "source_name": "角",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt85",
+      "source_name": "角的度量单位（度、分、秒）",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt86",
+      "source_name": "角度制",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt87",
+      "source_name": "角的比较",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt88",
+      "source_name": "角的加法和减法",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt89",
+      "source_name": "角的平分线",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt90",
+      "source_name": "余角",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt91",
+      "source_name": "补角",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl19",
+      "source_name": "用量角器测量角",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl20",
+      "source_name": "作角平分线",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe19",
+      "source_stem": "如图，O 是直线 AB 上一点，∠AOC = 53°17′，求 ∠BOC 的度数。",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe20",
+      "source_stem": "把一个周角7等分，每一份是多少度的角（精确到分）？",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_exe21",
+      "source_stem": "互余且相等的两个角，各是多少度？",
+      "target": "math_7a_rjb_ch4_s3",
+      "target_name": "第三节 角",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt92",
+      "source_name": "长方体",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt68",
+      "source_name": "展开图",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt93",
+      "source_name": "长方体的展开图",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_cpt94",
+      "source_name": "平面图形与立体图形的相互转化",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl21",
+      "source_name": "通过展开图构建立体图形",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    },
+    {
+      "source": "math_7a_rjb_skl22",
+      "source_name": "拆解与分析立体图形结构",
+      "target": "math_7a_rjb_ch4_s4",
+      "target_name": "第四节 课题学习 设计制作长方体形状的包装纸盒",
+      "type": "appears_in"
+    }
+  ]
+}

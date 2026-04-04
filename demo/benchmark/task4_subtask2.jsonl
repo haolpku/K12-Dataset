@@ -1,0 +1,609 @@
+{"id": "task4::subtask2::chemistry_9a_rjb_exp15", "question": "以下哪些概念可由化学中的【实验1-1 物质变化的比较】实验验证？", "options": {"A": "原子是化学变化的最小粒子", "B": "化学变化", "C": "物理变化", "D": "分子在化学变化中的作用"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp37", "question": "以下哪些概念可由化学中的【拉瓦锡研究空气成分的实验】实验验证？", "options": {"A": "保护空气", "B": "空气污染", "C": "空气的成分", "D": "空气质量日报"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp48", "question": "以下哪些概念可由化学中的【测定空气里氧气的含量（红磷实验）】实验验证？", "options": {"A": "红磷与氧气反应", "B": "空气污染", "C": "空气的成分", "D": "保护空气"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp23", "question": "通过化学中的【实验2-2 带火星木条在氧气中的复燃】实验，可以支持哪些核心概念？", "options": {"A": "氧气的检验方法", "B": "氧气的物理性质", "C": "实验室制取氧气的方法", "D": "氧气的收集方法"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp24", "question": "化学中的【实验2-3 硫在空气和氧气中的燃烧比较】实验验证了什么原理？", "options": {"A": "铁在氧气中的燃烧", "B": "木炭在氧气与空气中的燃烧差异", "C": "化学性质", "D": "硫在氧气中的燃烧"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp25", "question": "通过化学中的【实验2-4 铁丝在空气和氧气中的现象比较】实验，可以支持哪些核心概念？", "options": {"A": "硫在氧气中的燃烧", "B": "铁在氧气中的燃烧", "C": "铁在空气中的加热现象", "D": "燃烧实验安全"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp26", "question": "以下哪些概念可由化学中的【实验2-5 加热高锰酸钾制取氧气】实验验证？", "options": {"A": "氧气的收集方法", "B": "过氧化氢分解反应", "C": "高锰酸钾受热分解反应", "D": "实验室制取氧气的方法"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp59", "question": "以下哪些概念可由化学中的【过氧化氢分解实验中二氧化锰的作用】实验验证？", "options": {"A": "过氧化氢分解反应", "B": "二氧化锰的催化作用", "C": "高锰酸钾受热分解反应", "D": "加热氯酸钾制取氧气"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp12", "question": "化学中的【加热混有二氧化锰的氯酸钾固体制取氧气】实验验证了什么原理？", "options": {"A": "二氧化锰的催化作用", "B": "加热高锰酸钾制取氧气", "C": "分解过氧化氢制取氧气", "D": "过氧化氢分解反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp16", "question": "化学中的【实验1-2 氧气和二氧化碳的性质比较】实验验证了什么原理？", "options": {"A": "氧气的物理性质", "B": "氧气的化学性质", "C": "二氧化碳的物理性质", "D": "二氧化碳的实验室制取"}, "answer": ["A", "B", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp41", "question": "化学中的【木炭在氧气中燃烧实验】实验验证了什么原理？", "options": {"A": "氧气的性质", "B": "支持燃烧", "C": "氧气支持燃烧", "D": "铁丝在氧气中燃烧"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp60", "question": "通过化学中的【铁丝在氧气中燃烧实验】实验，可以支持哪些核心概念？", "options": {"A": "氧气的性质", "B": "支持燃烧", "C": "木炭在氧气中燃烧", "D": "氧气支持燃烧"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp14", "question": "以下哪些概念可由化学中的【品红在水中的扩散实验（实验3-1）】实验验证？", "options": {"A": "扩散现象", "B": "气体的可压缩性", "C": "分子", "D": "分子运动"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp10", "question": "化学中的【分子运动现象实验（酚酞与氨水，图3-4）】实验验证了什么原理？", "options": {"A": "分子间的间隔", "B": "分子运动", "C": "分子", "D": "扩散现象"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp27", "question": "以下哪些概念可由化学中的【实验4-1 明矾对天然水净化作用】实验验证？", "options": {"A": "活性炭净水原理", "B": "明矾净水原理", "C": "天然水", "D": "蒸馏法净水"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp28", "question": "通过化学中的【实验4-2 过滤天然水】实验，可以支持哪些核心概念？", "options": {"A": "吸附法净水", "B": "沉淀法净水", "C": "过滤法净水", "D": "蒸馏法净水"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp29", "question": "通过化学中的【实验4-3 用肥皂水区分软水和硬水】实验，可以支持哪些核心概念？", "options": {"A": "硬水软化", "B": "硬水", "C": "软水", "D": "硬水的危害"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp30", "question": "通过化学中的【实验4-4 制取蒸馏水并比较硬度】实验，可以支持哪些核心概念？", "options": {"A": "蒸馏水", "B": "过滤法净水", "C": "硬水软化", "D": "蒸馏法净水"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp58", "question": "通过化学中的【课外实验 自制简易净水器】实验，可以支持哪些核心概念？", "options": {"A": "明矾净水原理", "B": "活性炭净水原理", "C": "过滤法净水", "D": "蒸馏法净水"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp46", "question": "通过化学中的【氢气纯度检验实验】实验，可以支持哪些核心概念？", "options": {"A": "氢气的燃烧", "B": "氢气的物理性质", "C": "氢气", "D": "氢气纯度的检验"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp36", "question": "化学中的【对蜡烛及其燃烧的探究】实验验证了什么原理？", "options": {"A": "石蜡燃烧产物", "B": "燃烧实验安全", "C": "酒精灯燃烧", "D": "蜡烛燃烧"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp45", "question": "通过化学中的【氢气在空气中燃烧生成水的实验（实验4-5）】实验，可以支持哪些核心概念？", "options": {"A": "氢气的物理性质", "B": "水的生成反应", "C": "水的分解反应", "D": "氢气的燃烧"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp50", "question": "化学中的【电解水实验（图4-25）】实验验证了什么原理？", "options": {"A": "水的分解反应", "B": "分解反应", "C": "水的组成", "D": "电解水"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp39", "question": "以下哪些概念可由化学中的【普利斯特里和卡文迪什的水生成实验】实验验证？", "options": {"A": "水的组成", "B": "水的分解反应", "C": "化合反应", "D": "电解水"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp56", "question": "化学中的【红磷燃烧前后质量的测定（方案一）】实验验证了什么原理？", "options": {"A": "利用化学方程式进行质量计算", "B": "化学反应中原子的守恒", "C": "质量守恒定律", "D": "定量研究"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp61", "question": "通过化学中的【铁钉与硫酸铜溶液反应前后质量的测定（方案二）】实验，可以支持哪些核心概念？", "options": {"A": "质量守恒定律", "B": "化学反应中原子的守恒", "C": "利用化学方程式进行质量计算", "D": "定量研究"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp51", "question": "化学中的【盐酸与碳酸钠粉末反应前后质量的测定（实验5-1）】实验验证了什么原理？", "options": {"A": "化学反应中原子的守恒", "B": "利用化学方程式进行质量计算", "C": "定量研究", "D": "质量守恒定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp62", "question": "通过化学中的【镁条燃烧前后质量的比较（实验5-2）】实验，可以支持哪些核心概念？", "options": {"A": "利用化学方程式进行质量计算", "B": "质量守恒定律", "C": "化学反应中原子的守恒", "D": "定量研究"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp42", "question": "化学中的【木炭在氧气中燃烧生成二氧化碳】实验验证了什么原理？", "options": {"A": "化学方程式的配平", "B": "化学方程式提供的信息", "C": "质量守恒定律", "D": "化学方程式"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp54", "question": "以下哪些概念可由化学中的【磷在空气中燃烧生成五氧化二磷】实验验证？", "options": {"A": "质量守恒定律在化学方程式中的体现", "B": "化学计量数", "C": "化学方程式的配平", "D": "化学反应条件的表示"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp63", "question": "化学中的【高锰酸钾受热分解制氧气】实验验证了什么原理？", "options": {"A": "质量守恒定律", "B": "化学方程式的书写", "C": "化学方程式", "D": "化学方程式的量的含义"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp35", "question": "通过化学中的【对人体吸入的空气和呼出的气体的探究】实验，可以支持哪些核心概念？", "options": {"A": "二氧化碳的检验", "B": "二氧化碳对燃烧的影响", "C": "石蜡燃烧产物", "D": "物质的化学性质"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp47", "question": "化学中的【活性炭（木炭）的吸附性实验】实验验证了什么原理？", "options": {"A": "活性炭", "B": "碳的吸附性", "C": "木炭", "D": "碳单质"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp43", "question": "通过化学中的【木炭还原氧化铜实验】实验，可以支持哪些核心概念？", "options": {"A": "碳的化学性质", "B": "碳与金属氧化物的反应", "C": "高温对碳活泼性的影响", "D": "碳的吸附性"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp52", "question": "通过化学中的【石墨导电实验】实验，可以支持哪些核心概念？", "options": {"A": "石墨", "B": "碳单质", "C": "导电性（电导性）", "D": "导热性"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp49", "question": "化学中的【生成炭黑的实验】实验验证了什么原理？", "options": {"A": "木炭", "B": "焦炭", "C": "活性炭", "D": "炭黑"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp34", "question": "通过化学中的【实验室制取二氧化碳的实验】实验，可以支持哪些核心概念？", "options": {"A": "二氧化碳的实验室制法", "B": "二氧化碳的检验方法", "C": "实验室制取气体的一般思路和方法", "D": "气体收集装置"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp7", "question": "以下哪些概念可由化学中的【二氧化碳的检验与集满判定实验】实验验证？", "options": {"A": "二氧化碳的实验室制法", "B": "氧气的实验室制取", "C": "二氧化碳的检验方法", "D": "实验室制取气体的一般思路和方法"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp9", "question": "通过化学中的【倾倒二氧化碳观察其流动与密度（实验6-3）】实验，可以支持哪些核心概念？", "options": {"A": "二氧化碳的化学性质", "B": "二氧化碳的物理性质", "C": "二氧化碳的实验室制取", "D": "向上排空气法"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp8", "question": "以下哪些概念可由化学中的【二氧化碳的溶解性实验（实验6-4）】实验验证？", "options": {"A": "二氧化碳的化学性质", "B": "二氧化碳的实验室制取", "C": "向上排空气法", "D": "二氧化碳的物理性质"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp3", "question": "以下哪些概念可由化学中的【二氧化碳与水及石蕊的反应（实验6-5）】实验验证？", "options": {"A": "二氧化碳溶于水生成碳酸", "B": "二氧化碳的化学性质", "C": "二氧化碳对人体健康的影响", "D": "碳酸的性质"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp53", "question": "以下哪些概念可由化学中的【石灰水检验二氧化碳】实验验证？", "options": {"A": "二氧化碳使澄清石灰水变浑浊", "B": "二氧化碳的化学性质", "C": "碳酸钙沉淀", "D": "澄清石灰水检验二氧化碳"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp17", "question": "以下哪些概念可由化学中的【实验1-3 固体药品的取用】实验验证？", "options": {"A": "液体药品的取用", "B": "化学药品取用规则", "C": "实验现象", "D": "固体药品的取用"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp6", "question": "通过化学中的【二氧化碳的实验室制取与收集】实验，可以支持哪些核心概念？", "options": {"A": "二氧化碳的化学性质", "B": "二氧化碳的实验室制取", "C": "二氧化碳的物理性质", "D": "二氧化碳的溶解性"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp5", "question": "化学中的【二氧化碳对燃烧的影响（蜡烛实验）】实验验证了什么原理？", "options": {"A": "二氧化碳", "B": "二氧化碳的物理性质", "C": "二氧化碳不支持燃烧", "D": "二氧化碳溶于水生成碳酸"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp31", "question": "以下哪些概念可由化学中的【实验7-1 燃烧的条件（白磷与红磷实验）】实验验证？", "options": {"A": "燃烧的条件", "B": "燃烧", "C": "氧气（空气）对燃烧的作用", "D": "着火点"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp38", "question": "以下哪些概念可由化学中的【探究：蜡烛在不同条件下的燃烧（灭火原理）】实验验证？", "options": {"A": "干粉灭火器", "B": "水基型灭火器", "C": "灭火原理", "D": "二氧化碳灭火器"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp55", "question": "通过化学中的【粉尘爆炸实验（实验7-2）】实验，可以支持哪些核心概念？", "options": {"A": "粉尘爆炸", "B": "燃烧", "C": "爆炸极限", "D": "燃烧的条件"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp57", "question": "以下哪些概念可由化学中的【自制化学灭火器原理装置（碳酸钠与盐酸）】实验验证？", "options": {"A": "干粉灭火器", "B": "灭火原理", "C": "二氧化碳灭火器", "D": "水基型灭火器"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp32", "question": "化学中的【实验7-3 生石灰与水反应放出热量】实验验证了什么原理？", "options": {"A": "化石燃料的环境影响", "B": "合理利用化石燃料", "C": "新能源", "D": "放热反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp33", "question": "化学中的【实验7-4 甲烷燃烧及产物验证】实验验证了什么原理？", "options": {"A": "甲烷", "B": "吸热反应", "C": "放热反应", "D": "清洁燃料"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp18", "question": "以下哪些概念可由化学中的【实验1-4 液体取用与酸碱反应观察】实验验证？", "options": {"A": "固体药品的取用", "B": "化学药品", "C": "液体药品的取用", "D": "化学实验室规则与安全"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp44", "question": "化学中的【棉花蘸酒精和水的燃烧实验】实验验证了什么原理？", "options": {"A": "燃烧", "B": "氧气（空气）对燃烧的作用", "C": "灭火的原理", "D": "燃烧的条件"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp1", "question": "化学中的【乒乓球碎片和滤纸碎片的燃烧实验】实验验证了什么原理？", "options": {"A": "可燃物", "B": "物质是否为可燃物的判断", "C": "燃烧", "D": "燃烧实验安全"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp11", "question": "以下哪些概念可由化学中的【利用蜡烛和烧杯探究氧气对燃烧的作用】实验验证？", "options": {"A": "燃烧的条件", "B": "氧气（空气）对燃烧的作用", "C": "燃烧", "D": "粉末和碎屑的燃烧特点"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp40", "question": "以下哪些概念可由化学中的【木屑和煤粉燃烧现象实验】实验验证？", "options": {"A": "粉末和碎屑的燃烧特点", "B": "氧气（空气）对燃烧的作用", "C": "易燃物", "D": "燃烧"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp19", "question": "化学中的【实验1-5 酒精灯火焰分层观察】实验验证了什么原理？", "options": {"A": "酒精灯的使用与安全", "B": "酒精灯火焰分层", "C": "火焰的分层与温度分布", "D": "实验现象"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp20", "question": "化学中的【实验1-6 氢氧化钠溶液与硫酸铜溶液反应及加热】实验验证了什么原理？", "options": {"A": "物质的加热", "B": "化学实验室规则与安全", "C": "试管加热的安全操作要点", "D": "化学实验基本操作方法"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9a_rjb_exp21", "question": "化学中的【实验1-7 装置连接与气密性检验】实验验证了什么原理？", "options": {"A": "连接仪器装置", "B": "氧气的检验", "C": "实验现象", "D": "装置气密性检查"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp48", "question": "以下哪些概念可由化学中的【酸、碱与石蕊、酚酞等酸碱指示剂的作用】实验验证？", "options": {"A": "酸与酸碱指示剂的作用", "B": "酸碱指示剂", "C": "土壤的酸碱性", "D": "pH（酸碱度）"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp29", "question": "通过化学中的【溶液导电性实验】实验，可以支持哪些核心概念？", "options": {"A": "H⁺(氢离子)", "B": "OH⁻(氢氧根离子)", "C": "碱性溶液", "D": "碱溶液的导电性"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp3", "question": "通过化学中的【实验10-8 氢氧化钠与盐酸的中和反应】实验，可以支持哪些核心概念？", "options": {"A": "胃酸过多的中和", "B": "蚊虫叮咬与蚁酸中和", "C": "中和反应", "D": "工业废水的酸碱中和处理"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp4", "question": "以下哪些概念可由化学中的【实验10-9 用pH试纸测定溶液pH】实验验证？", "options": {"A": "pH计", "B": "pH", "C": "pH试纸", "D": "体液pH范围"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp2", "question": "化学中的【实验10-10 测定生活中一些物质的pH】实验验证了什么原理？", "options": {"A": "pH", "B": "溶液酸碱性在生命活动中的意义", "C": "体液pH范围", "D": "土壤的酸碱性"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp20", "question": "以下哪些概念可由化学中的【比较酸和碱与指示剂的作用】实验验证？", "options": {"A": "酸与指示剂的作用", "B": "酸碱指示剂", "C": "酸除锈作用", "D": "碱与金属盐溶液的复分解反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp36", "question": "化学中的【稀盐酸除去铁钉锈迹实验】实验验证了什么原理？", "options": {"A": "酸与指示剂的作用", "B": "酸除锈作用", "C": "酸与碱反应生成盐和水", "D": "酸与酸碱指示剂的作用"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp25", "question": "化学中的【氢氧化钠与硫酸铜溶液及盐酸的反应】实验验证了什么原理？", "options": {"A": "酸与碱反应生成盐和水", "B": "氢氧化钙的化学性质", "C": "碱与指示剂的作用", "D": "碱与金属盐溶液的复分解反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp34", "question": "化学中的【盐酸与氢氧化钠的中和反应及蒸干观察】实验验证了什么原理？", "options": {"A": "碱与金属盐溶液的复分解反应", "B": "酸与指示剂的作用", "C": "酸与碱反应生成盐和水", "D": "氢氧化钙的化学性质"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp24", "question": "通过化学中的【氢氧化钙粉末与水、酸及酚酞的反应】实验，可以支持哪些核心概念？", "options": {"A": "酸与碱反应生成盐和水", "B": "碱与金属盐溶液的复分解反应", "C": "碱与指示剂的作用", "D": "氢氧化钙的化学性质"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp32", "question": "以下哪些概念可由化学中的【用酸碱指示剂检验溶液的酸碱性】实验验证？", "options": {"A": "碱与酸碱指示剂的作用", "B": "酸碱指示剂", "C": "酸与酸碱指示剂的作用", "D": "溶液的酸碱性"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp40", "question": "以下哪些概念可由化学中的【自制植物酸碱指示剂】实验验证？", "options": {"A": "酸碱指示剂", "B": "自制植物酸碱指示剂", "C": "自制酸碱指示剂", "D": "酸与酸碱指示剂的作用"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp31", "question": "通过化学中的【用pH试纸测定溶液和土壤浸提液的酸碱度】实验，可以支持哪些核心概念？", "options": {"A": "土壤的酸碱性", "B": "碱性溶液", "C": "酸性溶液", "D": "中性溶液"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp5", "question": "通过化学中的【实验11-1：碳酸钠和碳酸氢钠与盐酸的反应】实验，可以支持哪些核心概念？", "options": {"A": "复分解反应", "B": "碳酸氢钠", "C": "含碳酸根或碳酸氢根的盐与盐酸的反应", "D": "碳酸钠"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp6", "question": "以下哪些概念可由化学中的【实验11-2：碳酸钠溶液与澄清石灰水的反应】实验验证？", "options": {"A": "碳酸钠", "B": "含碳酸根或碳酸氢根的盐与盐酸的反应", "C": "盐的反应类型", "D": "碳酸钠与氢氧化钙的反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp7", "question": "化学中的【实验11-3：硫酸铜溶液与氢氧化钠、氯化钡溶液的反应】实验验证了什么原理？", "options": {"A": "酸碱中和反应与复分解反应的关系", "B": "含碳酸根或碳酸氢根的盐与盐酸的反应", "C": "复分解反应发生的条件", "D": "复分解反应"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp19", "question": "化学中的【比较氮肥、磷肥和钾肥的外观、气味和溶解性】实验验证了什么原理？", "options": {"A": "钾肥的物理和化学性质", "B": "氮肥的物理和化学性质", "C": "铵态氮肥", "D": "合理施用化肥"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp30", "question": "化学中的【熟石灰研磨鉴别铵态氮肥和钾肥】实验验证了什么原理？", "options": {"A": "铵态氮肥", "B": "氮肥的物理和化学性质", "C": "钾肥的物理和化学性质", "D": "磷肥的物理和化学性质"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp39", "question": "化学中的【聚乙烯塑料的热塑性实验（实验12-1）】实验验证了什么原理？", "options": {"A": "热固性", "B": "链状高分子结构", "C": "热塑性", "D": "塑料的利与弊"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp18", "question": "通过化学中的【比较合金和纯金属的硬度和外观】实验，可以支持哪些核心概念？", "options": {"A": "纯金属", "B": "合金性能相对纯金属的改变", "C": "金属的个性物理性质", "D": "合金"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp51", "question": "化学中的【钢针的淬火与回火】实验验证了什么原理？", "options": {"A": "金属的共同物理性质", "B": "淬火", "C": "回火", "D": "金属的个性物理性质"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp55", "question": "以下哪些概念可由化学中的【镁、锌、铁、铜与盐酸和稀硫酸反应的比较实验】实验验证？", "options": {"A": "金属活动性", "B": "金属活动性顺序", "C": "金属活动性顺序的比较方法", "D": "金属与氧气的反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp52", "question": "通过化学中的【铁钉与硫酸铜溶液的反应】实验，可以支持哪些核心概念？", "options": {"A": "金属与盐酸、稀硫酸的反应", "B": "金属间的置换（溶液中）", "C": "金属活动性顺序", "D": "金属与氧气的反应"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp54", "question": "化学中的【铝丝、铜丝与不同金属盐溶液的反应探究金属活动性顺序】实验验证了什么原理？", "options": {"A": "金属活动性", "B": "金属活动性顺序", "C": "金属置换氢的条件", "D": "金属间的置换（溶液中）"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp16", "question": "以下哪些概念可由化学中的【实验室一氧化碳还原氧化铁实验】实验验证？", "options": {"A": "置换反应", "B": "铁的冶炼", "C": "金属矿石", "D": "一氧化碳还原氧化铁反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp53", "question": "化学中的【铁钉锈蚀条件的探究实验】实验验证了什么原理？", "options": {"A": "铁锈蚀（铁生锈）", "B": "防止钢铁生锈的措施", "C": "铁锈蚀的条件", "D": "生铁"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp43", "question": "通过化学中的【观察镁、铝、铁、铜的颜色和光泽】实验，可以支持哪些核心概念？", "options": {"A": "金属的硬度", "B": "金属的颜色和光泽", "C": "金属的延展性", "D": "金属的导热性"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp21", "question": "以下哪些概念可由化学中的【比较金属硬度的相互刻画实验】实验验证？", "options": {"A": "金属的熔点", "B": "金属的导热性", "C": "金属的延展性", "D": "金属的硬度"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp44", "question": "化学中的【证明金属具有导电性的实验】实验验证了什么原理？", "options": {"A": "金属的导电性", "B": "金属的导热性", "C": "金属的熔点", "D": "金属的硬度"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp27", "question": "以下哪些概念可由化学中的【浓硫酸的腐蚀性和吸水性】实验验证？", "options": {"A": "酸和碱的腐蚀性及安全性", "B": "酸和碱的腐蚀性及安全使用", "C": "浓硫酸的腐蚀性和吸水性", "D": "浓硫酸稀释的安全操作"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp1", "question": "通过化学中的【加热铜片观察氧化现象】实验，可以支持哪些核心概念？", "options": {"A": "金属与氧气的反应", "B": "金属与稀酸反应生成氢气", "C": "金属与盐酸、稀硫酸的反应", "D": "金属与氧气反应（氧化作用）"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp50", "question": "以下哪些概念可由化学中的【金属与稀盐酸（或稀硫酸）的反应】实验验证？", "options": {"A": "金属与盐酸、稀硫酸的反应", "B": "金属与氧气的反应", "C": "金属与稀酸反应生成氢气", "D": "金属与氧气反应（氧化作用）"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp22", "question": "化学中的【比较铁、铜、银金属活动性的实验（设计性）】实验验证了什么原理？", "options": {"A": "金属活动性顺序", "B": "金属活动性", "C": "金属活动性顺序的比较方法", "D": "金属与氧气的反应"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp8", "question": "化学中的【实验9-1 蔗糖溶解】实验验证了什么原理？", "options": {"A": "溶液", "B": "溶液的均一性", "C": "溶液的广泛用途", "D": "溶液的稳定性"}, "answer": ["A", "B", "D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp9", "question": "通过化学中的【实验9-2 碘和高锰酸钾的溶解性比较】实验，可以支持哪些核心概念？", "options": {"A": "溶解性", "B": "溶解过程中的热量变化", "C": "溶液", "D": "溶解度"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp10", "question": "通过化学中的【实验9-3 乙醇能溶解在水中】实验，可以支持哪些核心概念？", "options": {"A": "溶质和溶剂", "B": "溶质溶剂的物态类型", "C": "溶质", "D": "溶剂"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp17", "question": "以下哪些概念可由化学中的【探究溶解时的吸热或放热现象】实验验证？", "options": {"A": "放热溶解", "B": "吸热溶解", "C": "溶解性", "D": "溶解过程中的热量变化"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp11", "question": "以下哪些概念可由化学中的【实验9-4 植物油与水及洗涤剂的乳化实验】实验验证？", "options": {"A": "溶液的稳定性", "B": "乳浊液和悬浊液的应用", "C": "乳化", "D": "悬浊液"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp12", "question": "通过化学中的【实验9-5 氯化钠在水中的溶解与饱和】实验，可以支持哪些核心概念？", "options": {"A": "不饱和溶液", "B": "溶液的饱和与不饱和的条件性", "C": "溶剂量对溶液饱和状态的影响", "D": "水溶液"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp13", "question": "通过化学中的【实验9-6 硝酸钾在水中的溶解与温度影响】实验，可以支持哪些核心概念？", "options": {"A": "结晶", "B": "温度对溶液饱和状态的影响", "C": "饱和溶液", "D": "溶液的饱和与不饱和的条件性"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp28", "question": "化学中的【浓硫酸稀释放热现象】实验验证了什么原理？", "options": {"A": "浓硫酸稀释的安全操作", "B": "硫酸", "C": "酸的相似化学性质（酸的通性）", "D": "盐酸"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp45", "question": "通过化学中的【课外实验 自制白糖晶体】实验，可以支持哪些核心概念？", "options": {"A": "温度对溶液饱和状态的影响", "B": "用冷却饱和溶液获得晶体", "C": "结晶", "D": "不饱和溶液"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp14", "question": "通过化学中的【实验9-7 比较三种浓稀不同的硫酸铜溶液】实验，可以支持哪些核心概念？", "options": {"A": "溶解度", "B": "体积分数", "C": "浓溶液与稀溶液", "D": "溶液"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp15", "question": "通过化学中的【实验9-8 配制氯化钠溶液并计算质量分数】实验，可以支持哪些核心概念？", "options": {"A": "溶质质量", "B": "溶液质量", "C": "溶质", "D": "溶解度"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp47", "question": "通过化学中的【配制质量分数为6%的氯化钠溶液】实验，可以支持哪些核心概念？", "options": {"A": "一定溶质质量分数的溶液配制", "B": "准确配制溶液的实际意义", "C": "溶质质量分数", "D": "溶质的质量分数"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp33", "question": "化学中的【由6%氯化钠溶液配制3%氯化钠溶液】实验验证了什么原理？", "options": {"A": "溶质质量分数", "B": "稀溶液与浓溶液", "C": "准确配制溶液的实际意义", "D": "溶液密度近似为1 g/cm³的应用"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp26", "question": "通过化学中的【氢氧化钠的性质和潮解现象】实验，可以支持哪些核心概念？", "options": {"A": "氢氧化钠的潮解和变质", "B": "氢氧化钠", "C": "氢氧化钙及石灰水、石灰乳", "D": "碱的相似化学性质（碱的通性）"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp23", "question": "以下哪些概念可由化学中的【氢氧化钙及石灰水的性质】实验验证？", "options": {"A": "氢氧化钠", "B": "生石灰的干燥性", "C": "氢氧化钙及石灰水、石灰乳", "D": "碱与非金属氧化物反应"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_9b_rjb_exp35", "question": "化学中的【碱的化学性质与CO₂反应】实验验证了什么原理？", "options": {"A": "氢氧化钙及石灰水、石灰乳", "B": "中和反应", "C": "氢氧化钠", "D": "碱与非金属氧化物反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp12", "question": "化学中的【利用丁达尔效应区分Fe(OH)3胶体和CuSO4溶液】实验验证了什么原理？", "options": {"A": "溶液", "B": "乳浊液", "C": "胶体", "D": "光的散射"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp22", "question": "通过化学中的【实验2-6 金属的焰色试验】实验，可以支持哪些核心概念？", "options": {"A": "焰色试验", "B": "金属元素的特征焰色", "C": "钠的化学性质活泼", "D": "钠的焰色"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp27", "question": "化学中的【氢气在氯气中燃烧实验（实验2-7）】实验验证了什么原理？", "options": {"A": "氯气的强氧化性", "B": "氯气与金属的反应", "C": "氯气与非金属的反应", "D": "次氯酸的强氧化性与消毒作用"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp28", "question": "通过化学中的【氯气对有色物质的漂白实验（实验2-8）】实验，可以支持哪些核心概念？", "options": {"A": "次氯酸", "B": "次氯酸盐", "C": "次氯酸的漂白作用", "D": "氯气与水的反应"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp26", "question": "以下哪些概念可由化学中的【次氯酸光照分解的数字化实验】实验验证？", "options": {"A": "次氯酸", "B": "次氯酸盐", "C": "氯气与水的反应", "D": "次氯酸的光照分解"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp29", "question": "通过化学中的【氯离子的检验实验（实验2-9）】实验，可以支持哪些核心概念？", "options": {"A": "次氯酸光照分解的实验原理", "B": "水质检验的化学指标", "C": "氯离子的检验原理", "D": "氯气的实验室制取反应"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp32", "question": "以下哪些概念可由化学中的【配制 100 mL 1.00 mol/L NaCl 溶液】实验验证？", "options": {"A": "物质的量", "B": "溶液配制的准确性因素", "C": "NaCl溶液", "D": "溶液体积"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp30", "question": "通过化学中的【用1.00 mol/L NaCl溶液配制100 mL 0.50 mol/L NaCl溶液】实验，可以支持哪些核心概念？", "options": {"A": "溶液稀释", "B": "物质的量浓度", "C": "物质的量", "D": "NaCl溶液"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp8", "question": "以下哪些概念可由化学中的【FeCl3和FeSO4与NaOH反应制备铁的氢氧化物（实验3-1）】实验验证？", "options": {"A": "铁的氧化物", "B": "氢氧化亚铁（Fe(OH)2）", "C": "氢氧化铁（Fe(OH)3）", "D": "铁的氢氧化物"}, "answer": ["B", "C", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp4", "question": "以下哪些概念可由化学中的【Fe3+与KSCN的显色反应（实验3-2）】实验验证？", "options": {"A": "Fe3+与KSCN显色反应", "B": "铁的日推荐摄入量及食物来源", "C": "淀粉-碘显色反应", "D": "硫氰酸根检测试剂（KSCN）"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp16", "question": "以下哪些概念可由化学中的【固体NaCl、KNO3与其溶液导电性的比较实验（实验1-2）】实验验证？", "options": {"A": "电解质", "B": "熔融电解质的导电性", "C": "电离", "D": "电解质溶液的导电性"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp3", "question": "化学中的【Fe3+与Fe及Cl2之间的相互氧化还原（实验3-3）】实验验证了什么原理？", "options": {"A": "铁盐", "B": "亚铁盐", "C": "铁的氧化还原性质（Fe2+/Fe3+互相转化）", "D": "铁的氧化物"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp13", "question": "通过化学中的【利用覆铜板制作图案】实验，可以支持哪些核心概念？", "options": {"A": "铁盐", "B": "铁的氧化还原性质（Fe2+/Fe3+互相转化）", "C": "工业炼铁原理", "D": "覆铜板腐蚀原理（FeCl3腐蚀铜）"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp25", "question": "以下哪些概念可由化学中的【检验菠菜中铁元素】实验验证？", "options": {"A": "铁单质的物理性质", "B": "铁单质的化学性质", "C": "铁的氧化物", "D": "Fe3+与KSCN显色反应"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp39", "question": "通过化学中的【铝片与盐酸反应实验】实验，可以支持哪些核心概念？", "options": {"A": "铝与碱反应", "B": "铝与酸反应", "C": "铝的活泼性与保护性氧化膜", "D": "铝制餐具的使用限制"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp23", "question": "通过化学中的【实验3-5 铝与NaOH溶液的反应】实验，可以支持哪些核心概念？", "options": {"A": "两性氧化物", "B": "铝与酸反应", "C": "铝与碱反应", "D": "铝制餐具的使用限制"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp38", "question": "通过化学中的【铁丝与硫酸铜溶液反应验证铁的还原性】实验，可以支持哪些核心概念？", "options": {"A": "亚铁盐的氧化性和还原性", "B": "铁单质的还原性", "C": "铁盐的氧化性", "D": "氧化还原反应实现同种元素不同价态物质之间的相互转化"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp7", "question": "以下哪些概念可由化学中的【FeCl3 与铜片反应探究铁盐的氧化性】实验验证？", "options": {"A": "铁盐的氧化性", "B": "亚铁盐的氧化性和还原性", "C": "氧化还原反应实现同种元素不同价态物质之间的相互转化", "D": "铁单质的还原性"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp6", "question": "通过化学中的【FeCl3 与 KI、淀粉反应探究铁盐的氧化性】实验，可以支持哪些核心概念？", "options": {"A": "亚铁盐的氧化性和还原性", "B": "氧化还原反应实现同种元素不同价态物质之间的相互转化", "C": "铁单质的还原性", "D": "铁盐的氧化性"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp5", "question": "以下哪些概念可由化学中的【FeCl2 与锌片反应探究亚铁盐的氧化性】实验验证？", "options": {"A": "铁盐的氧化性", "B": "酸性高锰酸钾溶液的氧化性", "C": "亚铁盐的氧化性和还原性", "D": "铁单质的还原性"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp9", "question": "通过化学中的【FeSO4 与酸性 KMnO4 反应探究亚铁盐的还原性及 Fe2+→Fe3+ 转化】实验，可以支持哪些核心概念？", "options": {"A": "铁盐的氧化性", "B": "氧化还原反应实现同种元素不同价态物质之间的相互转化", "C": "亚铁盐的氧化性和还原性", "D": "铁单质的还原性"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp11", "question": "通过化学中的【Na2SO4与BaCl2溶液反应的离子变化实验（实验1-3）】实验，可以支持哪些核心概念？", "options": {"A": "离子方程式书写步骤", "B": "离子反应", "C": "旁观离子", "D": "电离"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp2", "question": "通过化学中的【Fe3+ 与 KSCN 显色检验铁离子】实验，可以支持哪些核心概念？", "options": {"A": "铁盐的氧化性", "B": "硫酸亚铁晶体的制备（以铁屑为原料）", "C": "铁离子的检验", "D": "铁单质的还原性"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp31", "question": "以下哪些概念可由化学中的【还原 Fe3+ 后再与 KSCN 反应探究Fe2+/Fe3+转化与检验】实验验证？", "options": {"A": "氧化还原反应实现同种元素不同价态物质之间的相互转化", "B": "亚铁盐的氧化性和还原性", "C": "铁单质的还原性", "D": "硫氰酸根检测试剂（KSCN）"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp37", "question": "通过化学中的【钾在空气中燃烧的实验】实验，可以支持哪些核心概念？", "options": {"A": "碱金属元素化学性质递变性", "B": "碱金属元素化学性质相似性", "C": "碱金属元素", "D": "原子结构与元素性质的关系"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp36", "question": "通过化学中的【钾与水反应的实验】实验，可以支持哪些核心概念？", "options": {"A": "碱金属元素", "B": "原子结构与元素性质的关系", "C": "碱金属元素化学性质递变性", "D": "碱金属元素化学性质相似性"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp14", "question": "化学中的【卤素间置换反应实验（氯水/溴水与溴化钾、碘化钾溶液）】实验验证了什么原理？", "options": {"A": "卤素与氢气反应及氢化物稳定性规律", "B": "卤族元素（卤素）", "C": "卤素单质物理性质规律", "D": "卤素单质氧化性强弱顺序"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp40", "question": "通过化学中的【镁与水反应的比较实验】实验，可以支持哪些核心概念？", "options": {"A": "非金属性", "B": "金属性", "C": "同周期元素性质的递变规律", "D": "元素性质的周期性变化"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp1", "question": "通过化学中的【Al(OH)₃与酸和碱反应的对比实验】实验，可以支持哪些核心概念？", "options": {"A": "两性氢氧化物", "B": "氢氧化铝的两性", "C": "氢氧化镁的碱性", "D": "最高价氧化物对应的水化物酸性强弱递变"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp15", "question": "化学中的【同主族卤素氧化性递变实验】实验验证了什么原理？", "options": {"A": "同主族元素性质的递变", "B": "溴水", "C": "卤素氧化性递变", "D": "氯水"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp35", "question": "化学中的【钠和镁与水反应比较金属性实验】实验验证了什么原理？", "options": {"A": "同主族元素性质的递变", "B": "同周期元素性质的递变", "C": "元素性质的周期性变化", "D": "镁与水的反应"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp10", "question": "化学中的【MgCl2 和 AlCl3 与 NaOH 反应比较氢氧化物碱性实验】实验验证了什么原理？", "options": {"A": "同周期元素性质的递变", "B": "同主族元素性质的递变", "C": "元素性质的周期性变化", "D": "金属性强弱"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp17", "question": "化学中的【实验2-1 钠的物理性质和与空气反应】实验验证了什么原理？", "options": {"A": "过氧化钠", "B": "氧化钠", "C": "钠单质", "D": "钠的物理性质"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp18", "question": "化学中的【实验2-2 钠在空气中加热的反应】实验验证了什么原理？", "options": {"A": "氧化钠", "B": "钠单质", "C": "过氧化钠与水的反应", "D": "过氧化钠"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp34", "question": "以下哪些概念可由化学中的【钠与水反应的实验】实验验证？", "options": {"A": "钠与水的反应", "B": "镁与水的反应", "C": "氢氧化钠溶液的碱性", "D": "氢氧化镁的碱性"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp19", "question": "以下哪些概念可由化学中的【实验2-3 过氧化钠与水和二氧化碳的反应】实验验证？", "options": {"A": "过氧化钠与水的反应", "B": "过氧化钠与二氧化碳的反应", "C": "钠与水的反应", "D": "过氧化钠"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp20", "question": "化学中的【实验2-4 比较Na2CO3和NaHCO3的性质】实验验证了什么原理？", "options": {"A": "碳酸氢钠", "B": "加热鉴别Na2CO3和NaHCO3", "C": "氢氧化钠溶液的碱性", "D": "碳酸钠与水的作用"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx1_rjb_exp21", "question": "化学中的【实验2-5 比较Na2CO3和NaHCO3的热稳定性】实验验证了什么原理？", "options": {"A": "碳酸钠的热稳定性", "B": "碳酸氢钠", "C": "加热鉴别Na2CO3和NaHCO3", "D": "碳酸氢钠的热稳定性"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp9", "question": "通过化学中的【二氧化硫溶于水及酸性检验（实验5-1）】实验，可以支持哪些核心概念？", "options": {"A": "二氧化硫的漂白作用", "B": "氧化性和还原性（以二氧化硫为例）", "C": "二氧化硫", "D": "亚硫酸"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp22", "question": "化学中的【氢氟酸溶蚀玻璃制备磨砂玻璃】实验验证了什么原理？", "options": {"A": "玻璃", "B": "水玻璃", "C": "氢氟酸与二氧化硅反应", "D": "高纯硅制备原理"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp43", "question": "化学中的【碱溶液对玻璃的腐蚀】实验验证了什么原理？", "options": {"A": "玻璃", "B": "二氧化硅的酸性氧化物性质", "C": "水玻璃", "D": "高纯硅制备原理"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp35", "question": "以下哪些概念可由化学中的【用化学沉淀法去除粗盐中的杂质离子】实验验证？", "options": {"A": "化学沉淀法", "B": "物质的分离和提纯", "C": "粗盐中的杂质离子", "D": "含硫物质的价态变化"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp1", "question": "化学中的【Na2S 与 H2SO3、酸性 KMnO4 反应实验】实验验证了什么原理？", "options": {"A": "氧化还原反应原理", "B": "硫及其化合物的性质", "C": "含硫物质的价态变化", "D": "含硫物质的价态与氧化还原转化"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp30", "question": "通过化学中的【浓硫酸与铜片加热反应实验】实验，可以支持哪些核心概念？", "options": {"A": "不同价态含硫物质", "B": "浓硫酸的性质", "C": "氧化还原反应原理", "D": "铜与浓硫酸的氧化还原反应"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp48", "question": "以下哪些概念可由化学中的【铁粉与硫粉混合加热反应实验】实验验证？", "options": {"A": "硫及其化合物的性质", "B": "不同价态含硫物质", "C": "氧化还原反应原理", "D": "硫粉的燃烧和化合反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp40", "question": "以下哪些概念可由化学中的【盐酸与镁反应的温度变化实验（实验6-1）】实验验证？", "options": {"A": "吸热反应", "B": "反应物总能量和生成物总能量", "C": "放热反应", "D": "热能"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp23", "question": "通过化学中的【氢氧化钡与氯化铵反应的吸热实验（实验6-2）】实验，可以支持哪些核心概念？", "options": {"A": "放热反应", "B": "吸热反应", "C": "反应物总能量和生成物总能量", "D": "热能"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp50", "question": "通过化学中的【锌-铜-稀硫酸原电池实验（实验6-3）】实验，可以支持哪些核心概念？", "options": {"A": "原电池", "B": "锌-铜-稀硫酸原电池反应", "C": "原电池的工作原理", "D": "原电池组装的注意事项"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp32", "question": "通过化学中的【温度对 H2O2 分解速率的影响实验】实验，可以支持哪些核心概念？", "options": {"A": "反应物浓度对反应速率的影响", "B": "固体表面积对反应速率的影响", "C": "化学反应速率", "D": "温度对反应速率的影响"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp10", "question": "化学中的【二氧化硫的漂白作用（实验5-2）】实验验证了什么原理？", "options": {"A": "二氧化硫的漂白作用", "B": "二氧化硫", "C": "含硫物质的价态与氧化还原转化", "D": "硫单质的化学性质"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp29", "question": "通过化学中的【浓度对反应速率影响的学生设计实验】实验，可以支持哪些核心概念？", "options": {"A": "温度对反应速率的影响", "B": "反应物浓度对反应速率的影响", "C": "固体表面积对反应速率的影响", "D": "化学反应速率"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp51", "question": "化学中的【镁与不同浓度盐酸反应速率的压强传感器实验】实验验证了什么原理？", "options": {"A": "温度对反应速率的影响", "B": "固体表面积对反应速率的影响", "C": "反应物浓度对反应速率的影响", "D": "化学反应速率"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp39", "question": "以下哪些概念可由化学中的【电极材料的实验（接触实验）】实验验证？", "options": {"A": "电极材料", "B": "电极电势差与电流产生条件", "C": "不同金属作为电极的可行性", "D": "原电池的构成要素"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp38", "question": "以下哪些概念可由化学中的【电极材料与稀硫酸的实验】实验验证？", "options": {"A": "氧化还原反应中的电子转移", "B": "原电池", "C": "原电池的工作原理", "D": "氧化还原反应在原电池中的作用"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp14", "question": "通过化学中的【原电池实验（锌、铜、石墨与稀硫酸）】实验，可以支持哪些核心概念？", "options": {"A": "锌-铜-稀硫酸原电池反应", "B": "原电池", "C": "原电池的工作原理", "D": "原电池组装的注意事项"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp28", "question": "以下哪些概念可由化学中的【浓度对化学反应速率的影响实验】实验验证？", "options": {"A": "温度对化学反应速率的影响", "B": "催化剂对化学反应速率的影响", "C": "硫代硫酸钠与硫酸反应", "D": "反应条件"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp33", "question": "化学中的【温度对化学反应速率的影响实验】实验验证了什么原理？", "options": {"A": "硫代硫酸钠与硫酸反应", "B": "反应物浓度对化学反应速率的影响", "C": "催化剂对化学反应速率的影响", "D": "温度对化学反应速率的影响"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp11", "question": "通过化学中的【催化剂对化学反应速率的影响实验】实验，可以支持哪些核心概念？", "options": {"A": "温度对化学反应速率的影响", "B": "催化剂对化学反应速率的影响", "C": "反应物浓度对化学反应速率的影响", "D": "反应条件"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp37", "question": "通过化学中的【甲烷与氯气在不同光照条件下的反应比较实验】实验，可以支持哪些核心概念？", "options": {"A": "甲烷与氯气的取代反应", "B": "一氯甲烷及其同系列氯代甲烷", "C": "取代反应", "D": "甲烷"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp15", "question": "以下哪些概念可由化学中的【实验7-2 乙烯的氧化反应】实验验证？", "options": {"A": "乙烯的氧化反应", "B": "乙烯", "C": "乙烯的物理性质与结构特点", "D": "乙烯的加成反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp31", "question": "通过化学中的【浓硫酸与铜的反应（实验5-3）】实验，可以支持哪些核心概念？", "options": {"A": "硫酸", "B": "浓硫酸的氧化性", "C": "二氧化硫", "D": "硫酸根离子的检验原理"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp16", "question": "通过化学中的【实验7-3 乙烯与溴的加成反应】实验，可以支持哪些核心概念？", "options": {"A": "加成聚合反应（加聚反应）", "B": "加成反应", "C": "乙烯", "D": "乙烯的加成反应"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp34", "question": "以下哪些概念可由化学中的【烃的分子结构探究活动】实验验证？", "options": {"A": "碳氢化合物（烃）", "B": "炔烃", "C": "链状烃和环状烃", "D": "烯烃"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp4", "question": "以下哪些概念可由化学中的【乙醇与钠反应（实验7-4）】实验验证？", "options": {"A": "羟基", "B": "酯化反应", "C": "乙酸乙酯", "D": "乙醇与钠的反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp5", "question": "化学中的【乙醇的催化氧化（实验7-5）】实验验证了什么原理？", "options": {"A": "羟基", "B": "乙醇的催化氧化", "C": "有机化合物的分类", "D": "酯化反应"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp2", "question": "通过化学中的【乙酸与乙醇的酯化反应（实验7-6）】实验，可以支持哪些核心概念？", "options": {"A": "酯化反应", "B": "乙酸乙酯", "C": "乙酸", "D": "乙醇"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp17", "question": "通过化学中的【实验7-7：葡萄糖与Cu(OH)2和银氨溶液的反应】实验，可以支持哪些核心概念？", "options": {"A": "葡萄糖", "B": "多糖", "C": "糖类", "D": "葡萄糖的特征反应"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp18", "question": "以下哪些概念可由化学中的【实验7-8：淀粉的检验和水解产物的检验】实验验证？", "options": {"A": "糖类", "B": "淀粉", "C": "糖的水解反应", "D": "多糖"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp19", "question": "通过化学中的【实验7-9：蛋白质性质的探究】实验，可以支持哪些核心概念？", "options": {"A": "蛋白质", "B": "蛋白质的两性", "C": "蛋白质的水解", "D": "蛋白质的变性"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp21", "question": "通过化学中的【搭建甲烷分子的球棍模型】实验，可以支持哪些核心概念？", "options": {"A": "碳原子的成键特征", "B": "烃分子中的化学键类型", "C": "有机化合物分子结构", "D": "含4个碳原子的烃的结构多样性"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp20", "question": "以下哪些概念可由化学中的【搭建乙烷、乙烯和乙炔分子的球棍模型并比较空间结构】实验验证？", "options": {"A": "有机化合物分子结构", "B": "烃分子中的化学键类型", "C": "含4个碳原子的烃的结构多样性", "D": "碳原子的成键特征"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp42", "question": "以下哪些概念可由化学中的【硫酸根离子的检验（实验5-4）】实验验证？", "options": {"A": "硫酸根离子 SO4^{2-}", "B": "碳酸根离子 CO3^{2-} 的干扰", "C": "硫酸根离子的检验原理", "D": "硫酸盐"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp12", "question": "化学中的【利用球棍模型验证二氯甲烷是否有同分异构体】实验验证了什么原理？", "options": {"A": "分子空间结构", "B": "结构式", "C": "含4个碳原子的烃的结构多样性", "D": "结构式与分子空间结构的关系"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp36", "question": "以下哪些概念可由化学中的【用球棍模型探究含4个碳原子的烃的结构种类】实验验证？", "options": {"A": "含4个碳原子的烃的结构多样性", "B": "烃分子中的化学键类型", "C": "同分异构体", "D": "碳原子的成键特征"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp46", "question": "以下哪些概念可由化学中的【观察乙醇的物理性质】实验验证？", "options": {"A": "乙酸的物理性质", "B": "乙醇的物理性质", "C": "乙酸的酸性及酸的通性", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp6", "question": "通过化学中的【乙醇的燃烧产物验证实验】实验，可以支持哪些核心概念？", "options": {"A": "乙醇的氧化生成乙醛", "B": "有机化合物的实验制备方法", "C": "乙醇的燃烧", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp7", "question": "通过化学中的【乙醇被氧化生成乙醛实验】实验，可以支持哪些核心概念？", "options": {"A": "乙醇的氧化生成乙醛", "B": "乙醇的燃烧", "C": "乙醇的物理性质", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp45", "question": "通过化学中的【观察乙酸的物理性质】实验，可以支持哪些核心概念？", "options": {"A": "乙醇的物理性质", "B": "乙酸的酸性及酸的通性", "C": "乙酸的物理性质", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp3", "question": "通过化学中的【乙酸酸性的验证及与碳酸酸性强弱比较】实验，可以支持哪些核心概念？", "options": {"A": "乙酸与碳酸酸性强弱比较", "B": "乙酸的酸性及酸的通性", "C": "乙酸的物理性质", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp13", "question": "以下哪些概念可由化学中的【制取乙酸乙酯并用Na2CO3溶液分层分离】实验验证？", "options": {"A": "饱和Na2CO3溶液在酯化后处理中的作用", "B": "浓硫酸在酯化反应中的作用", "C": "乙酸的物理性质", "D": "乙酸乙酯的制备（酯化反应）"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp24", "question": "以下哪些概念可由化学中的【氧化汞的热分解制备汞和氧气】实验验证？", "options": {"A": "电解法冶炼金属", "B": "焦炭、一氧化碳、氢气等还原剂冶炼金属", "C": "金属活泼性", "D": "热分解法冶炼金属"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp47", "question": "以下哪些概念可由化学中的【豆腐的传统制作实验】实验验证？", "options": {"A": "凝固剂", "B": "防腐剂", "C": "豆腐的制作原理", "D": "食品添加剂的使用条件"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp8", "question": "化学中的【二氧化氮溶于水的实验（实验5-5）】实验验证了什么原理？", "options": {"A": "一氧化氮", "B": "二氧化氮", "C": "硝酸的生产原理", "D": "氨的还原性及催化氧化"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp44", "question": "以下哪些概念可由化学中的【碳酸钠与碳酸氢钠性质比较实验】实验验证？", "options": {"A": "农药合理施用", "B": "药物", "C": "农药", "D": "膨松剂"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp26", "question": "以下哪些概念可由化学中的【污水混凝沉淀实验（示意）】实验验证？", "options": {"A": "混凝剂", "B": "物理法污水处理", "C": "污水处理", "D": "化学法污水处理"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp25", "question": "通过化学中的【氨溶于水的喷泉实验（实验5-6）】实验，可以支持哪些核心概念？", "options": {"A": "氨的还原性及催化氧化", "B": "氨水的碱性", "C": "氨的溶解性及水合氨", "D": "氨的物理性质"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp49", "question": "以下哪些概念可由化学中的【铵盐与NaOH反应产生氨（实验5-7）】实验验证？", "options": {"A": "铵盐的性质", "B": "浓硫酸的性质", "C": "硫及其化合物的性质", "D": "氨与酸反应生成铵盐"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp41", "question": "化学中的【硝酸与铜反应（实验5-8）】实验验证了什么原理？", "options": {"A": "浓硫酸的氧化性", "B": "铜与浓硫酸的氧化还原反应", "C": "硝酸的氧化性", "D": "硝酸的生产原理"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_bx2_rjb_exp27", "question": "以下哪些概念可由化学中的【测定雨水的pH】实验验证？", "options": {"A": "酸雨的危害", "B": "酸雨及其pH判定", "C": "氮氧化物与二氧化硫的污染作用", "D": "氮元素"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp18", "question": "通过化学中的【中和反应反应热的测定】实验，可以支持哪些核心概念？", "options": {"A": "热量", "B": "热量单位及“废热”", "C": "焓变", "D": "中和反应的反应热"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp16", "question": "化学中的【不同温度和压强下合成氨平衡组成的测定】实验验证了什么原理？", "options": {"A": "压强对气相平衡的影响", "B": "化学反应速率", "C": "化学平衡与平衡混合物组成", "D": "平衡移动原理"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp15", "question": "化学中的【不同温度与压强下SO₂转化为SO₃的平衡转化率测定】实验验证了什么原理？", "options": {"A": "平衡移动原理", "B": "化学反应速率", "C": "工业生产条件的优化与折中", "D": "放热可逆反应的条件选择"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp2", "question": "以下哪些概念可由化学中的【CaO对水煤气变换反应平衡的影响】实验验证？", "options": {"A": "平衡移动原理", "B": "化学平衡与平衡混合物组成", "C": "气-固反应中固体吸收剂对平衡的影响", "D": "放热可逆反应的条件选择"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp30", "question": "以下哪些概念可由化学中的【浓度对Fe3+与SCN−平衡的影响实验】实验验证？", "options": {"A": "温度对化学平衡的影响", "B": "Fe3+与SCN−平衡体系", "C": "浓度对化学平衡的影响", "D": "Cr2O7²−/CrO4²−平衡体系"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp12", "question": "通过化学中的【NaOH和H2SO4对Cr2O7²−/CrO4²−平衡的影响实验】实验，可以支持哪些核心概念？", "options": {"A": "浓度对化学平衡的影响", "B": "温度对化学平衡的影响", "C": "Cr2O7²−/CrO4²−平衡体系", "D": "Fe3+与SCN−平衡体系"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp32", "question": "以下哪些概念可由化学中的【温度对CuCl2溶液配位平衡的影响实验】实验验证？", "options": {"A": "浓度对化学平衡的影响", "B": "温度对化学平衡的影响", "C": "NO2/N2O4气相平衡体系", "D": "Le Châtelier原理（勒夏特列原理）"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp33", "question": "化学中的【温度对NO2/N2O4气相平衡的影响实验】实验验证了什么原理？", "options": {"A": "NO2/N2O4气相平衡体系", "B": "温度对化学平衡的影响", "C": "浓度对化学平衡的影响", "D": "Cu2+与Cl−配位平衡体系"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp23", "question": "化学中的【实验3-1 比较盐酸和醋酸的电离程度】实验验证了什么原理？", "options": {"A": "电离程度", "B": "相同物质的量浓度溶液的比较", "C": "溶液导电能力", "D": "弱电解质"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp24", "question": "通过化学中的【实验3-2 醋酸与碳酸钠溶液反应的现象与 Ka 大小推测】实验，可以支持哪些核心概念？", "options": {"A": "多步电离常数", "B": "一元弱酸", "C": "多元弱酸只考虑第一步电离的近似", "D": "弱电解质"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp39", "question": "以下哪些概念可由化学中的【纯水导电性实验】实验验证？", "options": {"A": "酸的电离常数 Ka", "B": "碱的电离常数 Kb", "C": "水的电离", "D": "水的离子积"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp22", "question": "通过化学中的【定性与定量研究影响化学反应速率的因素（实验探究Ⅰ）】实验，可以支持哪些核心概念？", "options": {"A": "压强对气体反应速率的影响", "B": "反应物浓度对反应速率的影响", "C": "活化能", "D": "活化分子"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp26", "question": "通过化学中的【强酸强碱中和滴定实验】实验，可以支持哪些核心概念？", "options": {"A": "酸碱中和滴定", "B": "定量分析", "C": "中和滴定", "D": "酸碱中和反应与盐类水解的关系"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp17", "question": "以下哪些概念可由化学中的【不同盐溶液酸碱性的测试与分类】实验验证？", "options": {"A": "强酸弱碱盐", "B": "溶液酸碱性的判定原理", "C": "盐的类型", "D": "盐溶液的酸碱性"}, "answer": ["A", "C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp21", "question": "通过化学中的【反应条件对FeCl₃水解平衡的影响】实验，可以支持哪些核心概念？", "options": {"A": "反应物性质对盐类水解的影响", "B": "盐类水解程度", "C": "盐的水解常数", "D": "反应条件对盐类水解的影响"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp9", "question": "化学中的【Mg(OH)2 在水和盐酸中的溶解对比】实验验证了什么原理？", "options": {"A": "平衡移动原理在沉淀溶解平衡中的应用", "B": "沉淀溶解平衡在污水治理中的应用", "C": "沉淀溶解平衡在锅炉除垢中的应用", "D": "沉淀的溶解"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp1", "question": "化学中的【AgCl 沉淀依次转化为 AgI 和 Ag2S】实验验证了什么原理？", "options": {"A": "溶解度大小与沉淀转化方向", "B": "平衡移动原理在沉淀溶解平衡中的应用", "C": "沉淀的转化", "D": "沉淀溶解平衡"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp10", "question": "以下哪些概念可由化学中的【Mg(OH)2 沉淀向 Fe(OH)3 沉淀的转化】实验验证？", "options": {"A": "沉淀的转化", "B": "溶解度大小与沉淀转化方向", "C": "平衡移动原理在沉淀溶解平衡中的应用", "D": "沉淀溶解平衡"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp40", "question": "通过化学中的【练习使用滴定管】实验，可以支持哪些核心概念？", "options": {"A": "仪器润洗", "B": "滴定管", "C": "酸式滴定管", "D": "碱式滴定管"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp35", "question": "通过化学中的【用已知浓度的强酸滴定未知浓度的强碱】实验，可以支持哪些核心概念？", "options": {"A": "酸碱中和滴定", "B": "强酸与强碱的中和反应", "C": "强酸强碱盐", "D": "中和滴定"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp27", "question": "化学中的【强酸被强碱滴定的pH随体积变化的测定】实验验证了什么原理？", "options": {"A": "滴定曲线", "B": "强酸强碱盐", "C": "pH的变化特点（强酸强碱滴定）", "D": "强酸"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp7", "question": "化学中的【FeCl₃ 溶液配制与水解现象观察】实验验证了什么原理？", "options": {"A": "Fe(OH)₃ 胶体", "B": "皂化与去污作用", "C": "氯化铁溶液的配制", "D": "盐类水解"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp29", "question": "化学中的【测定锌与稀硫酸反应速率（实验探究Ⅱ）】实验验证了什么原理？", "options": {"A": "反应物浓度对反应速率的影响", "B": "温度对反应速率的影响", "C": "催化剂对反应速率的影响", "D": "压强对气体反应速率的影响"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp6", "question": "以下哪些概念可由化学中的【FeCl₃ 和 Al₂(SO₄)₃ 净化浑浊水实验】实验验证？", "options": {"A": "净水剂（混凝剂）的作用", "B": "Fe(OH)₃ 胶体", "C": "皂化与去污作用", "D": "絮凝与混凝沉降"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp4", "question": "通过化学中的【Fe(OH)₃ 胶体的制备】实验，可以支持哪些核心概念？", "options": {"A": "净水剂（混凝剂）的作用", "B": "氯化铁溶液的配制", "C": "皂化与去污作用", "D": "Fe(OH)₃ 胶体"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp13", "question": "以下哪些概念可由化学中的【Na₂CO₃ 溶液与植物油的去污效果比较】实验验证？", "options": {"A": "净水剂（混凝剂）的作用", "B": "皂化与去污作用", "C": "氯化铁溶液的配制", "D": "Fe(OH)₃ 胶体"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp25", "question": "以下哪些概念可由化学中的【实验4-1 锌铜原电池中盐桥作用的探究】实验验证？", "options": {"A": "锌铜原电池", "B": "盐桥", "C": "化学电源", "D": "干电池"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp3", "question": "通过化学中的【CuCl₂溶液的电解实验（实验4-2）】实验，可以支持哪些核心概念？", "options": {"A": "电解池", "B": "CuCl₂水溶液的电解", "C": "电解", "D": "直流电源在电解中的作用"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp41", "question": "通过化学中的【铁钉的吸氧腐蚀实验（实验4-3 部分）】实验，可以支持哪些核心概念？", "options": {"A": "析氢腐蚀", "B": "金属腐蚀", "C": "吸氧腐蚀", "D": "电化学保护法"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp14", "question": "通过化学中的【Zn与稀盐酸及Cu²⁺的电化学腐蚀实验（实验4-3 部分）】实验，可以支持哪些核心概念？", "options": {"A": "化学腐蚀", "B": "电化学保护法", "C": "原电池", "D": "电化学腐蚀"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp34", "question": "化学中的【牺牲阳极法电解实验（实验4-4 部分）】实验验证了什么原理？", "options": {"A": "牺牲阳极法", "B": "外加电流法", "C": "电化学保护法", "D": "原电池"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp42", "question": "化学中的【锌皮包铁钉与铜丝缠铁钉的腐蚀对比实验（实验4-4 部分）】实验验证了什么原理？", "options": {"A": "外加电流法", "B": "牺牲阳极法", "C": "电化学保护法", "D": "原电池"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp8", "question": "以下哪些概念可由化学中的【Fe²⁺检验实验】实验验证？", "options": {"A": "金属腐蚀的危害", "B": "Fe²⁺的检验", "C": "己二腈的电合成", "D": "铁锈的成分及性质"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp5", "question": "化学中的【Fe3+与SCN-溶液中浓度对化学平衡的影响（实验2-1）】实验验证了什么原理？", "options": {"A": "化学平衡", "B": "化学平衡移动", "C": "化学平衡状态", "D": "勒夏特列原理"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp38", "question": "以下哪些概念可由化学中的【简单的电镀实验（铁上镀铜）】实验验证？", "options": {"A": "电镀", "B": "阳极溶解", "C": "电解", "D": "电镀液"}, "answer": ["A", "B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp36", "question": "以下哪些概念可由化学中的【电解水实验】实验验证？", "options": {"A": "氢氧燃料电池与电解水的关系", "B": "电解质溶液", "C": "氢氧燃料电池", "D": "电解水"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp19", "question": "以下哪些概念可由化学中的【制作简单的氢氧燃料电池】实验验证？", "options": {"A": "氢氧燃料电池", "B": "氢氧燃料电池与电解水的关系", "C": "化学能与电能的相互转化", "D": "电解原理"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp20", "question": "以下哪些概念可由化学中的【压强对 NO2/N2O4 化学平衡的影响（实验2-2）】实验验证？", "options": {"A": "化学平衡", "B": "化学平衡状态", "C": "化学平衡移动", "D": "勒夏特列原理"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp31", "question": "化学中的【温度对 NO2/N2O4 化学平衡的影响（实验2-3）】实验验证了什么原理？", "options": {"A": "放热反应", "B": "化学平衡", "C": "化学平衡状态", "D": "燃烧热与放热反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp28", "question": "通过化学中的【氯气与氢气的自发扩散混合】实验，可以支持哪些核心概念？", "options": {"A": "熵增原理（中学表述）", "B": "化学反应的自发方向", "C": "自发过程", "D": "熵"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx1_rjb_exp37", "question": "化学中的【硝酸铵溶于水的自发过程】实验验证了什么原理？", "options": {"A": "熵", "B": "化学反应的自发方向", "C": "熵增原理（中学表述）", "D": "自发过程"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp1", "question": "通过化学中的【X 射线衍射测定键长和键角】实验，可以支持哪些核心概念？", "options": {"A": "键长与键能的关系", "B": "键角", "C": "键能", "D": "共价键"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp4", "question": "通过化学中的【实验3-2：几种铜盐和钠钾盐溶液颜色比较】实验，可以支持哪些核心概念？", "options": {"A": "四水合铜离子 [Cu(H2O)4]2+", "B": "水合铜离子", "C": "配合物的颜色", "D": "四氨合铜离子 [Cu(NH3)4]2+"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp5", "question": "化学中的【实验3-3：CuSO4 与氨水和乙醇的反应】实验验证了什么原理？", "options": {"A": "氨水与 Cu2+ 反应", "B": "四水合铜离子 [Cu(H2O)4]2+", "C": "硫氰化铁配离子", "D": "配合物的颜色"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp6", "question": "化学中的【实验3-4：Fe3+ 与 KSCN 形成硫氰化铁配离子】实验验证了什么原理？", "options": {"A": "四氨合铜离子 [Cu(NH3)4]2+", "B": "四水合铜离子 [Cu(H2O)4]2+", "C": "配合物的颜色", "D": "硫氰化铁配离子"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp7", "question": "以下哪些概念可由化学中的【实验3-5：NaCl 溶液中 AgCl 的生成与在氨水中溶解】实验验证？", "options": {"A": "配离子", "B": "硫氰化铁配离子", "C": "氨水溶解 AgCl 生成二氨合银配离子", "D": "简单离子与配离子的性质差异"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp13", "question": "以下哪些概念可由化学中的【简单配合物的形成（Cu2+与NH3、Ag+与Cl-和NH3）】实验验证？", "options": {"A": "配合物的颜色与性质变化", "B": "配位键", "C": "简单配合物", "D": "叶啉配合物"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp12", "question": "以下哪些概念可由化学中的【简单离子与配离子的区别（Fe3+与[Fe(CN)6]3-）】实验验证？", "options": {"A": "简单离子", "B": "[Fe(CN)6]3- 的结构要素", "C": "简单离子与配离子的性质差异", "D": "配离子"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp14", "question": "以下哪些概念可由化学中的【红外光谱测定分子结构】实验验证？", "options": {"A": "红外吸收峰", "B": "羟基", "C": "化学键振动", "D": "红外光谱"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp15", "question": "通过化学中的【质谱法测定分子的相对分子质量】实验，可以支持哪些核心概念？", "options": {"A": "质谱法", "B": "质荷比 m/z", "C": "相对丰度", "D": "碎片离子峰"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp2", "question": "化学中的【制作分子的空间结构模型】实验验证了什么原理？", "options": {"A": "直线形分子结构", "B": "正四面体形分子结构", "C": "三角锥形分子结构", "D": "平面三角形分子结构"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp3", "question": "通过化学中的【壁虎足黏着力的微观机理研究】实验，可以支持哪些核心概念？", "options": {"A": "氢键对物质性质的影响", "B": "极性共价键", "C": "非极性共价键", "D": "范德华力"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp10", "question": "化学中的【熔融硫黄冷却结晶实验】实验验证了什么原理？", "options": {"A": "冷却速率对晶体形成的影响", "B": "晶体与非晶体的本质差异", "C": "偏向离子晶体的过渡晶体", "D": "偏向共价晶体的过渡晶体"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp11", "question": "通过化学中的【碘的凝华结晶实验】实验，可以支持哪些核心概念？", "options": {"A": "范德华力", "B": "冰的晶体结构", "C": "凝华", "D": "共价晶体的分类和典型实例"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp9", "question": "通过化学中的【氯化钠从溶液中结晶实验】实验，可以支持哪些核心概念？", "options": {"A": "偏向离子晶体的过渡晶体", "B": "偏向共价晶体的过渡晶体", "C": "晶体与非晶体的本质差异", "D": "晶体的三种制备途径"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx2_rjb_exp16", "question": "通过化学中的【镁在干冰中燃烧实验】实验，可以支持哪些核心概念？", "options": {"A": "冰的晶体结构", "B": "干冰晶体结构与性质", "C": "天然气水合物（甲烷水合物）", "D": "分子密堆积"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp7", "question": "化学中的【乙醇与钠反应比较实验】实验验证了什么原理？", "options": {"A": "基团相互影响", "B": "共价键的极性", "C": "有机反应", "D": "官能团的活性部位"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp30", "question": "通过化学中的【苯酚的酸性实验（与NaOH和稀盐酸）】实验，可以支持哪些核心概念？", "options": {"A": "苯酚酸性与碳酸酸性比较", "B": "苯酚与NaOH反应", "C": "基团间的相互影响", "D": "酚羟基的酸性"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp29", "question": "通过化学中的【苯酚与溴水的取代反应】实验，可以支持哪些核心概念？", "options": {"A": "酚的取代反应（芳环上的取代）", "B": "苯酚", "C": "苯酚与溴水的反应", "D": "基团间的相互影响"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp28", "question": "以下哪些概念可由化学中的【苯酚与三氯化铁的显色反应】实验验证？", "options": {"A": "苯酚", "B": "酚", "C": "苯酚与FeCl3的显色反应", "D": "苯酚与溴水的反应"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp10", "question": "通过化学中的【乙醛的银镜反应（实验3-7）】实验，可以支持哪些核心概念？", "options": {"A": "新制Cu(OH)2的氧化性", "B": "银镜反应", "C": "银氨溶液", "D": "醇的氧化反应（有机氧化的定义）"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp9", "question": "以下哪些概念可由化学中的【乙醛与新制Cu(OH)2的反应（实验3-8）】实验验证？", "options": {"A": "乙醛的氧化反应", "B": "醇的氧化反应（有机氧化的定义）", "C": "酯化反应", "D": "新制Cu(OH)2的氧化性"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp40", "question": "以下哪些概念可由化学中的【验证羧酸具有酸性】实验验证？", "options": {"A": "羧酸的酸性", "B": "羧基", "C": "一元羧酸与多元羧酸", "D": "羟基酸"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp18", "question": "化学中的【比较乙酸、碳酸和苯酚的酸性强弱】实验验证了什么原理？", "options": {"A": "羧酸的酸性", "B": "羧基", "C": "一元羧酸与多元羧酸", "D": "羟基酸"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp16", "question": "以下哪些概念可由化学中的【探究乙酸乙酯在不同条件下的水解速率】实验验证？", "options": {"A": "酯化反应", "B": "酯的水解反应", "C": "皂化反应", "D": "脂肪酸"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp25", "question": "以下哪些概念可由化学中的【自制肥皂（油脂皂化反应）】实验验证？", "options": {"A": "酯的水解反应", "B": "油脂", "C": "皂化反应", "D": "表面活性剂"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp15", "question": "通过化学中的【实验室有机合成加热回流实验】实验，可以支持哪些核心概念？", "options": {"A": "有机合成路线", "B": "碳骨架", "C": "官能团", "D": "有机合成"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp38", "question": "以下哪些概念可由化学中的【重结晶法提纯苯甲酸】实验验证？", "options": {"A": "蒸馏", "B": "重结晶", "C": "萃取", "D": "实验式"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp4", "question": "以下哪些概念可由化学中的【乙酸乙酯的制备】实验验证？", "options": {"A": "酯的水解反应", "B": "酯的水解", "C": "酯化反应", "D": "浓硫酸的催化与脱水作用"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp5", "question": "化学中的【乙酸乙酯的水解及影响因素比较】实验验证了什么原理？", "options": {"A": "酸催化水解", "B": "酯的水解", "C": "水解速率", "D": "碱性水解（皂化反应）"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp21", "question": "通过化学中的【烯烃中 C=C 碳碳双键的检验】实验，可以支持哪些核心概念？", "options": {"A": "C=C 碳碳双键", "B": "碳碳双键官能团", "C": "碳碳三键官能团", "D": "C–X 碳卤键"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp11", "question": "以下哪些概念可由化学中的【卤代烃中 C–X 碳卤键的检验】实验验证？", "options": {"A": "卤代烃", "B": "C=C 碳碳双键", "C": "碳碳三键官能团", "D": "C–X 碳卤键"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp36", "question": "化学中的【酚中羟基官能团的检验】实验验证了什么原理？", "options": {"A": "官能团转化", "B": "芳香族羟基（酚羟基）", "C": "官能团引入", "D": "碳碳双键官能团"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp37", "question": "以下哪些概念可由化学中的【醛中醛基的检验（乙醛）】实验验证？", "options": {"A": "羧基 –COOH", "B": "醛", "C": "醛基 –CHO", "D": "芳香族羟基（酚羟基）"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp39", "question": "化学中的【阿司匹林片中羧基和酯基官能团的检验】实验验证了什么原理？", "options": {"A": "醛基 –CHO", "B": "羧基 –COOH", "C": "官能团引入", "D": "酯及酯基"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp12", "question": "以下哪些概念可由化学中的【实验4-1 检验葡萄糖的还原性】实验验证？", "options": {"A": "还原糖", "B": "非还原糖", "C": "葡萄糖在急救中的应用", "D": "糖类的还原性"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp3", "question": "化学中的【乙炔的实验室制取及性质检验】实验验证了什么原理？", "options": {"A": "氧炔焰", "B": "溴的四氯化碳溶液褪色", "C": "酸性高锰酸钾溶液的褪色反应", "D": "碳碳三键官能团"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp13", "question": "以下哪些概念可由化学中的【实验4-2 纤维素与Cu(OH)2的反应】实验验证？", "options": {"A": "纤维素制燃料乙醇", "B": "糖类的结构功能", "C": "壳聚糖", "D": "纤维素"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp35", "question": "化学中的【蛋白质的盐析实验（实验4-3）】实验验证了什么原理？", "options": {"A": "盐析", "B": "蛋白质", "C": "蛋白质的一级结构", "D": "蛋白质的三级结构"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp34", "question": "以下哪些概念可由化学中的【蛋白质变性实验（实验4-4）】实验验证？", "options": {"A": "蛋白质", "B": "蛋白质的一级结构", "C": "蛋白质的三级结构", "D": "蛋白质的变性"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp33", "question": "以下哪些概念可由化学中的【蛋白质与浓硝酸的显色反应（实验4-5）】实验验证？", "options": {"A": "蛋白质", "B": "蛋白质的一级结构", "C": "蛋白质的显色反应", "D": "蛋白质的三级结构"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp17", "question": "通过化学中的【核酸水解产物分析实验】实验，可以支持哪些核心概念？", "options": {"A": "核糖核酸（RNA）", "B": "核酸的组成", "C": "脱氧核糖核酸（DNA）", "D": "核苷酸"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp2", "question": "通过化学中的【ATP水解与能量释放实验（示意/演示）】实验，可以支持哪些核心概念？", "options": {"A": "ATP-ADP循环", "B": "磷酸酐键（高能磷酸键）", "C": "磷酸", "D": "ATP（腺苷三磷酸）"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp31", "question": "通过化学中的【葡萄糖性质实验】实验，可以支持哪些核心概念？", "options": {"A": "还原糖", "B": "糖类的还原性", "C": "糖类的溶解性", "D": "银氨溶液检验还原糖"}, "answer": ["B", "C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp32", "question": "通过化学中的【蔗糖性质及水解前后还原性的实验】实验，可以支持哪些核心概念？", "options": {"A": "糖类的还原性", "B": "糖类", "C": "Cu(OH)₂检验还原糖", "D": "糖类的溶解性"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp19", "question": "化学中的【淀粉性质及水解前后还原性的实验】实验验证了什么原理？", "options": {"A": "糖类水解后的还原性", "B": "Cu(OH)₂检验还原糖", "C": "糖类的还原性", "D": "糖类"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp24", "question": "通过化学中的【糖类还原性的综合比较实验】实验，可以支持哪些核心概念？", "options": {"A": "非还原糖", "B": "糖类的还原性", "C": "还原糖", "D": "银氨溶液检验还原糖"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp27", "question": "以下哪些概念可由化学中的【苯与酸性高锰酸钾溶液和溴水的反应实验（实验2-1）】实验验证？", "options": {"A": "芳香性稳定性", "B": "苯的化学性质", "C": "苯的分子结构", "D": "苯的磺化反应"}, "answer": ["A"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp14", "question": "通过化学中的【实验5-1 苯酚与甲醛制备酚醛树脂】实验，可以支持哪些核心概念？", "options": {"A": "酚醛树脂", "B": "热塑性塑料", "C": "网状高分子结构", "D": "线型高分子结构"}, "answer": ["A", "C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp42", "question": "以下哪些概念可由化学中的【高吸水性树脂的吸水性能比较实验】实验验证？", "options": {"A": "高吸水性树脂", "B": "高分子结构与性能关系", "C": "高分子分离膜", "D": "通用高分子材料"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp41", "question": "通过化学中的【高分子分离膜在海水淡化中的应用探究】实验，可以支持哪些核心概念？", "options": {"A": "高吸水性树脂", "B": "高分子材料", "C": "合成橡胶", "D": "高分子分离膜"}, "answer": ["D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp26", "question": "通过化学中的【苯与甲苯的溴水和酸性高锰酸钾对比实验（实验2-2）】实验，可以支持哪些核心概念？", "options": {"A": "苯的同系物", "B": "甲苯", "C": "苯的同系物的化学性质", "D": "苯的同系物的通式"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp20", "question": "以下哪些概念可由化学中的【溴乙烷的水解与AgBr沉淀检验】实验验证？", "options": {"A": "卤代烃的消去反应", "B": "卤代烃分子中的C—X极性键", "C": "卤代烃的水解反应", "D": "卤代烃的取代反应"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp1", "question": "通过化学中的【1-溴丁烷的消去反应与烯烃检验】实验，可以支持哪些核心概念？", "options": {"A": "卤代烃的取代反应", "B": "卤代烃的消去反应", "C": "卤代烃分子中的C—X极性键", "D": "卤代烃的水解反应"}, "answer": ["B"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp8", "question": "化学中的【乙醇的消去反应制取乙烯】实验验证了什么原理？", "options": {"A": "醇", "B": "乙二醇", "C": "乙醇脱水生成乙烯", "D": "苯酚与FeCl3的显色反应"}, "answer": ["C"]}
+{"id": "task4::subtask2::chemistry_xzxbx3_rjb_exp6", "question": "化学中的【乙醇与酸性重铬酸钾的氧化反应】实验验证了什么原理？", "options": {"A": "乙醇氧化为乙醛和乙酸", "B": "乙醇在人体内的代谢", "C": "乙醛的氧化反应", "D": "醇的氧化反应（有机氧化的定义）"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp28", "question": "以下哪些概念可由物理中的【用刻度尺测量长度】实验验证？", "options": {"A": "长度", "B": "长度单位（米及其倍数、子倍数）", "C": "速度", "D": "平均速度"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp6", "question": "通过物理中的【噪声波形观察实验】实验，可以支持哪些核心概念？", "options": {"A": "噪声的危害", "B": "噪声控制方法", "C": "声波波形", "D": "噪声"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp33", "question": "通过物理中的【自制温度计实验】实验，可以支持哪些核心概念？", "options": {"A": "温度计", "B": "温度", "C": "液化放热", "D": "液体的热胀冷缩"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp15", "question": "以下哪些概念可由物理中的【探究固体熔化时温度的变化规律】实验验证？", "options": {"A": "熔点", "B": "晶体", "C": "凝固点", "D": "多晶体"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp34", "question": "通过物理中的【酒精在塑料袋中加热与冷却实验】实验，可以支持哪些核心概念？", "options": {"A": "液化放热", "B": "汽化吸热", "C": "液化", "D": "熔化"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp17", "question": "通过物理中的【探究水沸腾时温度变化的实验】实验，可以支持哪些核心概念？", "options": {"A": "沸点", "B": "蒸发", "C": "沸腾", "D": "温度"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp30", "question": "以下哪些概念可由物理中的【碘的升华和凝华实验】实验验证？", "options": {"A": "凝固", "B": "升华", "C": "吸热与放热", "D": "凝华"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp2", "question": "通过物理中的【光在水中的传播】实验，可以支持哪些核心概念？", "options": {"A": "光的直线传播", "B": "光线", "C": "光的色散", "D": "光的折射"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp11", "question": "物理中的【探究光反射时的规律】实验验证了什么原理？", "options": {"A": "光的反射定律", "B": "光的反射", "C": "反射角", "D": "入射角"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp16", "question": "通过物理中的【探究平面镜成像特点】实验，可以支持哪些核心概念？", "options": {"A": "对称成像规律", "B": "虚像", "C": "平面镜成像", "D": "投影仪成像"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp27", "question": "物理中的【用停表测量时间】实验验证了什么原理？", "options": {"A": "时间单位（秒及其换算）", "B": "时间", "C": "测量错误", "D": "能量"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp12", "question": "以下哪些概念可由物理中的【探究光折射时的特点】实验验证？", "options": {"A": "光路可逆", "B": "光的折射定律", "C": "折射角", "D": "光的折射"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp1", "question": "通过物理中的【三棱镜色散演示实验】实验，可以支持哪些核心概念？", "options": {"A": "色光三原色", "B": "光的色散", "C": "白光", "D": "光的折射"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp21", "question": "物理中的【水与平面镜的色散实验】实验验证了什么原理？", "options": {"A": "色光三原色", "B": "白光", "C": "光的折射", "D": "光的色散"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp3", "question": "以下哪些概念可由物理中的【凸透镜对光的偏折演示】实验验证？", "options": {"A": "凸透镜", "B": "焦点", "C": "凹透镜", "D": "焦距"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp4", "question": "物理中的【凹透镜对光的偏折演示】实验验证了什么原理？", "options": {"A": "凹透镜", "B": "凸透镜", "C": "实像", "D": "虚像"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp32", "question": "以下哪些概念可由物理中的【自制模型照相机实验】实验验证？", "options": {"A": "虚像", "B": "对称成像规律", "C": "实像", "D": "凸透镜"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp9", "question": "以下哪些概念可由物理中的【投影仪演示实验】实验验证？", "options": {"A": "虚像", "B": "对称成像规律", "C": "实像", "D": "凸透镜"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp13", "question": "以下哪些概念可由物理中的【探究凸透镜成像的规律】实验验证？", "options": {"A": "像距", "B": "凸透镜成像规律", "C": "望远镜", "D": "显微镜"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp19", "question": "物理中的【模拟望远镜实验】实验验证了什么原理？", "options": {"A": "凸透镜成像规律", "B": "视角", "C": "像距", "D": "望远镜"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp31", "question": "通过物理中的【自制显微镜实验】实验，可以支持哪些核心概念？", "options": {"A": "显微镜", "B": "凸透镜成像规律", "C": "光心", "D": "视角"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp23", "question": "以下哪些概念可由物理中的【测量物体运动的平均速度】实验验证？", "options": {"A": "平均速度", "B": "匀速直线运动", "C": "变速直线运动", "D": "速度"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp7", "question": "通过物理中的【形状变化前后物体质量的比较实验】实验，可以支持哪些核心概念？", "options": {"A": "质量", "B": "质量与体积的比例关系", "C": "质量守恒", "D": "体积"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp25", "question": "通过物理中的【溶解前后质量比较实验】实验，可以支持哪些核心概念？", "options": {"A": "质量", "B": "质量守恒", "C": "质量与体积的比例关系", "D": "体积"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp14", "question": "物理中的【探究同种物质的质量与体积的关系】实验验证了什么原理？", "options": {"A": "质量", "B": "体积", "C": "密度", "D": "质量与体积的比例关系"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp24", "question": "通过物理中的【测量盐水密度】实验，可以支持哪些核心概念？", "options": {"A": "质量", "B": "质量与体积的比例关系", "C": "密度", "D": "体积"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp22", "question": "通过物理中的【测量小石块密度】实验，可以支持哪些核心概念？", "options": {"A": "质量", "B": "质量与体积的比例关系", "C": "体积", "D": "密度"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp20", "question": "通过物理中的【气体受热膨胀演示】实验，可以支持哪些核心概念？", "options": {"A": "密度随温度变化", "B": "热胀冷缩", "C": "水的异常膨胀", "D": "体积"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp26", "question": "物理中的【热空气推动纸风车实验】实验验证了什么原理？", "options": {"A": "密度随温度变化", "B": "热胀冷缩", "C": "水的异常膨胀", "D": "物质的鉴别"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp5", "question": "以下哪些概念可由物理中的【利用超声波位置传感器测速度】实验验证？", "options": {"A": "变速直线运动", "B": "位移传感器测速度原理", "C": "速度", "D": "加速度"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp10", "question": "物理中的【抽气玻璃罩中的闹钟实验】实验验证了什么原理？", "options": {"A": "声波", "B": "介质", "C": "主动降噪原理", "D": "波的频率"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp18", "question": "通过物理中的【桌面传声实验】实验，可以支持哪些核心概念？", "options": {"A": "声波", "B": "声音的传播", "C": "声传递能量", "D": "介质"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp35", "question": "物理中的【钢尺振动实验】实验验证了什么原理？", "options": {"A": "音调", "B": "声波波形", "C": "频率", "D": "角频率"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp36", "question": "以下哪些概念可由物理中的【音叉与乒乓球实验】实验验证？", "options": {"A": "响度", "B": "振幅", "C": "音调", "D": "音色"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8a_rjb_exp8", "question": "以下哪些概念可由物理中的【扬声器对烛焰的演示】实验验证？", "options": {"A": "超声波", "B": "声传递信息", "C": "声传递能量", "D": "声音的传播"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp13", "question": "物理中的【测量铝块浸没水中所受的浮力】实验验证了什么原理？", "options": {"A": "排开液体所受的重力", "B": "浮力", "C": "物体的浮沉条件", "D": "排开液体的体积"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp16", "question": "以下哪些概念可由物理中的【研究定滑轮和动滑轮的特点】实验验证？", "options": {"A": "定滑轮", "B": "滑轮组", "C": "滑轮", "D": "动滑轮"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp3", "question": "以下哪些概念可由物理中的【使用动滑轮是否省功】实验验证？", "options": {"A": "额外功", "B": "有用功", "C": "机械效率", "D": "动滑轮"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp12", "question": "物理中的【测量滑轮组的机械效率】实验验证了什么原理？", "options": {"A": "总功", "B": "有用功", "C": "滑轮组", "D": "机械效率"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp19", "question": "物理中的【磁体与小铁球实验（改变运动状态）】实验验证了什么原理？", "options": {"A": "运动状态改变", "B": "形变", "C": "弹性形变", "D": "重力与质量的关系"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp20", "question": "以下哪些概念可由物理中的【磁体相互作用实验】实验验证？", "options": {"A": "力的作用效果", "B": "力的相互作用", "C": "力的示意图", "D": "力的三要素"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp21", "question": "物理中的【练习使用弹簧测力计】实验验证了什么原理？", "options": {"A": "弹性限度", "B": "弹力", "C": "力", "D": "弹簧测力计"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp10", "question": "物理中的【探究重力大小与质量的关系】实验验证了什么原理？", "options": {"A": "重力加速度 g", "B": "重力", "C": "重力与质量的关系", "D": "重力方向"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp18", "question": "物理中的【研究阻力对小车运动的影响实验】实验验证了什么原理？", "options": {"A": "阻力", "B": "阻力臂", "C": "动力", "D": "动力臂"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp4", "question": "通过物理中的【探究二力平衡的条件】实验，可以支持哪些核心概念？", "options": {"A": "匀速直线运动状态", "B": "力的平衡", "C": "二力平衡", "D": "重力与支持力的平衡"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp24", "question": "物理中的【验证浮力与深度无关】实验验证了什么原理？", "options": {"A": "浮力", "B": "浮力大小与液体密度关系", "C": "浮力大小与浸入体积关系", "D": "浮力与深度无关"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp17", "question": "物理中的【研究影响滑动摩擦力大小的因素】实验验证了什么原理？", "options": {"A": "滑动摩擦力", "B": "影响滑动摩擦力大小的因素", "C": "力的平衡", "D": "重力与支持力的平衡"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp5", "question": "物理中的【探究影响压力作用效果的因素】实验验证了什么原理？", "options": {"A": "受力面积", "B": "流体压强与流速关系", "C": "液体压强", "D": "大气压强"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp8", "question": "物理中的【探究液体内部压强方向与深度关系的实验】实验验证了什么原理？", "options": {"A": "液体压强", "B": "液体压强公式", "C": "液体压强的特点", "D": "液体的压强"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp2", "question": "通过物理中的【两张纸吹气实验】实验，可以支持哪些核心概念？", "options": {"A": "流体", "B": "压强", "C": "液体压强", "D": "流体压强与流速关系"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp1", "question": "物理中的【不同直径管道内流速与压强实验】实验验证了什么原理？", "options": {"A": "压强", "B": "流体压强与流速关系", "C": "流体", "D": "液体压强"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp22", "question": "物理中的【验证浮力与浸入体积有关】实验验证了什么原理？", "options": {"A": "浮力大小与液体密度关系", "B": "浮力", "C": "浮力大小与浸入体积关系", "D": "浮力与深度无关"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp23", "question": "通过物理中的【验证浮力与液体密度有关】实验，可以支持哪些核心概念？", "options": {"A": "浮力大小与浸入体积关系", "B": "浮力大小与液体密度关系", "C": "体积-质量-密度关系", "D": "浮力与深度无关"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp7", "question": "通过物理中的【探究浮力大小与排开液体重力的关系】实验，可以支持哪些核心概念？", "options": {"A": "阿基米德原理", "B": "排开液体所受的重力", "C": "排开液体的体积", "D": "物体的浮沉条件"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp15", "question": "物理中的【盐水浮鸡蛋实验】实验验证了什么原理？", "options": {"A": "物体的浮沉条件", "B": "排开液体所受的重力", "C": "浮力大小与液体密度关系", "D": "密度与浮沉关系"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp9", "question": "以下哪些概念可由物理中的【探究物体的动能与哪些因素有关】实验验证？", "options": {"A": "动能", "B": "动能的影响因素", "C": "势能", "D": "机械能"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp14", "question": "以下哪些概念可由物理中的【滚摆能量转化观察】实验验证？", "options": {"A": "机械能", "B": "能量", "C": "机械能守恒", "D": "动能"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_8b_rjb_exp6", "question": "通过物理中的【探究杠杆的平衡条件】实验，可以支持哪些核心概念？", "options": {"A": "杠杆", "B": "支点", "C": "动力臂", "D": "杠杆平衡条件"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp27", "question": "以下哪些概念可由物理中的【气体扩散演示实验】实验验证？", "options": {"A": "扩散", "B": "物质由分子构成", "C": "分子热运动", "D": "分子间作用力"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp8", "question": "通过物理中的【太阳加热水实验】实验，可以支持哪些核心概念？", "options": {"A": "能量守恒定律", "B": "能量转化（内燃机）", "C": "热机的能量损失", "D": "能量的转化"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp9", "question": "以下哪些概念可由物理中的【太阳能电池驱动电扇实验】实验验证？", "options": {"A": "能量的转化", "B": "能量守恒定律", "C": "能量转化（内燃机）", "D": "热机的能量损失"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp36", "question": "以下哪些概念可由物理中的【电荷间的相互作用实验】实验验证？", "options": {"A": "摩擦起电", "B": "电荷", "C": "正电荷与负电荷", "D": "电荷量"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp35", "question": "物理中的【电荷在金属棒中的定向移动实验】实验验证了什么原理？", "options": {"A": "绝缘体", "B": "导体", "C": "自由电子", "D": "导体和绝缘体"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp5", "question": "通过物理中的【利用LED判断电流方向】实验，可以支持哪些核心概念？", "options": {"A": "电流", "B": "LED单向导电性", "C": "电流方向", "D": "电流与电压的关系"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp1", "question": "物理中的【串联电路中开关控制作用实验】实验验证了什么原理？", "options": {"A": "串联电路", "B": "开关的控制作用", "C": "并联电路", "D": "串联电路电压规律"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp13", "question": "物理中的【并联电路中干路和支路开关控制作用实验】实验验证了什么原理？", "options": {"A": "并联电路", "B": "开关的控制作用", "C": "串联电路", "D": "并联电路电压规律"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp45", "question": "物理中的【练习使用电流表】实验验证了什么原理？", "options": {"A": "电流", "B": "电流与电压的关系", "C": "电流表", "D": "电流与电阻的关系"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp14", "question": "通过物理中的【探究串联电路中各处电流的关系】实验，可以支持哪些核心概念？", "options": {"A": "串联电路电压规律", "B": "电流", "C": "并联电路电流规律", "D": "串联电路电流规律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp17", "question": "以下哪些概念可由物理中的【探究并联电路中干路与支路电流关系】实验验证？", "options": {"A": "并联电路电流规律", "B": "并联电路电压规律", "C": "电流", "D": "干路"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp29", "question": "物理中的【液体扩散实验】实验验证了什么原理？", "options": {"A": "分子热运动", "B": "物质由分子构成", "C": "分子间作用力", "D": "扩散"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp23", "question": "通过物理中的【比较一节和两节干电池时灯泡亮度】实验，可以支持哪些核心概念？", "options": {"A": "电压", "B": "电流与电压的关系", "C": "电流", "D": "电压表"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp3", "question": "物理中的【使用电压表测量电压】实验验证了什么原理？", "options": {"A": "电压", "B": "电压表", "C": "电流与电压的关系", "D": "电源"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp15", "question": "物理中的【探究串联电路中用电器两端的电压与电源电压的关系】实验验证了什么原理？", "options": {"A": "并联电路的电压规律", "B": "电池串联电压", "C": "串联电路的电压规律", "D": "电流与电压的关系"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp16", "question": "通过物理中的【探究并联电路中各支路电压与电源电压的关系】实验，可以支持哪些核心概念？", "options": {"A": "串联电路的电压规律", "B": "电流与电压的关系", "C": "并联电路的电压规律", "D": "电压"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp24", "question": "通过物理中的【比较不同材料导线的电阻】实验，可以支持哪些核心概念？", "options": {"A": "气敏电阻", "B": "电阻", "C": "电流与电阻的关系", "D": "U/I 与电阻的关系"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp18", "question": "物理中的【探究影响导体电阻大小的因素】实验验证了什么原理？", "options": {"A": "电阻", "B": "电流与电压的关系", "C": "并联电路的电压规律", "D": "电阻的影响因素"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp32", "question": "物理中的【用铅笔芯调节小灯泡亮度实验】实验验证了什么原理？", "options": {"A": "气敏电阻", "B": "变阻器", "C": "电流与电阻的关系", "D": "电阻"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp19", "question": "通过物理中的【探究电流与电压的关系】实验，可以支持哪些核心概念？", "options": {"A": "电流与电压的关系", "B": "电压", "C": "电流", "D": "电压表"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp20", "question": "以下哪些概念可由物理中的【探究电流与电阻的关系】实验验证？", "options": {"A": "电阻", "B": "电流", "C": "电流表", "D": "电流与电阻的关系"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp30", "question": "通过物理中的【温度对扩散作用的影响】实验，可以支持哪些核心概念？", "options": {"A": "物质由分子构成", "B": "分子热运动", "C": "扩散", "D": "物态的微观结构差异"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp2", "question": "物理中的【伏安法测电阻实验】实验验证了什么原理？", "options": {"A": "伏安法测电阻", "B": "电阻", "C": "欧姆定律", "D": "小灯泡的电阻随电压变化"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp26", "question": "通过物理中的【比较不同用电器的电功率大小】实验，可以支持哪些核心概念？", "options": {"A": "电功", "B": "千瓦时", "C": "电功率", "D": "电能表"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp40", "question": "物理中的【研究电压对电功率的影响】实验验证了什么原理？", "options": {"A": "额定电压", "B": "额定功率", "C": "实际电功率", "D": "电功"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp28", "question": "通过物理中的【测量小灯泡的电功率】实验，可以支持哪些核心概念？", "options": {"A": "电功", "B": "滑动变阻器调节电压", "C": "实际电功率", "D": "千瓦时"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp37", "question": "物理中的【电阻不同情况下产生热量比较实验】实验验证了什么原理？", "options": {"A": "电流的热效应", "B": "焦耳定律", "C": "电功", "D": "额定功率"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp33", "question": "通过物理中的【电流不同情况下产生热量比较实验】实验，可以支持哪些核心概念？", "options": {"A": "电流的热效应", "B": "电功", "C": "额定功率", "D": "焦耳定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp48", "question": "通过物理中的【观察保险丝的作用】实验，可以支持哪些核心概念？", "options": {"A": "保险丝", "B": "保险管的额定电流", "C": "熔丝（保险丝）", "D": "保险装置"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp39", "question": "以下哪些概念可由物理中的【研究条形磁体的磁场方向】实验验证？", "options": {"A": "磁场方向", "B": "磁场", "C": "地磁场", "D": "磁体"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp43", "question": "以下哪些概念可由物理中的【研究蹄形磁体的磁场分布】实验验证？", "options": {"A": "磁场", "B": "切割磁感线运动", "C": "磁感线", "D": "直线电流的磁感线分布"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp11", "question": "通过物理中的【小磁针与通电直导线实验（奥斯特实验）】实验，可以支持哪些核心概念？", "options": {"A": "通电螺线管的磁场", "B": "电流的磁效应", "C": "通电螺线管", "D": "直线电流的磁感线分布"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp7", "question": "通过物理中的【压缩空气点燃硝化棉】实验，可以支持哪些核心概念？", "options": {"A": "内能", "B": "热传递", "C": "热量", "D": "做功改变内能"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp21", "question": "通过物理中的【探究通电螺线管外部的磁场分布】实验，可以支持哪些核心概念？", "options": {"A": "通电螺线管的磁场", "B": "电流的磁效应", "C": "通电螺线管", "D": "电流方向与螺线管极性的关系"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp41", "question": "通过物理中的【研究电流对电磁铁磁性的影响】实验，可以支持哪些核心概念？", "options": {"A": "电磁铁", "B": "电磁铁磁性的影响因素", "C": "电磁力", "D": "电磁感应"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp42", "question": "以下哪些概念可由物理中的【研究线圈匝数对电磁铁磁性的影响】实验验证？", "options": {"A": "电磁铁", "B": "电磁力", "C": "电磁感应", "D": "电磁铁磁性的影响因素"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp49", "question": "通过物理中的【通电导线在磁场中受力演示】实验，可以支持哪些核心概念？", "options": {"A": "通电线圈的受力与转动", "B": "扬声器的工作原理", "C": "电磁力", "D": "转子"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp50", "question": "物理中的【通电线圈在磁场中扭转演示】实验验证了什么原理？", "options": {"A": "电磁力", "B": "电动机", "C": "通电线圈的受力与转动", "D": "换向器"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp12", "question": "通过物理中的【干电池—导线—收音机实验】实验，可以支持哪些核心概念？", "options": {"A": "电磁波", "B": "电磁波的传播", "C": "电磁波接收", "D": "电磁波的产生"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp38", "question": "通过物理中的【真空罩中的手机实验】实验，可以支持哪些核心概念？", "options": {"A": "真空中的电磁波传播", "B": "电磁波", "C": "电磁波的传播", "D": "电磁波的产生"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp34", "question": "物理中的【电磁波的发射与接收实验】实验验证了什么原理？", "options": {"A": "调制", "B": "电磁波接收", "C": "解调", "D": "电磁波发射"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp4", "question": "以下哪些概念可由物理中的【光沿水流传播实验】实验验证？", "options": {"A": "激光", "B": "光纤通信", "C": "电磁波频率与信息量", "D": "微波通信"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp46", "question": "物理中的【给装水瓶打气出现白雾】实验验证了什么原理？", "options": {"A": "内能", "B": "热传递", "C": "热量", "D": "做功改变内能"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp47", "question": "物理中的【自制太阳能集热器实验】实验验证了什么原理？", "options": {"A": "能量转化", "B": "太阳能集热器", "C": "太阳能", "D": "太阳能电池"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_9_rjb_exp25", "question": "通过物理中的【比较不同物质吸热的实验】实验，可以支持哪些核心概念？", "options": {"A": "热量计算", "B": "热量", "C": "比热容", "D": "热传递"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_9_rjb_exp31", "question": "通过物理中的【用传感器比较不同物质的比热容】实验，可以支持哪些核心概念？", "options": {"A": "比热容", "B": "热量计算", "C": "热传递", "D": "热量"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_9_rjb_exp6", "question": "通过物理中的【加热试管使塞子弹出实验】实验，可以支持哪些核心概念？", "options": {"A": "热值", "B": "热机效率", "C": "热机的能量损失", "D": "热机"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_9_rjb_exp22", "question": "通过物理中的【摩擦双手实验】实验，可以支持哪些核心概念？", "options": {"A": "能量守恒定律", "B": "能量的转化", "C": "能量转化（内燃机）", "D": "热机的能量损失"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp2", "question": "物理中的【使用打点计时器测量位移和时间】实验验证了什么原理？", "options": {"A": "位置", "B": "矢量", "C": "位移", "D": "一维坐标系"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp15", "question": "物理中的【静摩擦力随拉力变化实验】实验验证了什么原理？", "options": {"A": "滑动摩擦力", "B": "牛顿第二定律", "C": "静摩擦力", "D": "最大静摩擦力"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp13", "question": "物理中的【用弹簧测力计探究作用力和反作用力的关系】实验验证了什么原理？", "options": {"A": "牛顿第三定律", "B": "作用力和反作用力", "C": "胡克定律", "D": "力的合成"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp12", "question": "以下哪些概念可由物理中的【用力传感器探究作用力和反作用力的关系】实验验证？", "options": {"A": "作用力和反作用力", "B": "牛顿第三定律", "C": "胡克定律", "D": "力的合成"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp4", "question": "物理中的【探究两个互成角度的力的合成规律】实验验证了什么原理？", "options": {"A": "平行四边形定则", "B": "力的合成", "C": "力的分解", "D": "共点力"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp1", "question": "以下哪些概念可由物理中的【伽利略斜面理想实验】实验验证？", "options": {"A": "惯性", "B": "加速度", "C": "加速度与质量的反比关系", "D": "牛顿第一定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp5", "question": "以下哪些概念可由物理中的【探究加速度与力、质量的关系实验】实验验证？", "options": {"A": "加速度", "B": "质量", "C": "加速度与力的正比关系", "D": "力"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp9", "question": "以下哪些概念可由物理中的【测量纸带的平均速度】实验验证？", "options": {"A": "瞬时速度", "B": "速度—时间图像", "C": "平均速度", "D": "匀变速直线运动"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp10", "question": "通过物理中的【测量纸带的瞬时速度】实验，可以支持哪些核心概念？", "options": {"A": "平均速度", "B": "瞬时速度", "C": "速度随时间变化的规律", "D": "位移传感器测速度原理"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp6", "question": "物理中的【探究小车速度随时间变化的规律】实验验证了什么原理？", "options": {"A": "速度随时间变化的规律", "B": "瞬时速度", "C": "速度—时间图像", "D": "平均速度"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp11", "question": "以下哪些概念可由物理中的【牛顿管中轻重物体下落比较实验】实验验证？", "options": {"A": "重力加速度 g", "B": "空气阻力", "C": "匀变速直线运动", "D": "自由落体运动"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp3", "question": "物理中的【打点计时器测自由落体加速度】实验验证了什么原理？", "options": {"A": "自由落体运动", "B": "重力加速度 g", "C": "匀变速直线运动", "D": "加速度"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp14", "question": "以下哪些概念可由物理中的【确定不规则薄板的重心】实验验证？", "options": {"A": "重心", "B": "重力", "C": "重力方向", "D": "重力与质量的关系"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp7", "question": "物理中的【探究弹簧弹力与形变量关系】实验验证了什么原理？", "options": {"A": "弹性形变", "B": "劲度系数", "C": "牛顿第三定律", "D": "胡克定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx1_rjb_exp8", "question": "以下哪些概念可由物理中的【测量滑动摩擦力的实验】实验验证？", "options": {"A": "动摩擦因数", "B": "静摩擦力", "C": "压力（支持力）", "D": "滑动摩擦力"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp10", "question": "物理中的【钢球离开弯轨记录速度方向实验】实验验证了什么原理？", "options": {"A": "切线", "B": "加速度与受力方向一致", "C": "速度方向与切线方向", "D": "速度的分解"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp1", "question": "通过物理中的【伽利略斜面实验】实验，可以支持哪些核心概念？", "options": {"A": "动能", "B": "重力势能", "C": "向心力与向心加速度", "D": "机械能守恒定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp12", "question": "以下哪些概念可由物理中的【验证机械能守恒定律（自由落体）】实验验证？", "options": {"A": "动能", "B": "机械能守恒定律", "C": "重力势能", "D": "向心力与向心加速度"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp11", "question": "通过物理中的【验证机械能守恒定律（光滑斜面）】实验，可以支持哪些核心概念？", "options": {"A": "动能", "B": "重力势能", "C": "机械能守恒定律", "D": "向心力与向心加速度"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp9", "question": "物理中的【钢球受侧向力发生曲线运动实验】实验验证了什么原理？", "options": {"A": "曲线运动的条件", "B": "加速度与受力方向一致", "C": "曲线运动", "D": "匀速直线运动"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp8", "question": "通过物理中的【蜡块平面运动实验】实验，可以支持哪些核心概念？", "options": {"A": "平面运动的坐标描述", "B": "速度的分解", "C": "运动的合成", "D": "平抛运动的位移规律"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp5", "question": "通过物理中的【对比平抛与自由落体的竖直分运动】实验，可以支持哪些核心概念？", "options": {"A": "平抛运动水平分运动", "B": "平抛运动的分解", "C": "平抛运动", "D": "平抛运动竖直分运动"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp7", "question": "物理中的【绘制平抛运动轨迹实验】实验验证了什么原理？", "options": {"A": "平抛运动水平分运动", "B": "平抛运动竖直分运动", "C": "平抛运动的分解", "D": "平抛运动"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp6", "question": "物理中的【感受向心力实验】实验验证了什么原理？", "options": {"A": "向心力公式", "B": "向心力", "C": "向心加速度", "D": "离心运动"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp3", "question": "以下哪些概念可由物理中的【向心力大小表达式实验（向心力演示器）】实验验证？", "options": {"A": "向心力", "B": "匀速圆周运动", "C": "向心力公式", "D": "向心加速度"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp4", "question": "物理中的【图钉和细绳绘制椭圆】实验验证了什么原理？", "options": {"A": "椭圆轨道", "B": "开普勒第一定律", "C": "光速不变原理", "D": "经典速度叠加原理"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx2_rjb_exp2", "question": "通过物理中的【卡文迪什扭秤实验】实验，可以支持哪些核心概念？", "options": {"A": "万有引力定律", "B": "向心力由万有引力提供", "C": "向心力", "D": "引力常量"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp17", "question": "以下哪些概念可由物理中的【观察电容器的充、放电现象（图10.4-1）】实验验证？", "options": {"A": "电容器放电", "B": "电容器充电", "C": "电容器", "D": "电容器储能与能量转化"}, "answer": ["A", "B", "D"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp10", "question": "通过物理中的【测量电池的电动势和内阻（电压表+电流表+滑动变阻器法）】实验，可以支持哪些核心概念？", "options": {"A": "部分电路欧姆定律", "B": "闭合电路欧姆定律", "C": "电动势", "D": "欧姆表原理（电阻-电流对应刻度）"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp9", "question": "以下哪些概念可由物理中的【测量水果电池的电动势和内阻（电压表+电阻箱法）】实验验证？", "options": {"A": "部分电路欧姆定律", "B": "闭合电路欧姆定律", "C": "电动势", "D": "欧姆表原理（电阻-电流对应刻度）"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp3", "question": "通过物理中的【奥斯特实验（通电导线使磁针偏转）】实验，可以支持哪些核心概念？", "options": {"A": "磁场", "B": "直线电流的磁感线分布", "C": "电流的磁效应", "D": "磁场方向（用小磁针规定）"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp16", "question": "以下哪些概念可由物理中的【观察常见磁场的分布（铁屑显示磁场）】实验验证？", "options": {"A": "磁感线", "B": "磁感线疏密与磁场强弱", "C": "直线电流的磁感线分布", "D": "磁场"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp6", "question": "物理中的【探究影响通电导线受力的因素（匀强磁场中）】实验验证了什么原理？", "options": {"A": "磁通量", "B": "电流元", "C": "电磁感应", "D": "磁场力（通电导线在磁场中受力）"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp7", "question": "以下哪些概念可由物理中的【探究感应电流产生的条件（双线圈互感实验）】实验验证？", "options": {"A": "产生感应电流的条件：磁通量变化", "B": "感应电流", "C": "磁通量", "D": "电磁感应的应用：发电机与电气化设备"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp5", "question": "以下哪些概念可由物理中的【捕捉电磁波（赫兹式发射与接收演示）】实验验证？", "options": {"A": "电磁波通信", "B": "电磁波具有能量（电磁波是一种物质存在）", "C": "电磁波", "D": "电磁波可在真空中传播"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp1", "question": "以下哪些概念可由物理中的【充电宝不同电量时的电动势和内阻研究】实验验证？", "options": {"A": "光的电磁理论", "B": "电源的电动势", "C": "电源的内阻", "D": "变化的电场产生磁场"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp18", "question": "物理中的【观察静电感应现象】实验验证了什么原理？", "options": {"A": "感应起电", "B": "静电感应", "C": "静电平衡", "D": "电子转移"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp4", "question": "以下哪些概念可由物理中的【库仑扭秤实验（扭秤实验）】实验验证？", "options": {"A": "电荷量乘积正比规律", "B": "平方反比规律（对距离）", "C": "库仑定律", "D": "静电力（库仑力）"}, "answer": ["A", "B", "C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp8", "question": "物理中的【模拟电场线（蓖麻油中碎屑排列）】实验验证了什么原理？", "options": {"A": "电场线的基本特点", "B": "匀强电场", "C": "电场强度", "D": "电场线"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp20", "question": "通过物理中的【金属网静电屏蔽验证（验电器箔片是否张开）】实验，可以支持哪些核心概念？", "options": {"A": "静电屏蔽", "B": "空腔导体的屏蔽性质（腔内E=0）", "C": "静电感应", "D": "静电平衡时导体的电荷分布"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp22", "question": "通过物理中的【验证电容器两极板间电势差U与所带电荷量Q成正比（图10.4-4）】实验，可以支持哪些核心概念？", "options": {"A": "电容器", "B": "平行板电容器电容与几何/介质的关系", "C": "电容（电容器的电容）", "D": "相对介电常数"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp14", "question": "通过物理中的【研究影响平行板电容器电容大小的因素（图10.4-6）】实验，可以支持哪些核心概念？", "options": {"A": "平行板电容器电容与几何/介质的关系", "B": "电容（电容器的电容）", "C": "相对介电常数", "D": "电容器充电"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp13", "question": "通过物理中的【研究导体电阻与长度、横截面积及材料的定量关系（串联分压法）】实验，可以支持哪些核心概念？", "options": {"A": "电阻率", "B": "U-I图像的斜率与电阻", "C": "影响导体电阻的因素", "D": "长度（物理量）"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp12", "question": "通过物理中的【电阻率与温度的关系演示（加热灯丝）】实验，可以支持哪些核心概念？", "options": {"A": "电阻温度计原理", "B": "电阻率与温度的关系（金属）", "C": "电阻率", "D": "表头的欧姆定律关系（满偏关系）"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_bx3_rjb_exp19", "question": "通过物理中的【金属丝电阻率的测量】实验，可以支持哪些核心概念？", "options": {"A": "电阻", "B": "影响导体电阻的因素", "C": "电阻定律（均匀导体）", "D": "电阻率"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp5", "question": "以下哪些概念可由物理中的【小车碰撞实验（测量碰撞前后 mv 之和）】实验验证？", "options": {"A": "动量不变性（碰撞中的不变量）", "B": "动能守恒（在弹性碰撞中）", "C": "正碰（对心碰撞、一维碰撞）", "D": "弹性碰撞"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp20", "question": "通过物理中的【用单摆测量重力加速度】实验，可以支持哪些核心概念？", "options": {"A": "单摆", "B": "驱动力", "C": "回复力", "D": "重力加速度"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp22", "question": "物理中的【研究受迫振动的频率】实验验证了什么原理？", "options": {"A": "固有振动", "B": "受迫振动", "C": "共振", "D": "阻尼振动"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp18", "question": "物理中的【演示共振现象】实验验证了什么原理？", "options": {"A": "受迫振动", "B": "固有频率", "C": "共振", "D": "振幅"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp25", "question": "通过物理中的【绳上波的形成与传播】实验，可以支持哪些核心概念？", "options": {"A": "纵波", "B": "波", "C": "波的频率", "D": "横波"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp7", "question": "以下哪些概念可由物理中的【弹簧上的纵波形成】实验验证？", "options": {"A": "纵波", "B": "横波", "C": "波", "D": "波的图像（波形图）"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp13", "question": "通过物理中的【水波的反射实验】实验，可以支持哪些核心概念？", "options": {"A": "波的反射", "B": "波的衍射", "C": "反射规律", "D": "波的折射"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp14", "question": "以下哪些概念可由物理中的【水波的折射实验】实验验证？", "options": {"A": "波的衍射", "B": "波的折射", "C": "波的反射", "D": "波的频率"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp15", "question": "通过物理中的【水波的衍射实验】实验，可以支持哪些核心概念？", "options": {"A": "衍射条件", "B": "波的折射", "C": "波的反射", "D": "波的衍射"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp24", "question": "通过物理中的【绳上横波的叠加观察实验】实验，可以支持哪些核心概念？", "options": {"A": "波的叠加", "B": "波的干涉", "C": "相干波源条件", "D": "主动降噪原理"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp12", "question": "以下哪些概念可由物理中的【水波干涉实验】实验验证？", "options": {"A": "波的叠加", "B": "相干波源条件", "C": "波的干涉", "D": "主动降噪原理"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp10", "question": "物理中的【气垫导轨滑块碰撞实验】实验验证了什么原理？", "options": {"A": "动量守恒条件", "B": "动量守恒定律", "C": "动量", "D": "动量定理"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp27", "question": "物理中的【蜂鸣器音调随运动变化的演示实验】实验验证了什么原理？", "options": {"A": "波的频率变化", "B": "多普勒效应的应用", "C": "主动降噪原理", "D": "多普勒效应"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp1", "question": "物理中的【人队伍模拟多普勒效应实验】实验验证了什么原理？", "options": {"A": "波的频率变化", "B": "多普勒效应", "C": "波的频率", "D": "多普勒效应的应用"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp17", "question": "物理中的【测量玻璃的折射率】实验验证了什么原理？", "options": {"A": "折射率", "B": "光的折射定律", "C": "光路可逆性", "D": "光的折射"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp29", "question": "以下哪些概念可由物理中的【观察全反射现象】实验验证？", "options": {"A": "全反射棱镜", "B": "临界角", "C": "全反射", "D": "光导纤维"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp2", "question": "通过物理中的【光在弯曲有机玻璃棒中传播】实验，可以支持哪些核心概念？", "options": {"A": "光导纤维", "B": "全反射", "C": "临界角", "D": "折射定律"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp4", "question": "物理中的【双缝干涉演示实验】实验验证了什么原理？", "options": {"A": "薄膜干涉", "B": "双缝干涉", "C": "干涉条纹间距 Δx", "D": "相干光源"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp26", "question": "通过物理中的【肥皂膜薄膜干涉实验】实验，可以支持哪些核心概念？", "options": {"A": "双缝干涉", "B": "光的波长 λ", "C": "薄膜干涉", "D": "双缝到屏距离 l"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp21", "question": "以下哪些概念可由物理中的【用双缝干涉测量光的波长（毛玻璃屏法）】实验验证？", "options": {"A": "干涉条纹间距 Δx", "B": "双缝干涉", "C": "光的衍射", "D": "光的波长 λ"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp19", "question": "物理中的【用光传感器观察双缝干涉】实验验证了什么原理？", "options": {"A": "光的波长 λ", "B": "干涉条纹间距 Δx", "C": "双缝干涉", "D": "光的衍射"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp28", "question": "通过物理中的【观察光的偏振现象】实验，可以支持哪些核心概念？", "options": {"A": "偏振片", "B": "偏振现象", "C": "自然光", "D": "偏振光"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp9", "question": "物理中的【斜槽小球碰撞实验】实验验证了什么原理？", "options": {"A": "动量守恒条件", "B": "动量守恒定律", "C": "动量", "D": "动量定理"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp23", "question": "以下哪些概念可由物理中的【研究小车碰撞前后动能的变化】实验验证？", "options": {"A": "动能守恒（在弹性碰撞中）", "B": "动量守恒", "C": "非弹性碰撞", "D": "正碰（对心碰撞、一维碰撞）"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp11", "question": "物理中的【气球反冲实验】实验验证了什么原理？", "options": {"A": "火箭原理", "B": "动量守恒定律", "C": "力的冲量", "D": "反冲现象"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp6", "question": "以下哪些概念可由物理中的【弯管喷水容器旋转实验】实验验证？", "options": {"A": "火箭原理", "B": "动量守恒定律", "C": "反冲现象", "D": "力的冲量"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp3", "question": "通过物理中的【利用频闪照相记录弹簧振子运动】实验，可以支持哪些核心概念？", "options": {"A": "简谐运动", "B": "位移-时间图像", "C": "胡克定律（弹簧弹力）", "D": "平衡位置"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp16", "question": "物理中的【测量小球振动的周期】实验验证了什么原理？", "options": {"A": "周期", "B": "振幅", "C": "圆频率", "D": "频率"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::physics_xzxbx1_rjb_exp8", "question": "通过物理中的【探究单摆周期与摆长关系实验】实验，可以支持哪些核心概念？", "options": {"A": "单摆周期", "B": "影响单摆周期的因素", "C": "单摆周期公式", "D": "单摆"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp5", "question": "通过物理中的【研究安培力方向的实验】实验，可以支持哪些核心概念？", "options": {"A": "洛伦兹力", "B": "磁感应强度", "C": "左手定则", "D": "安培力"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp12", "question": "以下哪些概念可由物理中的【观察振荡电路中电压的波形】实验验证？", "options": {"A": "LC振荡电路", "B": "电磁振荡", "C": "振荡电路", "D": "振荡电流"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp14", "question": "以下哪些概念可由物理中的【赫兹发现电磁波的实验】实验验证？", "options": {"A": "电磁波", "B": "电磁波与光的统一性", "C": "变化的电场产生磁场", "D": "变化的磁场产生电场"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp9", "question": "物理中的【观察光敏电阻特性】实验验证了什么原理？", "options": {"A": "热敏电阻", "B": "光敏电阻", "C": "金属热电阻", "D": "电阻应变片"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp13", "question": "以下哪些概念可由物理中的【观察热敏电阻特性】实验验证？", "options": {"A": "光敏电阻", "B": "金属热电阻", "C": "热敏电阻", "D": "电阻应变片"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp15", "question": "以下哪些概念可由物理中的【门窗防盗报警装置制作实验】实验验证？", "options": {"A": "霍尔元件", "B": "化学传感器", "C": "干簧管", "D": "光敏电阻"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp1", "question": "以下哪些概念可由物理中的【光控开关实验】实验验证？", "options": {"A": "热敏电阻", "B": "光敏电阻", "C": "电阻应变片", "D": "金属热电阻"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp4", "question": "通过物理中的【电子束在磁场中的偏转实验】实验，可以支持哪些核心概念？", "options": {"A": "带电粒子在匀强磁场中的圆周运动", "B": "安培力", "C": "圆周运动半径公式", "D": "洛伦兹力"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp10", "question": "物理中的【观察带电粒子在磁场中的运动径迹】实验验证了什么原理？", "options": {"A": "圆周运动半径公式", "B": "圆周运动周期公式", "C": "洛伦兹力", "D": "磁感应强度"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp6", "question": "物理中的【研究影响感应电流方向的因素实验】实验验证了什么原理？", "options": {"A": "感应电流", "B": "右手螺旋定则", "C": "右手定则（切割磁感线）", "D": "楞次定律"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp7", "question": "物理中的【线圈位置改变与落磁体实验】实验验证了什么原理？", "options": {"A": "导线切割磁感线的感应电动势公式", "B": "磁通量", "C": "法拉第电磁感应定律", "D": "楞次定律"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp11", "question": "以下哪些概念可由物理中的【观察开关闭合时灯泡的发光情况】实验验证？", "options": {"A": "自感电动势", "B": "自感", "C": "互感", "D": "磁场的能量储存"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp3", "question": "物理中的【用电流传感器显示自感对电流的影响】实验验证了什么原理？", "options": {"A": "自感电动势", "B": "自感", "C": "自感系数（电感）", "D": "感应电动势"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp8", "question": "物理中的【观察交变电流方向的实验】实验验证了什么原理？", "options": {"A": "正弦式交变电流", "B": "正弦式交变电流表达式", "C": "交变电流", "D": "直流电流"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx2_rjb_exp2", "question": "通过物理中的【探究变压器原、副线圈电压与匝数的关系】实验，可以支持哪些核心概念？", "options": {"A": "升压变压器与降压变压器", "B": "变压器电压与匝数关系", "C": "理想变压器", "D": "变压器"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp15", "question": "以下哪些概念可由物理中的【观察炭粒的布朗运动】实验验证？", "options": {"A": "布朗运动", "B": "热运动", "C": "分子的无规则运动", "D": "分子动理论基本内容"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp8", "question": "物理中的【焦耳实验2（电流加热液体）】实验验证了什么原理？", "options": {"A": "功与热的等效性", "B": "热量与内能的变化", "C": "热机", "D": "传热"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp12", "question": "以下哪些概念可由物理中的【空气压缩引火仪观察硝化棉自燃】实验验证？", "options": {"A": "做功引起的内能变化", "B": "热量与内能的变化", "C": "热力学第一定律", "D": "绝热过程"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp6", "question": "以下哪些概念可由物理中的【焦耳实验】实验验证？", "options": {"A": "热力学第一定律", "B": "传热", "C": "内能", "D": "做功"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp2", "question": "物理中的【伦福德炮筒镗孔实验】实验验证了什么原理？", "options": {"A": "热质说", "B": "热机", "C": "传热", "D": "热动说"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp13", "question": "物理中的【紫外线照射锌板的光电效应演示】实验验证了什么原理？", "options": {"A": "爱因斯坦光电效应方程", "B": "光电子", "C": "光电效应", "D": "康普顿效应"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp3", "question": "物理中的【图4.2-1光电效应研究实验】实验验证了什么原理？", "options": {"A": "逸出功", "B": "光电效应", "C": "饱和电流", "D": "截止频率"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp1", "question": "物理中的【α粒子散射实验】实验验证了什么原理？", "options": {"A": "核式结构模型", "B": "黑体辐射实验规律", "C": "玻尔原子模型", "D": "原子核"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp11", "question": "以下哪些概念可由物理中的【电子束晶体衍射实验】实验验证？", "options": {"A": "波动力学", "B": "物质波", "C": "矩阵力学", "D": "α粒子散射实验"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp10", "question": "物理中的【用油膜法估测油酸分子的大小】实验验证了什么原理？", "options": {"A": "分子大小数量级", "B": "宏观量测微观量", "C": "单分子油膜", "D": "油膜法估测分子大小"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp5", "question": "通过物理中的【模拟气体压强产生机理实验】实验，可以支持哪些核心概念？", "options": {"A": "分子热运动", "B": "气体压强的微观解释", "C": "气体分子无规则运动", "D": "温度的微观含义"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp4", "question": "以下哪些概念可由物理中的【探究气体等温变化的规律】实验验证？", "options": {"A": "气体的等温变化", "B": "查理定律", "C": "玻意耳定律", "D": "热平衡定律"}, "answer": ["C"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp9", "question": "物理中的【用传感器探究气体等温变化规律】实验验证了什么原理？", "options": {"A": "玻意耳定律", "B": "气体的等温变化", "C": "查理定律", "D": "热平衡定律"}, "answer": ["A"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp16", "question": "通过物理中的【观察玻璃和云母片上石蜡熔化区域的形状】实验，可以支持哪些核心概念？", "options": {"A": "各向异性", "B": "非晶体", "C": "各向同性", "D": "晶体"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp17", "question": "以下哪些概念可由物理中的【观察肥皂膜和棉线的变化】实验验证？", "options": {"A": "毛细现象", "B": "液体的表面张力", "C": "气体的等温变化", "D": "气体的等容变化"}, "answer": ["B"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp14", "question": "以下哪些概念可由物理中的【观察毛细现象】实验验证？", "options": {"A": "液体的表面张力", "B": "晶体的微观结构", "C": "非晶体", "D": "毛细现象"}, "answer": ["D"]}
+{"id": "task4::subtask2::physics_xzxbx3_rjb_exp7", "question": "通过物理中的【焦耳实验1（重物搅拌水升温）】实验，可以支持哪些核心概念？", "options": {"A": "热量与内能的变化", "B": "分子势能", "C": "做功引起的内能变化", "D": "分子动能"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp19", "question": "以下哪些概念可由生物学中的【观察种子的结构】实验验证？", "options": {"A": "球果不是果实（裸子植物种子裸露）", "B": "裸子植物", "C": "种子", "D": "子叶"}, "answer": ["B", "C", "D"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp7", "question": "以下哪些概念可由生物学中的【探究：二氧化碳是光合作用必需的原料吗】实验验证？", "options": {"A": "二氧化碳是光合作用必需的原料", "B": "光合作用的原料", "C": "光合作用", "D": "光合作用的产物"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp22", "question": "通过生物学中的【金鱼藻在光下放氧并用复燃法检验】实验，可以支持哪些核心概念？", "options": {"A": "输导组织", "B": "光合作用的产物", "C": "农业生产中光合作用的应用：合理密植", "D": "呼吸作用"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp15", "question": "以下哪些概念可由生物学中的【萌发种子呼吸放热（温度计比较）】实验验证？", "options": {"A": "呼吸作用", "B": "农业生产中呼吸作用的调控", "C": "输导组织", "D": "碳—氧平衡"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp14", "question": "以下哪些概念可由生物学中的【萌发种子呼吸放出二氧化碳（澄清石灰水变浑浊）】实验验证？", "options": {"A": "农业生产中呼吸作用的调控", "B": "碳—氧平衡", "C": "输导组织", "D": "呼吸作用"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp16", "question": "通过生物学中的【萌发种子呼吸消耗氧气（蜡烛熄灭对比）】实验，可以支持哪些核心概念？", "options": {"A": "农业生产中呼吸作用的调控", "B": "碳—氧平衡", "C": "呼吸作用", "D": "输导组织"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp6", "question": "生物学中的【探究种子萌发的环境条件（四瓶对照实验）】实验验证了什么原理？", "options": {"A": "种子萌发的过程", "B": "种子萌发", "C": "种子萌发的环境条件", "D": "适宜的温度"}, "answer": ["A", "C", "D"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp9", "question": "以下哪些概念可由生物学中的【测定种子的发芽率（培养皿样本检测）】实验验证？", "options": {"A": "自花传粉", "B": "发芽率", "C": "异花传粉", "D": "果实和种子的形成"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp1", "question": "通过生物学中的【制作并观察人的口腔上皮细胞临时装片（观察动物细胞）】实验，可以支持哪些核心概念？", "options": {"A": "双子叶植物", "B": "子叶", "C": "胚乳", "D": "胚"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp11", "question": "生物学中的【红墨水示踪水分在茎内的运输途径】实验验证了什么原理？", "options": {"A": "导管", "B": "无机盐运输（随水运输）", "C": "蒸腾作用的意义", "D": "蒸腾作用"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp18", "question": "生物学中的【观察叶片的结构（徒手切片与下表皮装片）】实验验证了什么原理？", "options": {"A": "叶片的结构（表皮、叶肉、叶脉）", "B": "保卫细胞", "C": "蒸腾作用", "D": "气孔"}, "answer": ["A", "B", "D"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp10", "question": "生物学中的【热水浸叶观察气孔分布（气泡比较）】实验验证了什么原理？", "options": {"A": "蒸腾作用", "B": "保卫细胞", "C": "生物圈的水循环（绿色植物的作用）", "D": "气孔"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_7a_rjb_exp13", "question": "生物学中的【绿叶在光下制造有机物】实验验证了什么原理？", "options": {"A": "筛管运输有机物", "B": "光是绿色植物制造有机物不可缺少的条件", "C": "有机物构建植物体并提供能量", "D": "被子植物"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp6", "question": "以下哪些概念可由生物学中的【测定某种食物中的能量】实验验证？", "options": {"A": "脂肪最终分解为甘油和脂肪酸", "B": "糖类", "C": "六类营养物质", "D": "脂肪"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp4", "question": "生物学中的【模拟探究：酸雨对生物（植物）的影响】实验验证了什么原理？", "options": {"A": "酸雨", "B": "pH（酸碱度）", "C": "水污染", "D": "生物圈"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp3", "question": "通过生物学中的【探究馒头在口腔中的变化（唾液对淀粉的消化作用）】实验，可以支持哪些核心概念？", "options": {"A": "淀粉最终分解为葡萄糖", "B": "蛋白质最终分解为氨基酸", "C": "脂肪最终分解为甘油和脂肪酸", "D": "淀粉分解为麦芽糖"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp1", "question": "通过生物学中的【呼吸运动与通气机制模拟实验（胸廓-膈-肺模型）】实验，可以支持哪些核心概念？", "options": {"A": "肺泡与血液的气体交换", "B": "肺与外界的气体交换（通气）", "C": "胸廓容积变化", "D": "物质交换（血液与组织细胞）"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp8", "question": "以下哪些概念可由生物学中的【用显微镜观察人血的永久涂片】实验验证？", "options": {"A": "红细胞", "B": "血红蛋白", "C": "血小板", "D": "白细胞"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp10", "question": "通过生物学中的【观察小鱼尾鳍内血液的流动】实验，可以支持哪些核心概念？", "options": {"A": "毛细血管", "B": "血管类型（动脉、静脉、毛细血管）", "C": "物质交换（血液与组织细胞）", "D": "鼻腔结构与功能（鼻毛、黏膜、毛细血管）"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::biology_7b_rjb_exp9", "question": "以下哪些概念可由生物学中的【膝跳反射实验】实验验证？", "options": {"A": "反射弧", "B": "神经系统的组成", "C": "反射", "D": "激素"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp9", "question": "以下哪些概念可由生物学中的【观察蚯蚓】实验验证？", "options": {"A": "环节动物", "B": "群体分工", "C": "体节（身体分节）", "D": "刚毛"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp2", "question": "通过生物学中的【发酵现象（酵母产气球胀大）】实验，可以支持哪些核心概念？", "options": {"A": "酒精发酵", "B": "乳酸发酵", "C": "对照实验", "D": "发酵"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp8", "question": "生物学中的【蚯蚓走T形迷宫（电击-暗室-食物）实验】实验验证了什么原理？", "options": {"A": "尝试与错误", "B": "先天性行为", "C": "动物行为", "D": "社会行为"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp5", "question": "以下哪些概念可由生物学中的【硬纸板-松紧带-工字钉演示肌肉牵动骨运动模型制作】实验验证？", "options": {"A": "基因的多样性", "B": "生物之间的相互依存与相互制约", "C": "生物多样性保护的根本措施：保护栖息环境与生态系统多样性", "D": "生态系统的多样性"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp6", "question": "生物学中的【蚂蚁对金合欢幼苗生长影响的对照实验】实验验证了什么原理？", "options": {"A": "自然保护区", "B": "迁地保护", "C": "种质库（遗传资源保护）", "D": "生物多样性保护的法律与国际公约/行动计划"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp4", "question": "以下哪些概念可由生物学中的【检测不同环境中的细菌和真菌（培养菌落法）】实验验证？", "options": {"A": "细菌的分裂生殖", "B": "芽孢", "C": "细菌和真菌生存的基本条件", "D": "细菌和真菌的广泛分布"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp10", "question": "以下哪些概念可由生物学中的【观察酵母菌和青霉的形态结构】实验验证？", "options": {"A": "原核生物", "B": "菌丝", "C": "真菌的细胞结构特点", "D": "真核生物"}, "answer": ["B", "C", "D"]}
+{"id": "task4::subtask2::biology_8a_rjb_exp1", "question": "以下哪些概念可由生物学中的【制作孢子印】实验验证？", "options": {"A": "孢子囊群", "B": "芽孢", "C": "孢子", "D": "种子"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp7", "question": "通过生物学中的【观察鸡卵的结构】实验，可以支持哪些核心概念？", "options": {"A": "非特异性免疫（先天性免疫）", "B": "特异性免疫（后天性免疫）", "C": "人体的三道防线", "D": "免疫"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp6", "question": "生物学中的【精子与卵细胞随机结合模拟实验（围棋子）】实验验证了什么原理？", "options": {"A": "生男生女机会均等", "B": "外出血类型：毛细血管/静脉/动脉出血", "C": "米勒模拟原始地球实验结论（无机合成有机物）", "D": "生命起源的条件（有机物与能量等）"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp2", "question": "生物学中的【探究：花生果实大小的变异（取样测量与作图）】实验验证了什么原理？", "options": {"A": "不可遗传的变异", "B": "可遗传的变异", "C": "安全用药", "D": "药物不良反应（副作用）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp1", "question": "通过生物学中的【孟德尔豌豆杂交实验（高茎×矮茎）】实验，可以支持哪些核心概念？", "options": {"A": "心肺复苏30:2循环要点", "B": "缺氧耐受时限（脑细胞）", "C": "心肺复苏（CPR）", "D": "紧急呼救"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp8", "question": "生物学中的【酒精或烟草浸出液对水蚤心率的影响】实验验证了什么原理？", "options": {"A": "身体健康", "B": "健康的生活方式", "C": "心理健康", "D": "健康评价（综合评价）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp3", "question": "以下哪些概念可由生物学中的【斯帕兰扎尼肉汤实验（开口/加棉塞对照）】实验验证？", "options": {"A": "健康评价（综合评价）", "B": "心理健康", "C": "身体健康", "D": "社会适应（社会适应方面的健康）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_8b_rjb_exp4", "question": "通过生物学中的【模拟保护色形成过程（纸片捕食模拟）】实验，可以支持哪些核心概念？", "options": {"A": "健康的生活方式", "B": "慢性、非传染性疾病风险与生活方式相关", "C": "生活方式", "D": "生活方式病（现代文明病）"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp5", "question": "以下哪些概念可由生物学中的【使用高倍显微镜观察几种细胞】实验验证？", "options": {"A": "细胞的统一性", "B": "DNA是遗传物质", "C": "细胞是结构和功能的基本单位", "D": "细胞"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp18", "question": "通过生物学中的【美西螈胚胎细胞核移植实验（黑核→白去核卵）】实验，可以支持哪些核心概念？", "options": {"A": "细胞核", "B": "细胞核的功能（控制中心）", "C": "遗传信息（细胞生命活动“蓝图”）", "D": "细胞分裂对遗传信息传递的意义"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp21", "question": "通过生物学中的【蝾螈受精卵横缢有核/无核及再植核实验】实验，可以支持哪些核心概念？", "options": {"A": "细胞核的功能（控制中心）", "B": "细胞核", "C": "遗传信息（细胞生命活动“蓝图”）", "D": "细胞分裂对遗传信息传递的意义"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp6", "question": "以下哪些概念可由生物学中的【变形虫切割去核/有核及再植核实验】实验验证？", "options": {"A": "细胞核", "B": "遗传信息（细胞生命活动“蓝图”）", "C": "细胞核的功能（控制中心）", "D": "细胞分裂对遗传信息传递的意义"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp4", "question": "通过生物学中的【伞藻嫁接与核移植实验（不同帽形）】实验，可以支持哪些核心概念？", "options": {"A": "细胞核", "B": "遗传信息（细胞生命活动“蓝图”）", "C": "细胞分裂对遗传信息传递的意义", "D": "细胞核的功能（控制中心）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp24", "question": "以下哪些概念可由生物学中的【长颈漏斗-玻璃纸渗透实验】实验验证？", "options": {"A": "选择透过性", "B": "渗透作用", "C": "跨膜运输", "D": "细胞壁（对水的通透性）"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp15", "question": "生物学中的【红细胞在不同浓度NaCl溶液中的吸水/失水观察】实验验证了什么原理？", "options": {"A": "半透膜", "B": "细胞壁（对水的通透性）", "C": "浓度梯度", "D": "渗透作用"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp13", "question": "通过生物学中的【洋葱鳞片叶表皮细胞质壁分离与复原实验】实验，可以支持哪些核心概念？", "options": {"A": "原生质层", "B": "质壁分离复原", "C": "半透膜", "D": "质壁分离"}, "answer": ["A", "B", "D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp12", "question": "通过生物学中的【比较过氧化氢在不同条件下的分解】实验，可以支持哪些核心概念？", "options": {"A": "酶的催化作用", "B": "细胞代谢", "C": "过氧化氢分解反应", "D": "光合作用"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp23", "question": "通过生物学中的【酵母菌有氧与无氧细胞呼吸的对比实验（检测CO2与酒精）】实验，可以支持哪些核心概念？", "options": {"A": "有氧呼吸", "B": "线粒体（有氧呼吸主要场所）", "C": "发酵", "D": "无氧呼吸"}, "answer": ["A", "C", "D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp17", "question": "以下哪些概念可由生物学中的【绿叶中色素的提取和分离（纸层析）】实验验证？", "options": {"A": "光合作用色素", "B": "光合作用", "C": "吸收光谱", "D": "纸层析分离色素原理（溶解度差异）"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp10", "question": "以下哪些概念可由生物学中的【检测生物组织中的糖类、脂肪和蛋白质】实验验证？", "options": {"A": "斐林试剂", "B": "颜色反应（化学试剂检测有机物的依据）", "C": "双缩脲试剂", "D": "苏丹Ⅲ染液"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp8", "question": "以下哪些概念可由生物学中的【恩格尔曼实验（用需氧细菌指示水绵放氧部位）】实验验证？", "options": {"A": "叶绿体的结构适于光合作用", "B": "叶绿体基质", "C": "叶绿体", "D": "叶绿素"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp22", "question": "以下哪些概念可由生物学中的【观察根尖分生区组织细胞的有丝分裂（洋葱根尖装片）】实验验证？", "options": {"A": "有丝分裂", "B": "有丝分裂的生物学意义（遗传稳定性）", "C": "细胞周期", "D": "子细胞染色体数目保持不变"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp19", "question": "通过生物学中的【胡萝卜韧皮部细胞组织培养实验（Steward, 1958）】实验，可以支持哪些核心概念？", "options": {"A": "细胞分化", "B": "植物组织培养", "C": "核移植（去核卵细胞重建）", "D": "细胞壁"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp25", "question": "以下哪些概念可由生物学中的【非洲爪蟾体细胞核移植获得新个体实验】实验验证？", "options": {"A": "细胞分化", "B": "植物组织培养", "C": "细胞全能性", "D": "骨髓移植（造血干细胞移植）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp2", "question": "以下哪些概念可由生物学中的【不同年龄来源肺成纤维细胞体外培养比较增殖代数】实验验证？", "options": {"A": "细胞衰老", "B": "端粒学说", "C": "细胞凋亡", "D": "细胞分裂次数与细胞衰老（复制性衰老）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp16", "question": "以下哪些概念可由生物学中的【细胞核-细胞质互换融合实验（年轻/老年）】实验验证？", "options": {"A": "细胞分裂次数与细胞衰老（复制性衰老）", "B": "细胞衰老", "C": "端粒学说", "D": "细胞凋亡"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp7", "question": "通过生物学中的【台盼蓝染色鉴别细胞死活】实验，可以支持哪些核心概念？", "options": {"A": "细胞膜分隔内外环境并维持内环境相对稳定", "B": "细胞间信息交流", "C": "流动镶嵌模型", "D": "细胞膜控制物质进出（选择透过性）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp11", "question": "通过生物学中的【欧文顿（Overton）细胞通透性比较实验】实验，可以支持哪些核心概念？", "options": {"A": "细胞膜的流动性", "B": "细胞膜的化学组成（脂质、蛋白质、糖类）", "C": "磷脂双分子层", "D": "流动镶嵌模型"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp9", "question": "通过生物学中的【戈特与格伦德尔红细胞脂质铺展实验（单分子层面积法）】实验，可以支持哪些核心概念？", "options": {"A": "磷脂双分子层", "B": "磷脂分子的两亲性结构", "C": "细胞膜的化学组成（脂质、蛋白质、糖类）", "D": "细胞膜的流动性"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp3", "question": "以下哪些概念可由生物学中的【丹尼利-戴维森细胞表面张力研究】实验验证？", "options": {"A": "细胞膜的流动性", "B": "磷脂双分子层", "C": "细胞膜的化学组成（脂质、蛋白质、糖类）", "D": "流动镶嵌模型"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp20", "question": "生物学中的【荧光标记的人-鼠细胞融合实验（膜蛋白侧向扩散）】实验验证了什么原理？", "options": {"A": "细胞膜的化学组成（脂质、蛋白质、糖类）", "B": "流动镶嵌模型", "C": "磷脂双分子层", "D": "细胞膜的流动性"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp14", "question": "生物学中的【用高倍显微镜观察叶绿体和细胞质的流动】实验验证了什么原理？", "options": {"A": "细胞质的流动", "B": "细胞质基质", "C": "细胞膜的流动性", "D": "细胞核"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx1_rjb_exp1", "question": "生物学中的【3H-亮氨酸示踪分泌蛋白合成与分泌（胰腺腺泡细胞）】实验验证了什么原理？", "options": {"A": "分泌蛋白", "B": "分泌蛋白的合成与运输过程", "C": "囊泡运输", "D": "高尔基体的交通枢纽作用"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp14", "question": "通过生物学中的【豌豆一对相对性状杂交实验（高茎×矮茎）】实验，可以支持哪些核心概念？", "options": {"A": "相对性状（relative trait）", "B": "F2性状分离比（3:1）", "C": "性状分离", "D": "显性性状（dominant trait）"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp16", "question": "以下哪些概念可由生物学中的【赫尔希-蔡斯T2噬菌体侵染大肠杆菌实验（35S/32P标记）】实验验证？", "options": {"A": "外源基因整合到受体细胞DNA", "B": "噬菌体侵染细菌时DNA进入细胞、蛋白质外壳留在细胞外", "C": "DNA是主要的遗传物质", "D": "DNA（脱氧核糖核酸）"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp1", "question": "通过生物学中的【X射线晶体衍射获得DNA衍射图谱】实验，可以支持哪些核心概念？", "options": {"A": "DNA复制", "B": "DNA的特异性", "C": "DNA双螺旋结构", "D": "DNA的多样性"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp4", "question": "生物学中的【制作DNA双螺旋结构模型】实验验证了什么原理？", "options": {"A": "DNA复制", "B": "DNA双螺旋结构", "C": "DNA的特异性", "D": "DNA的多样性"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp9", "question": "通过生物学中的【梅塞尔森—斯塔尔实验（证明DNA半保留复制）】实验，可以支持哪些核心概念？", "options": {"A": "半保留复制", "B": "全保留复制", "C": "碱基互补配对原则", "D": "反向平行（DNA两条链方向相反）"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp3", "question": "通过生物学中的【低温诱导植物细胞染色体数目的变化】实验，可以支持哪些核心概念？", "options": {"A": "秋水仙素诱导染色体加倍的机制", "B": "人工诱导多倍体", "C": "染色体组（非同源染色体组）", "D": "低温诱导染色体数目变化的机制"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp6", "question": "生物学中的【探究自然选择对种群基因频率变化的影响（桦尺蛾数字化模拟）】实验验证了什么原理？", "options": {"A": "基因频率", "B": "癌变相关基因：原癌基因", "C": "自然选择直接作用于表型（个体）", "D": "自然选择使基因频率定向改变"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp5", "question": "以下哪些概念可由生物学中的【性状分离比的模拟实验（彩球模拟配子随机结合）】实验验证？", "options": {"A": "配子形成时遗传因子分离", "B": "遗传因子/基因", "C": "受精时配子随机结合", "D": "性状分离"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp10", "question": "生物学中的【测交实验（F1×隐性纯合子）】实验验证了什么原理？", "options": {"A": "遗传因子/基因", "B": "纯合子", "C": "测交后代表型比（1:1）", "D": "遗传因子成对存在（体细胞）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp15", "question": "以下哪些概念可由生物学中的【豌豆两对相对性状杂交实验（黄色圆粒×绿色皱粒）】实验验证？", "options": {"A": "自由组合定律（孟德尔第二定律）", "B": "显性性状与隐性性状", "C": "分离定律（孟德尔第一定律）", "D": "配子及其随机结合（受精随机性）"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp2", "question": "生物学中的【两对相对性状测交实验（YyRr×yyrr）】实验验证了什么原理？", "options": {"A": "自由组合定律（孟德尔第二定律）", "B": "分离定律（孟德尔第一定律）", "C": "测交", "D": "配子及其随机结合（受精随机性）"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp7", "question": "以下哪些概念可由生物学中的【摩尔根果蝇红眼/白眼杂交实验】实验验证？", "options": {"A": "X染色体", "B": "伴性遗传（X连锁遗传）", "C": "性染色体", "D": "Y染色体"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp11", "question": "以下哪些概念可由生物学中的【测交验证摩尔根解释（w在X染色体上）】实验验证？", "options": {"A": "同源染色体", "B": "非同源染色体", "C": "基因位于染色体上", "D": "基因与染色体的平行关系"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp8", "question": "以下哪些概念可由生物学中的【格里菲思肺炎链球菌转化实验】实验验证？", "options": {"A": "DNA是主要的遗传物质", "B": "遗传物质", "C": "基因", "D": "转化因子"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_bx2_rjb_exp12", "question": "通过生物学中的【艾弗里鉴定转化因子实验（DNA酶/蛋白酶等处理）】实验，可以支持哪些核心概念？", "options": {"A": "DNA是主要的遗传物质", "B": "外源基因整合到受体细胞DNA", "C": "转化因子", "D": "RNA也可作为遗传物质（某些病毒）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp7", "question": "生物学中的【模拟生物体维持pH的稳定（比较自来水、缓冲液和肝匀浆的pH变化）】实验验证了什么原理？", "options": {"A": "内环境", "B": "血浆pH", "C": "缓冲对/缓冲系统", "D": "内环境稳态的重要意义（生命活动的必要条件）"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp8", "question": "通过生物学中的【温特实验（琼脂块携带生长素诱导弯曲）】实验，可以支持哪些核心概念？", "options": {"A": "生长素分布不均匀导致生长不均匀", "B": "生长素作用特点（浓度效应与器官差异）", "C": "赤霉素（GA）", "D": "生长素"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp6", "question": "生物学中的【检测生长素运输方向的玉米胚芽鞘琼脂块实验（教材“评价实验设计和结论”）】实验验证了什么原理？", "options": {"A": "生长素", "B": "极性运输", "C": "生长素分布不均匀导致生长不均匀", "D": "生长素作用特点（浓度效应与器官差异）"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp2", "question": "通过生物学中的【喷施赤霉菌培养基滤液诱导水稻幼苗出现恶苗病症状】实验，可以支持哪些核心概念？", "options": {"A": "赤霉素（GA）", "B": "生长素", "C": "油菜素内酯", "D": "细胞分裂素"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp5", "question": "以下哪些概念可由生物学中的【探索生长素类调节剂促进插条生根的最适浓度】实验验证？", "options": {"A": "植物生长调节剂", "B": "植物生长调节剂的类型（按分子结构）", "C": "最适浓度", "D": "植物生长调节剂浓度-效应关系（两重性）"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp3", "question": "生物学中的【尝试利用乙烯利催熟水果】实验验证了什么原理？", "options": {"A": "乙烯利释放乙烯（pH依赖分解）", "B": "乙烯", "C": "拮抗作用（植物激素）", "D": "乙烯的催熟作用（及诱导自身乙烯产生）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp14", "question": "通过生物学中的【验证植物根向地性的感受部位在根冠】实验，可以支持哪些核心概念？", "options": {"A": "重力对植物生长发育的调节", "B": "光对植物生长发育的调节", "C": "温度参与植物生长发育的调节", "D": "向地性"}, "answer": ["A", "D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp10", "question": "生物学中的【蛙坐骨神经表面电位差实验（微电极记录）】实验验证了什么原理？", "options": {"A": "神经递质", "B": "神经冲动（电信号）", "C": "局部电流", "D": "突触"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp11", "question": "生物学中的【蛙心脏A-B营养液转移实验（判断神经-心肌信号性质）】实验验证了什么原理？", "options": {"A": "神经冲动（电信号）", "B": "可卡因成瘾的神经机制（多巴胺回收受阻）", "C": "神经递质", "D": "兴奋剂/毒品对神经系统的作用位点（突触）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp1", "question": "通过生物学中的【促胰液素发现实验（小肠黏膜提取液注射促胰液分泌）】实验，可以支持哪些核心概念？", "options": {"A": "胰岛素", "B": "激素调节（hormonal regulation）", "C": "神经调节", "D": "促胰液素"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp9", "question": "以下哪些概念可由生物学中的【胰岛素来源与降血糖作用验证实验（结扎胰管-提取液治疗糖尿病狗）】实验验证？", "options": {"A": "糖尿病", "B": "胰岛素", "C": "胰岛", "D": "胰高血糖素"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp13", "question": "通过生物学中的【阉割与睾丸移植对雄性性征影响实验（睾丸分泌雄激素证据）】实验，可以支持哪些核心概念？", "options": {"A": "睾酮", "B": "激素的化学本质多样性", "C": "胰岛素", "D": "促胰液素"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp12", "question": "通过生物学中的【达尔文胚芽鞘向光性实验（去尖端/遮盖尖端）】实验，可以支持哪些核心概念？", "options": {"A": "向光性", "B": "生长素分布不均匀导致生长不均匀", "C": "生长素", "D": "生长素作用特点（浓度效应与器官差异）"}, "answer": ["A", "B"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp15", "question": "通过生物学中的【鲍森·詹森实验（琼脂片传递影响）】实验，可以支持哪些核心概念？", "options": {"A": "生长素作用特点（浓度效应与器官差异）", "B": "赤霉素（GA）", "C": "细胞分裂素", "D": "生长素"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_xzxbx1_rjb_exp4", "question": "以下哪些概念可由生物学中的【拜尔实验（影响分布不均导致弯曲）】实验验证？", "options": {"A": "向光性", "B": "生长素分布不均匀导致生长不均匀", "C": "昼夜长短（光周期）影响开花", "D": "细胞分裂素"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp5", "question": "生物学中的【灯光诱捕估算趋光性昆虫种群密度（黑光灯）】实验验证了什么原理？", "options": {"A": "迁出率（emigration rate）", "B": "迁入率（immigration rate）", "C": "性别比例（性比，sex ratio）", "D": "种群密度（population density）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp7", "question": "以下哪些概念可由生物学中的【调查草地中某种双子叶植物的种群密度（样方法野外调查）】实验验证？", "options": {"A": "种群密度（population density）", "B": "迁出率（emigration rate）", "C": "迁入率（immigration rate）", "D": "性别比例（性比，sex ratio）"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp8", "question": "通过生物学中的【高斯单独培养大草履虫实验（种群“S”形增长）】实验，可以支持哪些核心概念？", "options": {"A": "环境容纳量（K值）", "B": "种群“J”形增长", "C": "种群“S”形增长", "D": "S形增长"}, "answer": ["A", "C"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp9", "question": "以下哪些概念可由生物学中的【高斯草履虫种间竞争实验（混合培养与单独培养对比）】实验验证？", "options": {"A": "种内竞争", "B": "原始合作（互惠）", "C": "种间竞争", "D": "食物供给（丰歉）"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp1", "question": "生物学中的【去除海星的潮间带群落实验】实验验证了什么原理？", "options": {"A": "捕食关系", "B": "捕食", "C": "种内竞争", "D": "种间竞争"}, "answer": ["B", "D"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp4", "question": "生物学中的【探究土壤微生物对落叶腐烂的作用（对照实验）】实验验证了什么原理？", "options": {"A": "分解者（在物质循环中的作用）", "B": "生态系统的物质循环（matter cycle）", "C": "能量流动与物质循环的关系", "D": "食物链"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp3", "question": "以下哪些概念可由生物学中的【探究土壤微生物对淀粉的分解作用】实验验证？", "options": {"A": "生态系统的物质循环（matter cycle）", "B": "能量流动与物质循环的关系", "C": "食物链", "D": "分解者（在物质循环中的作用）"}, "answer": ["D"]}
+{"id": "task4::subtask2::biology_xzxbx2_rjb_exp6", "question": "生物学中的【调查当地环境状况并提出保护环境建议/行动计划】实验验证了什么原理？", "options": {"A": "土地荒漠化", "B": "环境污染", "C": "水资源短缺", "D": "人口增长"}, "answer": ["B", "C"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp3", "question": "通过生物学中的【制作泡菜（传统发酵食品）】实验，可以支持哪些核心概念？", "options": {"A": "传统发酵技术", "B": "泡菜发酵", "C": "果醋发酵", "D": "酒精发酵"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp2", "question": "生物学中的【制作果酒和果醋（以葡萄为例）】实验验证了什么原理？", "options": {"A": "泡菜发酵", "B": "传统发酵技术", "C": "果酒发酵", "D": "醋酸菌"}, "answer": ["C"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp6", "question": "以下哪些概念可由生物学中的【酵母菌的纯培养（马铃薯琼脂平板划线）】实验验证？", "options": {"A": "纯培养物", "B": "培养基", "C": "平板划线法", "D": "纯培养"}, "answer": ["C", "D"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp5", "question": "以下哪些概念可由生物学中的【菊花的组织培养】实验验证？", "options": {"A": "植物体细胞杂交", "B": "细胞全能性", "C": "外植体", "D": "基因选择性表达"}, "answer": ["B"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp4", "question": "生物学中的【琼脂糖凝胶电泳鉴定PCR产物】实验验证了什么原理？", "options": {"A": "PCR（聚合酶链式反应）", "B": "PCR三步循环：变性-复性-延伸", "C": "引物", "D": "目的基因"}, "answer": ["A"]}
+{"id": "task4::subtask2::biology_xzxbx3_rjb_exp7", "question": "生物学中的【饲喂棉铃虫鉴定转基因棉抗虫性】实验验证了什么原理？", "options": {"A": "目的基因", "B": "基因工程的基本操作程序", "C": "转化（transformation）", "D": "目的基因的检测与鉴定"}, "answer": ["D"]}
