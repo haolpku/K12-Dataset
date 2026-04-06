@@ -1,0 +1,1 @@
+"""Knowledge-graph pipeline entrypoints."""

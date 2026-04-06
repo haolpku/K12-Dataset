@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pyo
+.openai.env
+*.env
+!*.env.example

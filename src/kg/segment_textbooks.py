@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Step 1: 解析教材 Markdown 的目录结构，生成 sections_index.json。
+"""Step 1: 解析教材 Markdown 的目录结构，生成 sections_index.json 并切分章节文件。
 
 通过 TOC 识别（含回退启发式）解析课本的章节层级结构：
 1) 定位 TOC（目录/目 录）并提取章节标题层级；
 2) 匹配正文中的 heading 行确定各节起止位置；
 3) 输出 sections_index.json（章节索引）和 metadata.md；
-4) 复制原始 Markdown 到输出目录。
-
-实际的章节文件切分由 split_by_sections_index.py 完成。
+4) 同步切分章节 Markdown 到 workspace。
 """
 
 from __future__ import annotations
@@ -17,10 +15,18 @@ import argparse
 import json
 import re
 import shutil
+import sys
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+
+THIS_DIR = Path(__file__).resolve().parent
+SRC_DIR = THIS_DIR.parent
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from utils.config import load_config
 
 
 STAGE_NAMES = {
@@ -171,10 +177,11 @@ def normalize_output_grade(stage: str, raw_grade: str, book_name: str) -> str:
 
 @dataclass
 class BookRecord:
+    book_prefix: str
     source_md: Path
     stage: str
     subject: str
-    version: str
+    publisher: str
     grade: str
     book_name: str
 
@@ -895,7 +902,7 @@ def _fixed_search_roots(
     input_root: Path,
     stage: Optional[str],
     subject: Optional[str],
-    version: Optional[str],
+    publisher: Optional[str],
 ) -> List[Path]:
     """Build deterministic roots from known docs structure.
 
@@ -906,8 +913,8 @@ def _fixed_search_roots(
         root = root / stage
     if subject:
         root = root / subject
-    if version:
-        root = root / version
+    if publisher:
+        root = root / publisher
 
     if root.exists():
         return [root]
@@ -918,8 +925,8 @@ def _iter_md_candidates(base: Path, grade: Optional[str]) -> Iterable[Path]:
     """Yield markdown candidates via fixed-depth glob patterns.
 
     Supported structures:
-    1) <version>/<grade>/<book>/hybrid_auto/*.md
-    2) <version>/<book>/hybrid_auto/*.md
+    1) <publisher>/<grade>/<book>/hybrid_auto/*.md
+    2) <publisher>/<book>/hybrid_auto/*.md
     """
     patterns: List[str] = []
     if grade:
@@ -947,10 +954,10 @@ def discover_books(
     input_root: Path,
     stage: Optional[str] = None,
     subject: Optional[str] = None,
-    version: Optional[str] = None,
+    publisher: Optional[str] = None,
     grade: Optional[str] = None,
 ) -> Iterable[BookRecord]:
-    roots = _fixed_search_roots(input_root, stage, subject, version)
+    roots = _fixed_search_roots(input_root, stage, subject, publisher)
     for base in roots:
         for md in _iter_md_candidates(base, grade=grade):
             name = md.name
@@ -972,30 +979,31 @@ def discover_books(
                 continue
 
             rel = list(parts[stage_idx + 1 : hybrid_idx])
-            # Expect at least subject/version/book
+            # Expect at least subject/publisher/book
             if len(rel) < 3:
                 continue
 
             rec_stage = parts[stage_idx]
             rec_subject = rel[0]
-            rec_version = rel[1]
+            rec_publisher = rel[1]
 
             if len(rel) == 3:
-                # Structure: <subject>/<version>/<book>/hybrid_auto
+                # Structure: <subject>/<publisher>/<book>/hybrid_auto
                 book_dir = rel[2]
                 rec_grade = infer_grade_from_book_name(book_dir)
             else:
-                # Structure: <subject>/<version>/<grade>/<book>/hybrid_auto
+                # Structure: <subject>/<publisher>/<grade>/<book>/hybrid_auto
                 rec_grade = rel[2]
                 book_dir = rel[-1]
 
             rec_grade = normalize_output_grade(rec_stage, rec_grade, book_dir)
 
             yield BookRecord(
+                book_prefix="",
                 source_md=md,
                 stage=rec_stage,
                 subject=rec_subject,
-                version=rec_version,
+                publisher=rec_publisher,
                 grade=normalize_grade_name(rec_stage, rec_grade, book_dir),
                 book_name=book_dir,
             )
@@ -1019,7 +1027,7 @@ def normalize_grade_name(stage: str, grade_from_path: str, book_name: str) -> st
 
 
 def should_skip_protected(record: BookRecord) -> bool:
-    return record.stage == "小学" and record.subject == "数学" and record.version == "人教版"
+    return False
 
 
 def _int_to_chinese_for_ordinal(num: int) -> Optional[str]:
@@ -1132,63 +1140,63 @@ def build_index_items(
     chapter_section_order: Dict[Tuple[str, str], int] = {}
 
     for seg in segments:
+        flatten_unit_to_chapter = has_unit_level and not seg.section_id
+
+        source_chapter_id = seg.unit_id if flatten_unit_to_chapter else seg.chapter_id
+        source_chapter_title = seg.unit_title if flatten_unit_to_chapter else seg.chapter_title
+        source_section_id = seg.chapter_id if flatten_unit_to_chapter else seg.section_id
+        source_section_title = seg.chapter_title if flatten_unit_to_chapter else seg.section_title
+
         if force_numeric_sections:
             # For junior/high math index, keep only '第x节' and '复习题x'.
-            if not seg.section_id:
+            if not source_section_id:
                 continue
-            if not _keep_math_section_for_index(str(seg.section_id), seg.section_title or ""):
+            if not _keep_math_section_for_index(str(source_section_id), source_section_title or ""):
                 continue
 
         output_section_num = ""
-        unit_token = sanitize_token(seg.unit_id) or "unit"
-        chapter_token = sanitize_token(seg.chapter_id) or "chapter"
-        output_filename = f"u{unit_token}_ch{chapter_token}.md" if has_unit_level else f"ch{chapter_token}.md"
+        chapter_token = sanitize_token(source_chapter_id) or "chapter"
+        output_filename = f"ch{chapter_token}.md"
 
-        if seg.section_id:
-            original_is_numeric = str(seg.section_id).isdigit()
+        if source_section_id:
+            original_is_numeric = str(source_section_id).isdigit()
             # Numeric section ids are normalized to chapter-local sequence index.
             if force_numeric_sections or original_is_numeric:
-                key = (seg.unit_id, seg.chapter_id)
+                key = (source_chapter_id, source_chapter_id)
                 chapter_section_order.setdefault(key, 0)
                 chapter_section_order[key] += 1
                 output_section_num = str(chapter_section_order[key])
             else:
-                output_section_num = str(seg.section_id)
+                output_section_num = str(source_section_id)
 
             if force_numeric_sections:
                 if original_is_numeric:
-                    section_token = sanitize_token(str(seg.section_id)) or "section"
+                    section_token = sanitize_token(str(source_section_id)) or "section"
                 else:
-                    section_token = _special_section_file_token(str(seg.section_id), seg.section_title or "") or "section"
+                    section_token = _special_section_file_token(str(source_section_id), source_section_title or "") or "section"
             else:
                 section_token = sanitize_token(output_section_num) or "section"
-            if has_unit_level:
-                output_filename = f"u{unit_token}_ch{chapter_token}_s{section_token}.md"
-            else:
-                output_filename = f"ch{chapter_token}_s{section_token}.md"
+            output_filename = f"ch{chapter_token}_s{section_token}.md"
 
         # For forced-numeric sections in junior math:
         # - numeric sections keep original ordinal (第x节)
         # - special sections keep original TOC title text
-        if seg.section_id and force_numeric_sections and str(seg.section_id).isdigit():
-            section_title = _with_section_prefix(str(seg.section_id), seg.section_title or "")
-        elif seg.section_id and force_numeric_sections:
-            section_title = (seg.section_title or "").strip()
+        if source_section_id and force_numeric_sections and str(source_section_id).isdigit():
+            section_title = _with_section_prefix(str(source_section_id), source_section_title or "")
+        elif source_section_id and force_numeric_sections:
+            section_title = (source_section_title or "").strip()
         else:
-            section_title = _with_section_prefix(output_section_num, seg.section_title or "")
+            section_title = _with_section_prefix(output_section_num, source_section_title or "")
         if hs_physics_mode:
             section_title = _normalize_hs_physics_section_title(section_title)
 
         item: Dict[str, str] = {
-            "chapter_num": seg.chapter_id,
-            "chapter_title": _with_chapter_prefix(seg.chapter_id, seg.chapter_title),
+            "chapter_num": source_chapter_id,
+            "chapter_title": _with_chapter_prefix(source_chapter_id, source_chapter_title),
             "section_num": output_section_num,
             "section_title": section_title,
             "file": output_filename,
         }
-        if has_unit_level:
-            item["unit_num"] = seg.unit_id
-            item["unit_title"] = _with_unit_prefix(seg.unit_id, seg.unit_title)
         index_items.append(item)
 
     return index_items
@@ -1384,31 +1392,23 @@ def build_file_blocks_from_index(content: str, index_items: Sequence[Dict[str, s
 
 def write_book_outputs(
     record: BookRecord,
-    output_root: Path,
+    workspace_root: Path,
     overwrite: bool,
 ) -> Tuple[bool, str, Dict[str, object]]:
-    """解析教材 TOC 结构，生成 sections_index.json 和 metadata.md。"""
-    out_grade = output_root / record.subject / record.stage / record.version / record.grade
-    out_sections = out_grade / "out_sections"
+    """解析教材、生成 sections_index，并同步切分章节文件。"""
+    book_dir = workspace_root / "segmentation" / record.book_prefix
+    sections_dir = book_dir / "sections"
 
-    if should_skip_protected(record) and out_sections.exists():
-        return False, "skip_protected", {"reason": "existing protected output"}
+    if book_dir.exists() and overwrite:
+        shutil.rmtree(book_dir)
 
-    if out_sections.exists() and overwrite:
-        shutil.rmtree(out_sections)
-
-    out_sections.mkdir(parents=True, exist_ok=True)
-    out_grade.mkdir(parents=True, exist_ok=True)
-
-    target_md = out_grade / f"{record.book_name}.md"
-
-    shutil.copy2(record.source_md, target_md)
-    content = target_md.read_text(encoding="utf-8", errors="ignore")
-    metadata_text, segments, info = split_markdown(content)
+    sections_dir.mkdir(parents=True, exist_ok=True)
+    content = record.source_md.read_text(encoding="utf-8", errors="ignore")
+    metadata_text, segments, info = split_markdown(content, stage=record.stage)
     if not segments:
         return False, "no_segments", info
 
-    (out_sections / "metadata.md").write_text(cleanup_markdown(metadata_text), encoding="utf-8")
+    (book_dir / "metadata.md").write_text(cleanup_markdown(metadata_text), encoding="utf-8")
 
     hs_physics_mode = record.stage == "高中" and record.subject == "物理"
     force_numeric_sections = record.stage in {"初中", "高中"} and record.subject == "数学"
@@ -1419,73 +1419,97 @@ def write_book_outputs(
         force_numeric_sections=force_numeric_sections,
     )
     index = {
-        "textbook": f"{record.book_name}.md",
+        "book_prefix": record.book_prefix,
+        "textbook": record.source_md.name,
         "mode": info.get("mode", "unknown"),
+        "subject": record.subject,
+        "stage": record.stage,
+        "grade": record.grade,
+        "publisher": record.publisher,
         "sections": index_items,
     }
-    (out_sections / "sections_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+    (book_dir / "sections_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    return True, "ok", {"index_items": len(index_items), **info}
+    _, blocks, block_info = build_file_blocks_from_index(content, index_items, stage=record.stage)
+    if not blocks:
+        return False, "no_blocks_from_index", block_info
+    for filename, cleaned in blocks:
+        (sections_dir / filename).write_text(cleaned, encoding="utf-8")
+
+    return True, "ok", {"index_items": len(index_items), "written": len(blocks), **info, **block_info}
+
+
+def load_book_records(config_path: Optional[str], filter_prefixes: Optional[Sequence[str]]) -> List[BookRecord]:
+    config = load_config(config_path)
+    wanted = {item.strip() for item in (filter_prefixes or []) if item.strip()}
+    records: List[BookRecord] = []
+    for book in config.load_books():
+        if wanted and book["book_prefix"] not in wanted:
+            continue
+        source_md = config.resolve_book_source(book)
+        records.append(
+            BookRecord(
+                book_prefix=str(book["book_prefix"]),
+                source_md=source_md,
+                stage=str(book["stage"]),
+                subject=str(book["subject"]),
+                publisher=str(book["publisher"]),
+                grade=str(book["grade"]),
+                book_name=source_md.stem,
+            )
+        )
+    return records
 
 
 def process_all(
-    input_root: Path,
-    output_root: Path,
-    stage: Optional[str],
-    subject: Optional[str],
-    version: Optional[str],
-    grade: Optional[str],
+    config_path: Optional[str],
+    filter_prefixes: Optional[Sequence[str]],
     limit: Optional[int],
     overwrite: bool,
 ) -> Dict[str, object]:
+    config = load_config(config_path)
     summary = {
         "processed": 0,
         "success": 0,
-        "skipped": 0,
         "failed": 0,
         "failures": [],
     }
 
     count = 0
-    for rec in discover_books(
-        input_root,
-        stage=stage,
-        subject=subject,
-        version=version,
-        grade=grade,
-    ):
-        if stage and rec.stage != stage:
-            continue
-        if subject and rec.subject != subject:
-            continue
-        if version and rec.version != version:
-            continue
-        if grade and rec.grade != grade:
+    for rec in load_book_records(config_path, filter_prefixes):
+        summary["processed"] += 1
+        if not rec.source_md.exists():
+            summary["failed"] += 1
+            summary["failures"].append(
+                {
+                    "book_prefix": rec.book_prefix,
+                    "source_md": str(rec.source_md),
+                    "status": "missing_source",
+                }
+            )
+            print(f"[FAIL] {rec.book_prefix} (missing_source)")
             continue
 
-        ok, status, info = write_book_outputs(rec, output_root, overwrite=overwrite)
-        summary["processed"] += 1
+        ok, status, info = write_book_outputs(rec, config.workspace_dir, overwrite=overwrite)
 
         if ok:
             summary["success"] += 1
-            print(f"[OK] {rec.subject}/{rec.stage}/{rec.version}/{rec.grade}/{rec.book_name} -> {info.get('index_items', 0)} sections")
-        elif status.startswith("skip"):
-            summary["skipped"] += 1
-            print(f"[SKIP] {rec.subject}/{rec.stage}/{rec.version}/{rec.grade}/{rec.book_name} ({status})")
+            print(f"[OK] {rec.book_prefix} -> {info.get('written', 0)} sections")
         else:
             summary["failed"] += 1
             failure = {
+                "book_prefix": rec.book_prefix,
                 "source_md": str(rec.source_md),
                 "subject": rec.subject,
                 "stage": rec.stage,
-                "version": rec.version,
+                "publisher": rec.publisher,
                 "grade": rec.grade,
                 "book_name": rec.book_name,
                 "status": status,
                 "info": info,
             }
             summary["failures"].append(failure)
-            print(f"[FAIL] {rec.subject}/{rec.stage}/{rec.version}/{rec.grade}/{rec.book_name} ({status})")
+            print(f"[FAIL] {rec.book_prefix} ({status})")
 
         count += 1
         if limit and count >= limit:
@@ -1496,19 +1520,15 @@ def process_all(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Step 1: 解析教材 Markdown 目录结构，生成 sections_index.json（不切分文件）。"
+        description="Step 1: 解析教材 Markdown，生成 sections_index.json，并切分章节 Markdown。"
     )
-    parser.add_argument("--input-root", required=True, help="Path to ChinaTextbook_after_mineru root")
-    parser.add_argument("--output-root", required=True, help="Path to k12_graphbench/output root")
-    parser.add_argument("--stage", default=None, help="Filter stage, e.g. 小学/初中/高中")
-    parser.add_argument("--subject", default=None, help="Filter subject")
-    parser.add_argument("--version", default=None, help="Filter version")
-    parser.add_argument("--grade", default=None, help="Filter grade")
+    parser.add_argument("--config", default=None, help="Pipeline config path")
+    parser.add_argument("--filter-prefix", action="append", default=None, help="Only process specific book_prefix values")
     parser.add_argument("--limit", type=int, default=None, help="Process at most N books")
     parser.add_argument(
         "--no-overwrite",
         action="store_true",
-        help="Do not overwrite existing out_sections for non-protected paths",
+        help="Do not overwrite existing segmentation workspace outputs",
     )
     parser.add_argument(
         "--failure-report",
@@ -1517,15 +1537,9 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    input_root = Path(args.input_root)
-    output_root = Path(args.output_root)
     summary = process_all(
-        input_root=input_root,
-        output_root=output_root,
-        stage=args.stage,
-        subject=args.subject,
-        version=args.version,
-        grade=args.grade,
+        config_path=args.config,
+        filter_prefixes=args.filter_prefix,
         limit=args.limit,
         overwrite=not args.no_overwrite,
     )

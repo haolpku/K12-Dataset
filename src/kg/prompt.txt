@@ -1,0 +1,46 @@
+你是一位精通 K12 教材教研的知识图谱专家，擅长从教材文本中提取结构化知识。
+
+你的任务是：阅读提供的【教材Chapter文本】，根据指定的【Schema Definition】提取节点（Nodes）和边（Edges），并输出JSON结果。
+
+# Schema Definition
+## Nodes
+- Concept: 教材里的核心概念。
+    - 必须包括的属性：节点类型(label，值为"Concept")、编号(id，格式为"cpt_序号")、概念的名字(name)、概念的定义(definition)、概念的重要程度(importance, 取值为"了解"/"掌握"/"重要")
+    - 可选的扩展属性: 概念的具体例子(examples)、概念的别名(aliases)、概念对应的公式/数学语言描述(formula)、概念的常用单位(unit)等
+- Skill: 教材传授的思维方法、学科技能等。
+    - 必须包括的属性：节点类型(label，值为"Skill")、编号(id，格式为"skl_序号")、方法的名字(name)、方法的具体描述(description)
+    - 可选的扩展属性: 应用这个方法的具体例子(examples)等
+- Experiment: 教材中涉及的实验（如果教材无实验内容则跳过此类节点）。
+    - 必须包括的属性：节点类型(label，值为"Experiment")、编号(id，格式为"exp_序号")、实验的名字(name)、实验所需的器材(instrument)、是否为学生实验(is_student, 0表示教师演示实验, 1表示学生需要实操的实验)
+    - 可选的扩展属性: 实验的过程(process)、实验的现象(phenomena)、实验的结论(conclusion)等
+- Exercise: 教材里**少量经典的、有代表性的例题**，以辅助理解知识点为目的。
+    - 必须包括的属性：节点类型(label，值为"Exercise")、编号(id，格式为"exe_序号")、题目的完整题干(stem)、题目的参考答案(answer)、题目的难度(difficulty, 取值为1~5, 数字越大代表难度越高)、题目的题型(type, 取值为"选择题"/"填空题"/"判断题"/"简答题"/"证明题"/"应用题"等)
+    - 可选的扩展属性: 题目的解题过程分析(analysis)
+    - 每道Exercise必须**明确考察已提取的某个Concept/Skill**
+    - 尽量选取**有答案的例题**，否则应当为题目**合成参考答案**
+
+## Edges（不同类型的边用不同的type字段区分，每条边必须包含source和target，即起点和终点的id字段）
+- is_a: 概念的**包含、从属关系**，由Concept(**小概念**)指向Concept(**大概念**)。
+- prerequisites_for：概念/方法/实验的依赖关系、先修要求，由Concept/Skill/Experiment(前置概念/方法/实验)指向Concept/Skill/Experiment(后置概念/方法/实验)。
+- verifies: 实验验证的原理，由Experiment指向Concept。如果教材无实验内容则跳过此类边。
+- relates_to: 数形之间的映射关系、高度关联的概念、成对的概念等，由Concept指向Concept。
+    - 必须包括的属性：两个概念之间具体的关联(relations)
+- tests_concept: 题目考察的概念，由Exercise指向Concept。
+- tests_skill: 题目考察的方法，由Exercise指向Skill。
+
+# 要求：
+- 本任务**以构建知识点（Concept/Skill）和知识点之间的关联为主**，Exercise可以没有或仅需少量、宁缺毋滥。
+- 应提取本段教材中**真正重要、明确呈现**的概念/方法，不要臆造内容，也不必包含细枝末节的内容。
+- Skill需要是在这个学科里**通用性的、可泛化的**，而不是在某道题里使用的特殊解题技巧。
+- 对于每条边，如果教材原文中有佐证的句子，请给出原文。
+- 如果内容较长，请直接按照**核心概念为主**的原则提取，不要询问用户。
+
+# 输出格式：
+- 只输出一个JSON对象，不要输出任何解释性文字、注释、markdown代码块标记。
+
+# Input Text
+下面是一段教材原文：
+
+{{Section_Markdown_Content}}
+
+下面请生成知识图谱JSON：
