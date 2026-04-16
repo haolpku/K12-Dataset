@@ -1,9 +1,25 @@
-"""Shared path helpers for SFT QA scripts."""
+"""Shared helpers for the ``sft_qa`` scripts (paths, env bootstrap).
+
+Keeps path resolution consistent across generators and provides a thin wrapper for
+loading repository-level environment defaults used by LLM clients.
+"""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any, Optional
+
+
+def load_openai_env(config_path: Optional[str]) -> Path:
+    """Load ``<repo>/config/.env`` into ``os.environ`` without overriding existing keys.
+
+    The ``config_path`` argument is retained for backwards compatibility with older
+    call sites; the on-disk file used is always ``config/.env`` at the repo root.
+    """
+    _ = config_path
+    from utils.config import load_repo_dotenv
+
+    return load_repo_dotenv()
 
 
 def resolve_input_path(config: Any, subject_stage: str, input_json: Optional[str]) -> Path:

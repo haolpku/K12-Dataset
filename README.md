@@ -1,80 +1,113 @@
-# K12-GraphBench Pipeline
+# K12-Dataset（K12-GraphBench Pipeline）
 
-基于 K12 教材构建知识图谱（KG），并在此基础上生成 Benchmark 评测题和 SFT 训练数据的完整流水线。
+面向 K12 教材的 **知识图谱构建** 与 **下游数据资产**（Benchmark、SFT）生产流水线；另在仓库根目录提供与本数据集格式对齐的 **多选题评测**（`eval/`），与你在 LLaMA-Factory、lm-eval 等外部框架中的实验相互独立。
 
-## Pipeline 总览
+---
 
+## Modules
+
+仓库按职责拆成四条线，可单独使用，常见顺序是 **kg → benchmark / sft_qa → eval**。
+
+1. **教材图谱（`src/kg/`）**  
+   从 `books.yaml` 注册的书目出发：PDF 或 Markdown → 章节切分 → 章节级 KG 抽取 → 多层级合并（book / subject_stage / subject / global）→ 课后题抽取与补全 → 合并图上的质量检测。
+
+2. **Benchmark 生成（`src/benchmark/`）**  
+   基于图谱节点与关系生成结构化评测任务。
+
+3. **SFT 数据生成（`src/sft_qa/`）**  
+   基于图谱节点与关系生成 SFT 问答对，导出训练用 JSONL。
+
+4. **多选题评测（`eval/`）**  
+   对已产出的 benchmark JSONL 调用 OpenAI 兼容 API 或本地 vLLM，写入逐条预测与 `summary.json`；模型与端点通过 `eval/configs/models/*.yaml` 与本地 `.env` 配置。
+
+共享逻辑在 **`src/utils/`**（配置解析、LLM 客户端、IO 等）。格式样例见 **`demo/`**（含图谱、benchmark、SFT 的裁剪示例）。
+
+---
+
+## Quick Start
+
+### 获取代码
+
+```bash
+git clone https://github.com/haolpku/K12-Dataset.git
+cd K12-Dataset
 ```
-教材 Markdown
-    │
-    ▼
-┌─────────────┐
-│     kg      │  ── segmentation → build_graph → merge_graph → check_graph
-└─────┬───────┘
-      ▼
-┌──────────┐     ┌───────────┐     ┌──────────┐
-│ exercise │     │ benchmark │     │  sft_qa  │
-│ 习题补全  │     │ 评测题生成 │     │ SFT 数据 │
-└──────────┘     └─────┬─────┘     └──────────┘
-                       ▼
-                ┌────────────┐
-                │ test_bench │  ── 模型评测
-                └────────────┘
+
+### 安装依赖
+
+请从仓库根目录安装依赖文件：
+
+```bash
+pip install -r requirements.txt
 ```
 
-## 各模块说明
+图谱主线若使用 **PDF → Markdown**，需额外安装并可在 shell 中调用 **MinerU**（默认命令名见 `config/default.yaml` 中 `mineru.command`）。
 
-### 1. kg — 图谱主线
+### 配置密钥与端点
 
-图谱主线已经统一收拢到 `src/kg/`，内部按四个顺序入口脚本组织。
+主线 kg、sft_qa 等读取 `config/` 下的环境变量：
 
-| 文件 | 功能 |
-|------|------|
-| `segment_textbooks.py` | 读取 `books.yaml` 和教材 Markdown，解析 TOC，生成 `sections_index.json` 并切分章节文件 |
-| `extract_kg_from_textbook.py` | 读取切分后的章节 Markdown，调用 LLM 抽取 chapter 级 KG，输出到 `data/chapter_kg/` |
-| `prompt.txt` | `extract_kg_from_textbook.py` 默认使用的 KG 抽取 prompt 模板 |
-| `merge_kg.py` | 将 `chapter_kg` 逐层合并为 `book_kg`、`subject_stage_kg`、`subject_kg`、`global_kg` |
-| `check_cycles.py` | 对合并图谱执行环检测，当前检查 `is_a` 和 `prerequisites_for` 两类边 |
+```bash
+cp config/.env.example config/.env
+# 编辑 config/.env：OPENAI_API_KEY、OPENAI_BASE_URL 等
+```
 
-### 2. exercise — 习题补全
+### 跑通图谱主线
 
-调用 LLM 补全习题的答案、难度、题型、解析等字段。
+1. 在仓库根目录维护 **`books.yaml`**，为至少一条书目配置书目所在路径 `source_pdf` 或 `source_md`。  
+2. 在仓库根目录执行（将 `<YourBookPrefix>` 换成 `books.yaml` 里真实的 `book_prefix`）：
 
-| 文件 | 功能 |
-|------|------|
-| `generate_exercise_json.py` | 根据习题文本和章节 KG，用 LLM 补全习题答案 |
-| `run.sh` | 加载环境变量并调用 `generate_exercise_json.py` |
+```bash
+python src/kg/run_pipeline.py \
+  --config config/default.yaml \
+  --filter-prefix <YourBookPrefix>
+```
 
-### 3. benchmark — Benchmark 评测题生成
+默认 **`data/`** 为图谱与课后题等最终输出，**`workspace/`** 为中间产物，路径由 `config/default.yaml` 的 `paths` 统一定义。
 
-基于知识图谱结构生成多种类型的评测题。
+```bash
+python src/kg/run_pipeline.py --help
+```
 
-| 文件 | 功能 |
-|------|------|
-| `generate_benchmark.py` | 基于图谱索引与任务配置生成 benchmark 原始题目 |
-| `build_qa.py` | 将 benchmark 原始题目转换为评测使用的多选 QA JSONL |
-| `bench.md` | benchmark 模块专属说明文档 |
+可查看 `--limit`、`--skip-check` 等选项。
 
-### 4. test_bench — 模型评测
+### Benchmark 与 SFT（在已有 `data/` 产物之后）
 
-测试模型在bench上的表现（目前只测了qwen3-32b）。
+```bash
+python src/benchmark/run_pipeline.py --help
+python src/sft_qa/run_pipeline.py --help
+```
 
-| 文件 | 功能 |
-|------|------|
-| `eval_multiselect.py` | 多选题评测 |
-| `configs/task_k12_multiselect.yaml` | 评测任务配置（选项标签、prompt 模板等） |
-| `configs/models/*.yaml` | 各模型的 API 端点和超参配置 |
-| `vllm_scripts/*.sh` | vLLM 服务启动脚本 |
+### 评测（`eval/`）
 
-### 5. sft_qa — SFT 训练数据生成
+```bash
+cp eval/configs/.env.example eval/configs/.env
+# 按需填写 OPENAI_BASE_URL、本地 vLLM 地址等
 
-调用 LLM 基于图谱节点和关系生成问答对，用于模型微调。
+chmod +x eval/run.sh   # 若尚未可执行
+./eval/run.sh <模型配置的 stem>
+```
 
-| 文件 | 功能 |
-|------|------|
-| `generate_qa.py` | 按节点或关系类型调用模板与 API，生成分片 QA 结果 |
-| `tests_to_qa.py` | 将 `tests_concept` / `tests_skill` 关系转换为 QA 数据 |
-| `merge_qa.py` | 汇总分片结果并生成合并后的 QA 产物 |
-| `prompts/*.txt` | 各类型节点与关系的 prompt 模板 |
-| `sft.md` / `sft_v2.md` | SFT 模块说明与细化设计文档 |
+`<stem>` 对应 **`eval/configs/models/<stem>.yaml`**。需先启动本地 vLLM 时，可参考 **`eval/vllm_scripts/`** 中的示例脚本。
 
+---
+
+## 目录结构
+
+```text
+.
+├── config/               # 管线默认配置（paths、LLM、merge）
+├── demo/                 # 格式样例（说明见 demo/README.md）
+├── eval/                 # 多选题评测脚本与模型 YAML
+├── src/kg|benchmark|sft_qa|utils/
+├── workspace/            # 默认中间产物
+├── data/                 # 默认最终数据输出
+├── books.yaml            # 书目注册表
+└── requirements.txt
+```
+
+---
+
+## 数据分发说明
+
+完整数据集与版本快照见 Hugging Face：[`tunaaa126/K12-Dataset`](https://huggingface.co/datasets/tunaaa126/K12-Dataset)

@@ -2,9 +2,9 @@ name: qwen3_32b_vllm_openai
 description: Qwen3-32B 通过 vLLM 的 OpenAI 兼容 API 调用配置
 
 api:
-  base_url: "http://127.0.0.1:8000/v1"
-  api_key_env: "OPENAI_API_KEY"
-  model: "qwen3-32b-local"
+  base_url: "${VLLM_BASE_URL}"
+  api_key_env: ""
+  model: "qwen3-32b"
 
 request:
   temperature: 0.0

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Evaluate multi-select K12 benchmark JSONL via an OpenAI-compatible Chat API.
+
+Loads optional ``eval/configs/.env`` (not repo ``config/.env``) for model
+YAML ``${VAR}`` expansion, writes per-input prediction JSONL, and emits ``summary.json``.
+"""
 
 from __future__ import annotations
 
@@ -9,6 +14,7 @@ import json
 import os
 import random
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Sequence, Set
@@ -16,6 +22,12 @@ from typing import Any, Dict, Iterable, List, Sequence, Set
 import yaml
 from openai import AsyncOpenAI
 
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_SRC = _REPO_ROOT / "src"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
+
+from utils.envfile import load_env_file
 
 LABELS = ("A", "B", "C", "D")
 LABEL_SET = set(LABELS)
@@ -38,7 +50,27 @@ def read_yaml(path: Path) -> Dict[str, Any]:
         data = yaml.safe_load(f)
     if not isinstance(data, dict):
         raise ValueError(f"YAML must be object: {path}")
-    return data
+    return expand_env(data)
+
+
+_ENV_VAR_RE = re.compile(r"\$\{(\w+)\}")
+
+
+def _expand_env_str(value: str) -> str:
+    def _repl(m: re.Match) -> str:
+        return os.environ.get(m.group(1), "")
+
+    return _ENV_VAR_RE.sub(_repl, value)
+
+
+def expand_env(obj: Any) -> Any:
+    if isinstance(obj, str):
+        return _expand_env_str(obj)
+    if isinstance(obj, list):
+        return [expand_env(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: expand_env(v) for k, v in obj.items()}
+    return obj
 
 
 def read_jsonl(path: Path) -> List[Dict[str, Any]]:
@@ -95,7 +127,11 @@ def build_user_prompt(sample: Dict[str, Any], tmpl: str) -> str:
 
 
 def parse_prediction(text: str) -> List[str]:
-    t = text.upper()
+    raw = (text or "").strip()
+    if raw.startswith("__ERROR__") or raw == "__EMPTY_RESPONSE__":
+        return []
+
+    t = raw.upper()
     t = t.replace("，", ",").replace("、", ",").replace("；", ",")
     if "</THINK>" in t:
         t = t.split("</THINK>")[-1].strip()
@@ -148,6 +184,7 @@ async def call_model(
     top_p: float,
     max_tokens: int,
     timeout: int,
+    reasoning_effort: str | None = None,
     extra_body: Dict[str, Any] | None = None,
 ) -> str:
     req: Dict[str, Any] = {
@@ -159,11 +196,12 @@ async def call_model(
         "temperature": temperature,
         "top_p": top_p,
         "max_tokens": max_tokens,
-        "timeout": timeout,
     }
+    if isinstance(reasoning_effort, str) and reasoning_effort.strip():
+        req["reasoning_effort"] = reasoning_effort.strip()
     if isinstance(extra_body, dict) and extra_body:
         req["extra_body"] = extra_body
-    resp = await client.chat.completions.create(**req)
+    resp = await client.chat.completions.create(**req, timeout=timeout)
     return (resp.choices[0].message.content or "").strip()
 
 
@@ -199,6 +237,7 @@ async def eval_file_async(
     top_p: float,
     max_tokens: int,
     timeout: int,
+    reasoning_effort: str | None,
     extra_body: Dict[str, Any] | None,
     concurrency: int,
 ) -> List[SampleResult]:
@@ -242,38 +281,23 @@ async def eval_file_async(
             sid = str(sample.get("id", "")).strip()
             gold = clean_label_list(sample.get("answer"))
             user_prompt = build_user_prompt(sample, user_tmpl)
-            raw_output = await call_model(
-                client=client,
-                model_name=model_name,
-                system_prompt=system_prompt,
-                user_prompt=user_prompt,
-                temperature=temperature,
-                top_p=top_p,
-                max_tokens=max_tokens,
-                timeout=timeout,
-                extra_body=extra_body,
-            )
-            pred = parse_prediction(raw_output)
-            if not pred:
-                retry_prompt = (
-                    user_prompt
-                    + "\n仅输出答案字母集合（如 A 或 A,C），禁止任何解释与额外文本。"
-                )
-                raw_output_retry = await call_model(
+            try:
+                raw_output = await call_model(
                     client=client,
                     model_name=model_name,
                     system_prompt=system_prompt,
-                    user_prompt=retry_prompt,
+                    user_prompt=user_prompt,
                     temperature=temperature,
                     top_p=top_p,
                     max_tokens=max_tokens,
                     timeout=timeout,
+                    reasoning_effort=reasoning_effort,
                     extra_body=extra_body,
                 )
-                pred_retry = parse_prediction(raw_output_retry)
-                if pred_retry:
-                    raw_output = raw_output_retry
-                    pred = pred_retry
+                raw_output = raw_output.strip() if raw_output.strip() else "__EMPTY_RESPONSE__"
+            except Exception as e:
+                raw_output = f"__ERROR__ {type(e).__name__}: {e}"
+            pred = parse_prediction(raw_output)
             metrics = score_prediction(gold, pred)
             one = SampleResult(
                 sample_id=sid,
@@ -332,37 +356,89 @@ async def eval_file_async(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Evaluate multi-select QA with OpenAI-compatible API.")
-    parser.add_argument("--model-config", type=Path, required=True)
-    parser.add_argument("--task-config", type=Path, required=True)
-    parser.add_argument("--input-dir", type=Path, required=True)
-    parser.add_argument("--output-dir", type=Path, required=True)
+    bench_dir = Path(__file__).resolve().parent
+    repo_root = bench_dir.parent
+    parser = argparse.ArgumentParser(description="K12 multi-select benchmark evaluation")
+    parser.add_argument(
+        "--model",
+        required=True,
+        help="Stem of ``eval/configs/models/<name>.yaml`` (without ``.yaml``), e.g. gpt4o",
+    )
+    parser.add_argument(
+        "-i",
+        "--input-dir",
+        type=Path,
+        default=None,
+        help="Directory of input ``*.jsonl`` (default: <repo>/data/benchmark/benchmark_qa)",
+    )
+    parser.add_argument(
+        "-o",
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="Output directory (default: <repo>/workspace/benchmark_output/<model>)",
+    )
     parser.add_argument("--glob", default="*.jsonl")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--max-samples-per-file", type=int, default=0, help="0 means no limit.")
-    parser.add_argument("--concurrency", type=int, default=4, help="Concurrent API requests.")
-    return parser.parse_args()
+    parser.add_argument("--max-samples-per-file", type=int, default=0, help="0 means no per-file cap")
+    parser.add_argument("--concurrency", type=int, default=4, help="Concurrent API requests")
+    args = parser.parse_args()
+    stem = str(args.model).strip()
+    if not stem:
+        parser.error("--model must be non-empty")
+    args.model_yaml = bench_dir / "configs" / "models" / f"{stem}.yaml"
+    args.task_yaml = bench_dir / "configs" / "task_k12_multiselect.yaml"
+    if args.input_dir is None:
+        args.input_dir = repo_root / "data" / "benchmark" / "benchmark_qa"
+    else:
+        args.input_dir = Path(args.input_dir).expanduser().resolve()
+    if args.output_dir is None:
+        args.output_dir = repo_root / "workspace" / "benchmark_output" / stem
+    else:
+        args.output_dir = Path(args.output_dir).expanduser().resolve()
+    return args
 
 
 def main() -> None:
     args = parse_args()
     random.seed(args.seed)
 
-    model_cfg = read_yaml(args.model_config)
-    task_cfg = read_yaml(args.task_config)
+    # Optional local env for benchmark models only (not repo config/.env).
+    configs_dir = args.model_yaml.resolve().parent.parent
+    load_env_file(configs_dir / ".env")
+
+    if not args.model_yaml.is_file():
+        raise FileNotFoundError(f"Model config not found: {args.model_yaml}")
+    if not args.task_yaml.is_file():
+        raise FileNotFoundError(f"Task config not found: {args.task_yaml}")
+    if not args.input_dir.is_dir():
+        raise FileNotFoundError(f"Input directory missing or not a directory: {args.input_dir}")
+
+    model_cfg = read_yaml(args.model_yaml)
+    task_cfg = read_yaml(args.task_yaml)
 
     api_cfg = model_cfg.get("api", {})
     req_cfg = model_cfg.get("request", {})
     if not isinstance(api_cfg, dict) or not isinstance(req_cfg, dict):
         raise ValueError("model config must contain `api` and `request` objects")
 
-    base_url = str(api_cfg.get("base_url", "")).strip()
+    base_url_env = str(api_cfg.get("base_url_env", "")).strip()
+    base_url = os.getenv(base_url_env, "").strip() if base_url_env else str(api_cfg.get("base_url", "")).strip()
     model_name = str(api_cfg.get("model", "")).strip()
-    key_env = str(api_cfg.get("api_key_env", "OPENAI_API_KEY")).strip()
-    api_key = os.getenv(key_env, "")
+
+    api_key_raw = str(api_cfg.get("api_key", "")).strip()
+    key_env = str(api_cfg.get("api_key_env", "")).strip()
+    if api_key_raw:
+        api_key = api_key_raw
+    elif key_env:
+        api_key = os.getenv(key_env, "")
+    else:
+        # vLLM / local OpenAI-compatible servers often don't require a real key,
+        # but the OpenAI SDK expects a non-empty string.
+        api_key = "EMPTY"
     if not base_url or not model_name:
         raise ValueError("model config missing api.base_url or api.model")
-    if not api_key:
+    if key_env and not api_key:
         raise ValueError(f"environment variable not set: {key_env}")
 
     system_prompt = str(task_cfg.get("system_prompt", "")).strip()
@@ -374,6 +450,9 @@ def main() -> None:
     top_p = float(req_cfg.get("top_p", 1.0))
     max_tokens = int(req_cfg.get("max_tokens", 16))
     timeout = int(req_cfg.get("timeout", 120))
+    reasoning_effort = req_cfg.get("reasoning_effort")
+    if reasoning_effort is not None and not isinstance(reasoning_effort, str):
+        raise ValueError("request.reasoning_effort must be a string when provided")
     extra_body = req_cfg.get("extra_body")
     if extra_body is not None and not isinstance(extra_body, dict):
         raise ValueError("request.extra_body must be an object when provided")
@@ -384,8 +463,9 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     summary: Dict[str, Any] = {
-        "model_config": str(args.model_config),
-        "task_config": str(args.task_config),
+        "model": str(args.model).strip(),
+        "model_yaml": str(args.model_yaml),
+        "task_yaml": str(args.task_yaml),
         "input_dir": str(args.input_dir),
         "output_dir": str(args.output_dir),
         "files": [],
@@ -411,6 +491,7 @@ def main() -> None:
                 top_p=top_p,
                 max_tokens=max_tokens,
                 timeout=timeout,
+                reasoning_effort=reasoning_effort,
                 extra_body=extra_body,
                 concurrency=args.concurrency,
             )

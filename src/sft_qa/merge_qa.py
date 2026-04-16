@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Merge SFT QA part files into final node/edge/exercise JSONL."""
+"""Merge per-task SFT QA JSONL parts into final ``node`` / ``edge`` / ``exercise`` files.
+
+Reads ``workspace/sft_qa/<subject_stage>/parts`` and writes consolidated JSONL under
+``final/`` for downstream packaging (e.g. ``build_train_jsonl.py``).
+"""
 
 from __future__ import annotations
 
@@ -7,13 +11,11 @@ import argparse
 from pathlib import Path
 from typing import Dict, List
 
-import sys
+from utils.bootstrap import ensure_src_on_path
 
-SRC_DIR = Path(__file__).resolve().parents[1]
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+ensure_src_on_path(__file__)
 
-from sft_qa.common import resolve_workspace_root  # noqa: E402
+from sft_qa.common import load_openai_env, resolve_workspace_root  # noqa: E402
 from utils.config import load_config  # noqa: E402
 from utils.io import read_jsonl, write_jsonl  # noqa: E402
 
@@ -97,6 +99,7 @@ def merge_exercise_records(parts_dir: Path) -> List[Dict[str, Any]]:
 
 def main() -> None:
     args = parse_args()
+    load_openai_env(args.config)
     config = load_config(args.config)
     workspace_root = resolve_workspace_root(config, args.subject_stage, args.workspace_dir)
     parts_dir = workspace_root / "parts"

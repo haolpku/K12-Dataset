@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
-"""Generate LLM-based SFT QA parts from subject-stage KG JSON."""
+"""Generate LLM-based SFT QA shards (node/edge tasks) from subject-stage KG JSON.
+
+Consumes merged ``subject_stage_kg`` JSON and writes intermediate JSONL parts under
+``workspace/sft_qa/<subject_stage>/parts`` for later merging.
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
-SRC_DIR = Path(__file__).resolve().parents[1]
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+from utils.bootstrap import ensure_src_on_path
 
-from sft_qa.common import resolve_input_path, resolve_workspace_root  # noqa: E402
+ensure_src_on_path(__file__)
+
+from sft_qa.common import load_openai_env, resolve_input_path, resolve_workspace_root  # noqa: E402
 from utils.config import load_config  # noqa: E402
 from utils.io import read_json  # noqa: E402
 from utils.llm_client import create_llm_client  # noqa: E402
@@ -194,6 +197,25 @@ def parse_response_to_qas(text: str) -> List[Dict[str, str]]:
                     "answer": str(obj["answer"]).strip(),
                 }
             ]
+        if isinstance(obj, dict):
+            for key in ("items", "qas", "qa_items"):
+                value = obj.get(key)
+                if not isinstance(value, list):
+                    continue
+                qas: List[Dict[str, str]] = []
+                for item in value:
+                    if not isinstance(item, dict):
+                        continue
+                    if "question" not in item or "answer" not in item:
+                        continue
+                    qas.append(
+                        {
+                            "question": str(item["question"]).strip(),
+                            "answer": str(item["answer"]).strip(),
+                        }
+                    )
+                if qas:
+                    return qas
         if isinstance(obj, list) and obj and isinstance(obj[0], dict):
             qas: List[Dict[str, str]] = []
             for item in obj:
@@ -219,18 +241,25 @@ def build_response_format(num_samples: int) -> Dict[str, Any]:
             "name": "qa_items",
             "strict": True,
             "schema": {
-                "type": "array",
-                "minItems": num_samples,
-                "maxItems": num_samples,
-                "items": {
-                    "type": "object",
-                    "additionalProperties": False,
-                    "properties": {
-                        "question": {"type": "string"},
-                        "answer": {"type": "string"},
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "minItems": num_samples,
+                        "maxItems": num_samples,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "properties": {
+                                "question": {"type": "string"},
+                                "answer": {"type": "string"},
+                            },
+                            "required": ["question", "answer"],
+                        },
                     },
-                    "required": ["question", "answer"],
                 },
+                "required": ["items"],
             },
         },
     }
@@ -323,6 +352,7 @@ def iter_task_names(raw_tasks: str) -> Iterable[str]:
 
 def main() -> None:
     args = parse_args()
+    load_openai_env(args.config)
     config = load_config(args.config)
     input_path = resolve_input_path(config, args.subject_stage, args.input_json)
     workspace_root = resolve_workspace_root(config, args.subject_stage, args.workspace_dir)
@@ -343,7 +373,7 @@ def main() -> None:
 
     llm_cfg = dict(config.llm)
     provider = str(llm_cfg.get("provider", "openai"))
-    model = args.model or str(llm_cfg.get("model", "gpt-4.1-mini"))
+    model = args.model or str(llm_cfg.get("model", "gpt-4o")) # gpt-4.1-mini
     api_key = str(llm_cfg.get("api_key", "") or "").strip()
     base_url = str(llm_cfg.get("base_url", "") or "").strip() or None
     temperature = args.temperature if args.temperature is not None else float(llm_cfg.get("temperature", 0.0))

@@ -1,4 +1,8 @@
-"""Shared I/O helpers for JSON / JSONL reading and writing."""
+"""Small JSON / JSONL helpers shared across pipeline modules.
+
+Provides strict-ish readers and writers used by KG merge, benchmark export, and SFT
+utilities to keep serialization consistent.
+"""
 
 from __future__ import annotations
 

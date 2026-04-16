@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Generate layered multiple-choice benchmark candidates from merged KGs.
+
+Reads ``global_kg`` (optionally augmented with ``subject_kg`` node metadata),
+scores distractors with embeddings, and writes per-task JSONL plus a summary.
+"""
 
 from __future__ import annotations
 
@@ -7,7 +12,6 @@ import argparse
 import hashlib
 import json
 import re
-import sys
 from collections import defaultdict, deque
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -16,44 +20,25 @@ from typing import Any, DefaultDict, Dict, Iterable, List, Optional, Sequence, S
 import numpy as np
 from fastembed import TextEmbedding
 
-SRC_DIR = Path(__file__).resolve().parents[1]
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+from utils.bootstrap import ensure_src_on_path
+
+ensure_src_on_path(__file__)
 
 from utils.io import read_json, write_json, write_jsonl  # noqa: E402
+from utils.k12_ids import (
+    BOOK_CODE_ORDER,
+    BOOK_CODE_ORDER_INDEX,
+    CHAPTER_ID_RE,
+    HIGH_SCHOOL_BOOK_CODES,
+    MIDDLE_SCHOOL_BOOK_CODES,
+    PRIMARY_MATH_BOOK_CODES,
+    SECTION_ID_RE,
+    TYPE_CODE_PREFIX_RE,
+)
 
 
-BOOK_ORDER = [
-    "1a",
-    "1b",
-    "2a",
-    "2b",
-    "3a",
-    "3b",
-    "4a",
-    "4b",
-    "5a",
-    "5b",
-    "6a",
-    "6b",
-    "7a",
-    "7b",
-    "8a",
-    "8b",
-    "9a",
-    "9",
-    "9b",
-    "bx1",
-    "bx2",
-    "bx3",
-    "xzxbx1",
-    "xzxbx2",
-    "xzxbx3",
-]
-BOOK_ORDER_INDEX = {code: idx for idx, code in enumerate(BOOK_ORDER)}
-PRIMARY_MATH_BOOK_CODES = {"1a", "1b", "2a", "2b", "3a", "3b", "4a", "4b", "5a", "5b", "6a", "6b"}
-MIDDLE_SCHOOL_BOOK_CODES = {"7a", "7b", "8a", "8b", "9a", "9", "9b"}
-HIGH_SCHOOL_BOOK_CODES = {"bx1", "bx2", "bx3", "xzxbx1", "xzxbx2", "xzxbx3"}
+BOOK_ORDER = BOOK_CODE_ORDER
+BOOK_ORDER_INDEX = BOOK_CODE_ORDER_INDEX
 
 SUBJECT_CN = {
     "math": "数学",
@@ -69,15 +54,7 @@ STAGE_CN = {
 
 CONTENT_LABELS = {"Concept", "Skill", "Experiment", "Exercise"}
 TASK2_LABELS = {"Concept", "Skill", "Experiment"}
-TYPE_CODE_RE = re.compile(
-    r"^(?P<subject>[a-z]+)_(?P<book_code>1a|1b|2a|2b|3a|3b|4a|4b|5a|5b|6a|6b|7a|7b|8a|8b|9a|9|9b|bx1|bx2|bx3|xzxbx1|xzxbx2|xzxbx3)_rjb(?:_|$)"
-)
-CHAPTER_ID_RE = re.compile(
-    r"^(?P<subject>[a-z]+)_(?P<book_code>1a|1b|2a|2b|3a|3b|4a|4b|5a|5b|6a|6b|7a|7b|8a|8b|9a|9|9b|bx1|bx2|bx3|xzxbx1|xzxbx2|xzxbx3)_rjb_ch(?P<chapter>\d+)$"
-)
-SECTION_ID_RE = re.compile(
-    r"^(?P<subject>[a-z]+)_(?P<book_code>1a|1b|2a|2b|3a|3b|4a|4b|5a|5b|6a|6b|7a|7b|8a|8b|9a|9|9b|bx1|bx2|bx3|xzxbx1|xzxbx2|xzxbx3)_rjb_ch(?P<chapter>\d+)_s(?P<section>\d+)$"
-)
+TYPE_CODE_RE = TYPE_CODE_PREFIX_RE
 
 
 @dataclass(frozen=True)

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Step 3: merge chapter KGs into book / subject_stage / subject / global outputs."""
+"""Step 3: merge chapter-level KGs into book, stage, subject, and global graphs.
+
+Aggregates nodes/edges produced by chapter extraction, applies dedupe/normalization
+rules from pipeline config, and writes merged ``nodes.json`` / ``edges.json`` trees.
+"""
 
 from __future__ import annotations
 
@@ -11,14 +15,12 @@ from pathlib import Path
 import re
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
-import sys
+from utils.bootstrap import ensure_src_on_path
 
-THIS_DIR = Path(__file__).resolve().parent
-SRC_DIR = THIS_DIR.parent
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+ensure_src_on_path(__file__)
 
 from utils.config import PipelineConfig, load_config
+from utils.k12_ids import BOOK_CODE_ORDER_INDEX, BOOK_PREFIX_RE
 from utils.io import read_json, write_json
 
 SUBJECT_MAP = {
@@ -43,39 +45,8 @@ NODE_TYPE_CODE = {
     "Exercise": "exe",
 }
 
-BOOK_SEQUENCE = [
-    "1a",
-    "1b",
-    "2a",
-    "2b",
-    "3a",
-    "3b",
-    "4a",
-    "4b",
-    "5a",
-    "5b",
-    "6a",
-    "6b",
-    "7a",
-    "7b",
-    "8a",
-    "8b",
-    "9a",
-    "9",
-    "9b",
-    "bx1",
-    "bx2",
-    "bx3",
-    "xzxbx1",
-    "xzxbx2",
-    "xzxbx3",
-]
-BOOK_SEQUENCE_INDEX = {code: idx for idx, code in enumerate(BOOK_SEQUENCE)}
 STAGE_SEQUENCE = ["primaryschool", "middleschool", "highschool"]
 STAGE_SEQUENCE_INDEX = {stage: idx for idx, stage in enumerate(STAGE_SEQUENCE)}
-BOOK_PREFIX_RE = re.compile(
-    r"^(?P<subject>[a-z]+)_(?P<book_code>1a|1b|2a|2b|3a|3b|4a|4b|5a|5b|6a|6b|7a|7b|8a|8b|9a|9|9b|bx1|bx2|bx3|xzxbx1|xzxbx2|xzxbx3)_rjb$"
-)
 
 
 def parse_args() -> argparse.Namespace:
@@ -106,7 +77,7 @@ def parse_book_code(value: str) -> str:
 
 def book_sequence_key(book_prefix: str) -> Tuple[int, str]:
     code = parse_book_code(book_prefix)
-    return (BOOK_SEQUENCE_INDEX.get(code, 10**9), str(book_prefix))
+    return (BOOK_CODE_ORDER_INDEX.get(code, 10**9), str(book_prefix))
 
 
 def load_graph(path: Path) -> Dict[str, Any]:
@@ -715,23 +686,30 @@ def write_global(config: PipelineConfig, dry_run: bool) -> Optional[Dict[str, An
     return {"nodes": slim_nodes, "edges": slim_edges}
 
 
-def main() -> None:
-    args = parse_args()
-    config = load_config(args.config)
+def run_all(
+    config_path: Optional[str],
+    *,
+    stage: Optional[str],
+    filter_prefixes: Optional[Sequence[str]],
+    dry_run: bool,
+) -> List[str]:
+    config = load_config(config_path)
     books = config.load_books(require_source=False)
     books.sort(key=lambda book: book_sequence_key(str(book["book_prefix"])))
-    filter_prefixes = {item.strip() for item in (args.filter_prefix or []) if item.strip()}
+    wanted = {item.strip() for item in (filter_prefixes or []) if item.strip()}
+    completed: List[str] = []
 
-    if args.stage in (None, "book"):
+    if stage in (None, "book"):
         for book in books:
-            if filter_prefixes and book["book_prefix"] not in filter_prefixes:
+            if wanted and book["book_prefix"] not in wanted:
                 continue
-            if merge_book(book, config, args.dry_run):
+            if merge_book(book, config, dry_run):
                 print(f"[OK][book] {book['book_prefix']}")
-        if args.stage == "book":
-            return
+                completed.append(f"book:{book['book_prefix']}")
+        if stage == "book":
+            return completed
 
-    if args.stage in (None, "subject_stage"):
+    if stage in (None, "subject_stage"):
         grouped_books = group_books(books)
         for subject_en, stage_en in sorted(
             grouped_books,
@@ -743,12 +721,13 @@ def main() -> None:
             group = grouped_books[(subject_en, stage_en)]
             paths = [config.book_kg_dir / f"{book['book_prefix']}.json" for book in group]
             output = config.subject_stage_kg_dir / f"{subject_en}_{stage_en}.json"
-            if merge_graphs(paths, config, args.dry_run, output):
+            if merge_graphs(paths, config, dry_run, output):
                 print(f"[OK][subject_stage] {subject_en}_{stage_en}")
-        if args.stage == "subject_stage":
-            return
+                completed.append(f"subject_stage:{subject_en}_{stage_en}")
+        if stage == "subject_stage":
+            return completed
 
-    if args.stage in (None, "subject"):
+    if stage in (None, "subject"):
         grouped: Dict[str, List[Path]] = defaultdict(list)
         for path in config.subject_stage_kg_dir.glob("*.json"):
             subject_en = path.stem.split("_", 1)[0]
@@ -762,13 +741,26 @@ def main() -> None:
                 ),
             )
             output = config.subject_kg_dir / f"{subject_en}.json"
-            if merge_graphs(paths, config, args.dry_run, output):
+            if merge_graphs(paths, config, dry_run, output):
                 print(f"[OK][subject] {subject_en}")
-        if args.stage == "subject":
-            return
+                completed.append(f"subject:{subject_en}")
+        if stage == "subject":
+            return completed
 
-    if write_global(config, args.dry_run):
+    if write_global(config, dry_run):
         print("[OK][global]")
+        completed.append("global")
+    return completed
+
+
+def main() -> None:
+    args = parse_args()
+    run_all(
+        config_path=args.config,
+        stage=args.stage,
+        filter_prefixes=args.filter_prefix,
+        dry_run=args.dry_run,
+    )
 
 
 if __name__ == "__main__":

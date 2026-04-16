@@ -1,5 +1,4 @@
 openai>=1.0.0
-requests
-torch
-transformers
 pyyaml
+numpy
+fastembed

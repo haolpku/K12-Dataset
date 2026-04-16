@@ -1,4 +1,8 @@
-"""Load and resolve the unified pipeline configuration (config/default.yaml)."""
+"""Load and resolve the unified pipeline configuration (``config/default.yaml``).
+
+Expands ``${ENV_VAR}`` placeholders after optionally loading ``config/.env`` into
+the process environment, and exposes resolved filesystem paths as properties.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +14,20 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 _ENV_VAR_RE = re.compile(r"\$\{(\w+)\}")
+
+
+def repo_root() -> Path:
+    """Return the repository root (directory containing ``config/`` and ``src/``)."""
+    return Path(__file__).resolve().parent.parent.parent
+
+
+def load_repo_dotenv() -> Path:
+    """Load ``<repo>/config/.env`` into ``os.environ`` (without overriding existing keys)."""
+    from utils.envfile import load_env_file
+
+    env_path = repo_root() / "config" / ".env"
+    load_env_file(env_path)
+    return env_path
 
 
 def _expand_env(value: str) -> str:
@@ -82,12 +100,24 @@ class PipelineConfig:
         return self.output_dir / "global_kg"
 
     @property
+    def afterclass_exercises_dir(self) -> Path:
+        return self.output_dir / "afterclass_exercises"
+
+    @property
     def segmentation_workspace_dir(self) -> Path:
         return self.workspace_dir / "segmentation"
 
     @property
+    def pdf_to_md_workspace_dir(self) -> Path:
+        return self.workspace_dir / "pdf_to_md"
+
+    @property
     def build_graph_workspace_dir(self) -> Path:
         return self.workspace_dir / "build_graph"
+
+    @property
+    def afterclass_exercises_workspace_dir(self) -> Path:
+        return self.workspace_dir / "afterclass_exercises"
 
     @property
     def check_graph_workspace_dir(self) -> Path:
@@ -98,6 +128,10 @@ class PipelineConfig:
     @property
     def llm(self) -> Dict[str, Any]:
         return self._raw.get("llm", {})
+
+    @property
+    def mineru(self) -> Dict[str, Any]:
+        return self._raw.get("mineru", {})
 
     # ---- merge settings ------------------------------------------------------
 
@@ -111,7 +145,7 @@ class PipelineConfig:
 
     # ---- books.yaml loading --------------------------------------------------
 
-    def load_books(self, *, require_source: bool = True) -> List[Dict[str, Any]]:
+    def load_books(self, *, require_source: bool = False) -> List[Dict[str, Any]]:
         """Return validated book records from ``books.yaml``."""
         with open(self.books_yaml, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
@@ -120,8 +154,6 @@ class PipelineConfig:
             raise ValueError("books.yaml must contain a top-level 'books' list")
 
         required = {"book_prefix", "subject", "stage", "grade", "publisher"}
-        if require_source:
-            required.add("source")
         normalized: List[Dict[str, Any]] = []
         seen_prefixes: set[str] = set()
 
@@ -129,11 +161,20 @@ class PipelineConfig:
             if not isinstance(raw_book, dict):
                 raise ValueError(f"books[{idx}] must be an object")
             missing = [key for key in required if not str(raw_book.get(key, "")).strip()]
+            has_any_source = any(
+                str(raw_book.get(key, "")).strip()
+                for key in ("source_pdf", "source_md")
+            )
+            if require_source and not has_any_source:
+                missing.append("source_pdf|source_md")
             if missing:
                 raise ValueError(f"books[{idx}] missing required fields: {', '.join(missing)}")
 
             book = dict(raw_book)
             book["book_prefix"] = str(book["book_prefix"]).strip()
+            for key in ("source_pdf", "source_md"):
+                if key in book:
+                    book[key] = str(book.get(key, "")).strip()
             if book["book_prefix"] in seen_prefixes:
                 raise ValueError(f"duplicate book_prefix in books.yaml: {book['book_prefix']}")
             seen_prefixes.add(book["book_prefix"])
@@ -141,11 +182,25 @@ class PipelineConfig:
 
         return normalized
 
-    def resolve_book_source(self, book: Dict[str, Any]) -> Path:
-        source = Path(str(book["source"]))
-        if source.is_absolute():
-            return source
-        return (self.input_dir / source).resolve()
+    def _resolve_book_path(self, book: Dict[str, Any], *keys: str) -> Optional[Path]:
+        for key in keys:
+            source_value = str(book.get(key, "")).strip()
+            if not source_value:
+                continue
+            source = Path(source_value)
+            if source.is_absolute():
+                return source
+            return (self.books_yaml.parent / source).resolve()
+        return None
+
+    def resolve_book_source(self, book: Dict[str, Any]) -> Optional[Path]:
+        return self._resolve_book_path(book, "source_pdf", "source_md")
+
+    def resolve_book_markdown(self, book: Dict[str, Any]) -> Optional[Path]:
+        return self._resolve_book_path(book, "source_md")
+
+    def resolve_book_pdf(self, book: Dict[str, Any]) -> Optional[Path]:
+        return self._resolve_book_path(book, "source_pdf")
 
     def segmentation_book_dir(self, book_prefix: str) -> Path:
         return self.segmentation_workspace_dir / book_prefix
@@ -159,6 +214,21 @@ class PipelineConfig:
     def build_graph_book_dir(self, book_prefix: str) -> Path:
         return self.build_graph_workspace_dir / book_prefix
 
+    def afterclass_exercises_book_dir(self, book_prefix: str) -> Path:
+        return self.afterclass_exercises_workspace_dir / book_prefix
+
+    def afterclass_exercises_output_for(self, book_prefix: str) -> Path:
+        return self.afterclass_exercises_dir / f"{book_prefix}.json"
+
+    def pdf_to_md_book_dir(self, book_prefix: str) -> Path:
+        return self.pdf_to_md_workspace_dir / book_prefix
+
+    def generated_book_md_for(self, book_prefix: str) -> Path:
+        return self.pdf_to_md_book_dir(book_prefix) / "book.md"
+
+    def generated_book_manifest_for(self, book_prefix: str) -> Path:
+        return self.pdf_to_md_book_dir(book_prefix) / "manifest.json"
+
 
 def load_config(config_path: Optional[str] = None) -> PipelineConfig:
     """Load a :class:`PipelineConfig` from a YAML file.
@@ -167,10 +237,11 @@ def load_config(config_path: Optional[str] = None) -> PipelineConfig:
     to the repository root is used.
     """
     if config_path is None:
-        repo_root = Path(__file__).resolve().parent.parent.parent
-        config_path_obj = repo_root / "config" / "default.yaml"
+        config_path_obj = repo_root() / "config" / "default.yaml"
     else:
         config_path_obj = Path(config_path)
+
+    load_repo_dotenv()
 
     with open(config_path_obj, "r", encoding="utf-8") as f:
         raw = yaml.safe_load(f)

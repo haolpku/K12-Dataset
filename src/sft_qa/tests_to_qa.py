@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
-"""Generate deterministic tests_concept/tests_skill QA parts."""
+"""Generate deterministic ``tests_concept`` / ``tests_skill`` QA JSONL without an LLM.
+
+Derives short QA rows from KG exercise edges so ``merge_qa.py`` can include them in
+the merged edge bundle.
+"""
 
 from __future__ import annotations
 
 import argparse
-import sys
 from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Dict, List
 
-SRC_DIR = Path(__file__).resolve().parents[1]
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+from utils.bootstrap import ensure_src_on_path
 
-from sft_qa.common import resolve_input_path, resolve_workspace_root  # noqa: E402
+ensure_src_on_path(__file__)
+
+from sft_qa.common import load_openai_env, resolve_input_path, resolve_workspace_root  # noqa: E402
 from utils.config import load_config  # noqa: E402
 from utils.io import read_json, write_jsonl  # noqa: E402
 
@@ -85,6 +88,7 @@ def build_records(data: Dict[str, Any], edge_type: str) -> List[Dict[str, Any]]:
 
 def main() -> None:
     args = parse_args()
+    load_openai_env(args.config)
     config = load_config(args.config)
     input_path = resolve_input_path(config, args.subject_stage, args.input_json)
     workspace_root = resolve_workspace_root(config, args.subject_stage, args.workspace_dir)

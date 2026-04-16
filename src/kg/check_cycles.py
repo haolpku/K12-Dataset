@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Step 4: detect cycles in merged graphs."""
+"""Step 4: detect simple cycles in merged graphs for selected edge types.
+
+Loads merged graph JSON from configured output directories and reports cycles on
+``is_a`` / ``prerequisites_for`` relations (optionally persisting a workspace report).
+"""
 
 from __future__ import annotations
 
@@ -10,12 +14,9 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Set, Tuple
 
-import sys
+from utils.bootstrap import ensure_src_on_path
 
-THIS_DIR = Path(__file__).resolve().parent
-SRC_DIR = THIS_DIR.parent
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+ensure_src_on_path(__file__)
 
 from utils.config import load_config
 from utils.io import read_json, write_json
@@ -124,20 +125,26 @@ def check_file(path: Path, level: str) -> Dict[str, Any]:
     return result
 
 
-def main() -> None:
-    args = parse_args()
-    paths = list(iter_graph_inputs(args.level, args.config))
+def run_checks(config_path: Optional[str], level: str, save_report: bool) -> List[Dict[str, Any]]:
+    paths = list(iter_graph_inputs(level, config_path))
     if not paths:
-        raise FileNotFoundError(f"no inputs found for level={args.level}")
+        raise FileNotFoundError(f"no inputs found for level={level}")
 
-    reports = [check_file(path, args.level) for path in paths]
+    reports = [check_file(path, level) for path in paths]
     print(json.dumps(reports, ensure_ascii=False, indent=2))
 
-    if args.save_report:
-        config = load_config(args.config)
-        output_path = config.check_graph_workspace_dir / f"{args.level}_cycle_report.json"
+    if save_report:
+        config = load_config(config_path)
+        output_path = config.check_graph_workspace_dir / f"{level}_cycle_report.json"
         write_json(output_path, reports)
         print(f"saved report: {output_path}")
+
+    return reports
+
+
+def main() -> None:
+    args = parse_args()
+    run_checks(args.config, args.level, args.save_report)
 
 
 if __name__ == "__main__":

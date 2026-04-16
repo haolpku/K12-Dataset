@@ -1,0 +1,15 @@
+name: gemini_3_flash_openai_compat
+description: Gemini 3 Flash 通过 OpenAI 兼容 API 调用配置（变量来自 eval/configs/.env）
+
+api:
+  base_url: "${OPENAI_BASE_URL}"
+  api_key_env: "OPENAI_API_KEY"
+  model: "gemini-3.0-flash"
+
+request:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 32
+  timeout: 120
+  reasoning_effort: "none"
+

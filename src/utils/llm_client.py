@@ -25,7 +25,7 @@ class OpenAIClient(LLMClient):
         try:
             from openai import OpenAI
         except ImportError as exc:
-            raise ImportError("请先安装 openai：pip install openai") from exc
+            raise ImportError("Install the OpenAI SDK: pip install openai") from exc
 
         if not api_key.strip():
             raise ValueError("missing llm api_key")
@@ -67,8 +67,8 @@ class OpenAIClient(LLMClient):
 
         try:
             data = json.loads(json_text)
-        except json.JSONDecodeError:
-            return {"nodes": [], "edges": []}
+        except json.JSONDecodeError as exc:
+            raise ValueError("LLM response is not valid JSON") from exc
 
         nodes = data.get("nodes", [])
         edges = data.get("edges", [])

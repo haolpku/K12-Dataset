@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Build final four-option multiple-choice QA JSONL from benchmark candidate files.
+
+Down-samples and formats candidate pools into standardized ``question`` /
+``options`` / ``answer`` records for evaluation and training.
+"""
 
 from __future__ import annotations
 
@@ -7,15 +12,15 @@ import argparse
 import hashlib
 import json
 import random
-import sys
 from pathlib import Path
 from typing import Any, Dict, List, Sequence, Tuple
 
-SRC_DIR = Path(__file__).resolve().parents[1]
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+from utils.bootstrap import ensure_src_on_path
+
+ensure_src_on_path(__file__)
 
 from utils.io import read_json, read_jsonl, write_json, write_jsonl  # noqa: E402
+from utils.k12_ids import BOOK_CODES, HIGH_SCHOOL_BOOK_CODES, MIDDLE_SCHOOL_BOOK_CODES, PRIMARY_MATH_BOOK_CODES  # noqa: E402
 
 
 LABELS = ("A", "B", "C", "D")
@@ -26,10 +31,6 @@ SUBJECT_CN = {
     "chemistry": "化学",
     "biology": "生物",
 }
-PRIMARY_MATH_BOOK_CODES = {"1a", "1b", "2a", "2b", "3a", "3b", "4a", "4b", "5a", "5b", "6a", "6b"}
-MIDDLE_SCHOOL_BOOK_CODES = {"7a", "7b", "8a", "8b", "9a", "9", "9b"}
-HIGH_SCHOOL_BOOK_CODES = {"bx1", "bx2", "bx3", "xzxbx1", "xzxbx2", "xzxbx3"}
-BOOK_CODES = PRIMARY_MATH_BOOK_CODES | MIDDLE_SCHOOL_BOOK_CODES | HIGH_SCHOOL_BOOK_CODES
 
 def clean_text_list(values: Any) -> List[str]:
     if not isinstance(values, list):

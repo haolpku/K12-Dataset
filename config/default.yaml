@@ -3,9 +3,12 @@
 
 paths:
   books_yaml: ../books.yaml                    # 书目注册表
-  input_dir: ../input                          # 原始教材 Markdown 输入根目录
+  input_dir: ../input                          # 原始教材 PDF / Markdown 输入根目录
   workspace_dir: ../workspace                  # 中间产物（gitignored）
   output_dir: ../data                          # 最终 KG 数据
+
+mineru:
+  command: mineru                             # MinerU CLI 命令名
 
 llm:
   provider: openai

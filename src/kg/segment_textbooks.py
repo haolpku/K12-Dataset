@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Step 1: 解析教材 Markdown 的目录结构，生成 sections_index.json 并切分章节文件。
+"""Step 1: parse textbook Markdown TOC, emit section index, and split section files.
 
-通过 TOC 识别（含回退启发式）解析课本的章节层级结构：
-1) 定位 TOC（目录/目 录）并提取章节标题层级；
-2) 匹配正文中的 heading 行确定各节起止位置；
-3) 输出 sections_index.json（章节索引）和 metadata.md；
-4) 同步切分章节 Markdown 到 workspace。
+Detects a table-of-contents block (with fallbacks), normalizes the outline to a
+two-level chapter/section model, writes ``sections_index.json`` (and a legacy
+``section_index.json`` alias), and writes per-section Markdown under the
+configured segmentation workspace.
 """
 
 from __future__ import annotations
@@ -15,16 +14,14 @@ import argparse
 import json
 import re
 import shutil
-import sys
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
-THIS_DIR = Path(__file__).resolve().parent
-SRC_DIR = THIS_DIR.parent
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+from utils.bootstrap import ensure_src_on_path
+
+ensure_src_on_path(__file__)
 
 from utils.config import load_config
 
@@ -38,24 +35,24 @@ STAGE_NAMES = {
 }
 
 SECTION_KEYWORDS = [
-    "阅读与思考",
-    "观察与猜想",
-    "实验与探究",
-    "探究与发现",
-    "信息技术应用",
-    "数学活动",
-    "综合与实践",
-    "课题学习",
-    "项目",
-    "小结",
+    # "阅读与思考",
+    # "观察与猜想",
+    # "实验与探究",
+    # "探究与发现",
+    # "信息技术应用",
+    # "数学活动",
+    # "综合与实践",
+    # "课题学习",
+    # "项目",
+    # "小结",
     "复习参考题",
     "复习题",
     "习题",
-    "语文园地",
-    "口语交际",
-    "快乐读书吧",
-    "习作",
-    "做一做",
+    # "语文园地",
+    # "口语交际",
+    # "快乐读书吧",
+    # "习作",
+    # "做一做",
     "练习",
 ]
 
@@ -178,12 +175,13 @@ def normalize_output_grade(stage: str, raw_grade: str, book_name: str) -> str:
 @dataclass
 class BookRecord:
     book_prefix: str
-    source_md: Path
+    source_md: Optional[Path]
     stage: str
     subject: str
     publisher: str
     grade: str
     book_name: str
+    source_input: Optional[Path] = None
 
 
 @dataclass
@@ -231,7 +229,8 @@ def normalize_for_match(text: str) -> str:
     text = re.sub(r"^#+\s*", "", text)
     text = re.sub(r"\$[^$]*\$", "", text)
     text = re.sub(r"\([^)]*\)", "", text)
-    text = re.sub(r"[\s\-—_·•\.。,:：;；，、'\"`~!@#$%^&*+=|<>?\[\]{}()]+", "", text)
+    # also strip common OCR artifacts like backslashes
+    text = re.sub(r"[\\\s\-—_·•\.。,:：;；，、'\"`~!@#$%^&*+=|<>?\[\]{}()]+", "", text)
     return text.lower()
 
 
@@ -402,10 +401,10 @@ def parse_section_candidate(line: str, current_chapter: Optional[str]) -> Option
     # Chemistry/physics style: "课题1 xxx", "实验活动2 xxx"
     m = re.match(r"^(课题|实验活动)\s*(\d+)\s*(.*)$", s)
     if m and current_chapter:
-        sec = m.group(2)
-        rest = (m.group(3) or "").strip()
         prefix = m.group(1)
-        title = f"{prefix}{sec} {rest}".strip()
+        sec = f"{prefix}{m.group(2)}"
+        rest = (m.group(3) or "").strip()
+        title = f"{sec} {rest}".strip()
         return current_chapter, sec, title
 
     # 21.1 / 21．1 / 211
@@ -445,6 +444,8 @@ def parse_section_candidate(line: str, current_chapter: Optional[str]) -> Option
 def extract_toc_block(lines: Sequence[str], toc_start: int) -> Tuple[int, List[str]]:
     block: List[str] = []
     first_chapter_key = ""
+    first_key_from_heading = False
+    first_key_heading_seen_once = False
     end_idx = min(len(lines), toc_start + 260)
 
     start_line = toc_start + 1
@@ -462,15 +463,56 @@ def extract_toc_block(lines: Sequence[str], toc_start: int) -> Tuple[int, List[s
         if stripped.startswith("!["):
             continue
 
-        candidate = parse_chapter_candidate(line, fallback_idx=1)
-        if candidate and not first_chapter_key:
-            first_chapter_key = normalize_for_match(candidate[1])
+        # If we've already collected a meaningful number of TOC chapter/unit headings and we now hit
+        # a heading that is NOT a unit/chapter heading, it's very likely we've entered the body
+        # (e.g. "致同学们", "编者的话", "前言", etc.). Stop TOC collection.
+        if stripped.startswith("#") and len(block) > 0:
+            # Count how many chapter/unit headings we've seen inside TOC so far.
+            seen_structured = 0
+            for b in block[-80:]:
+                bs = b.strip()
+                if not bs.startswith("#"):
+                    continue
+                plain = re.sub(r"^#+\s*", "", normalize_text(bs)).strip()
+                if parse_unit_candidate(plain, fallback_idx=1) or parse_chapter_candidate(plain, fallback_idx=1):
+                    seen_structured += 1
+            if seen_structured >= 3:
+                plain = re.sub(r"^#+\s*", "", normalize_text(stripped)).strip()
+                if not (parse_unit_candidate(plain, fallback_idx=1) or parse_chapter_candidate(plain, fallback_idx=1)):
+                    end_idx = idx
+                    break
 
-        if idx - toc_start > 20 and stripped.startswith("#") and first_chapter_key:
+        # Detect the first TOC item key to know when the body begins.
+        # Some books use "单元" as the topmost TOC level (no explicit 章),
+        # so we try both unit/chapter candidates.
+        if not first_chapter_key:
+            unit_candidate = parse_unit_candidate(line, fallback_idx=1)
+            if unit_candidate:
+                # Use the full TOC line (incl. ordinal) as the key to avoid over-matching
+                # short titles like "三角形" against "全等三角形".
+                first_chapter_key = normalize_for_match(strip_toc_line(line))
+                first_key_from_heading = stripped.startswith("#")
+            else:
+                candidate = parse_chapter_candidate(line, fallback_idx=1)
+                if candidate:
+                    first_chapter_key = normalize_for_match(strip_toc_line(line))
+                    first_key_from_heading = stripped.startswith("#")
+
+        # End TOC when the first TOC item heading re-appears in the body.
+        # If the key was captured from a heading line inside TOC, then the *first* match is still TOC;
+        # break only on the second match. If the key came from non-heading TOC lines, then the first
+        # heading match is already body and we should break immediately.
+        if stripped.startswith("#") and first_chapter_key:
             h = normalize_for_match(stripped)
             if first_chapter_key and (first_chapter_key in h or h in first_chapter_key):
-                end_idx = idx
-                break
+                if first_key_from_heading:
+                    if first_key_heading_seen_once:
+                        end_idx = idx
+                        break
+                    first_key_heading_seen_once = True
+                else:
+                    end_idx = idx
+                    break
 
         block.append(line)
         end_idx = idx + 1
@@ -541,8 +583,11 @@ def parse_toc_entries(lines: Sequence[str]) -> List[TocEntry]:
                 )
                 continue
 
-        # 3) Non-heading lines under a chapter are usually sections/lessons.
-        sec = parse_section_candidate(s, current_chapter=current_chapter)
+        # 3) Non-heading lines under a chapter/unit are usually sections/lessons.
+        # If the TOC has unit level but no explicit chapter level (e.g. chemistry: 单元 -> 课题),
+        # treat unit as the "current chapter" anchor for section parsing.
+        anchor_chapter = current_chapter or current_unit
+        sec = parse_section_candidate(s, current_chapter=anchor_chapter)
         if sec:
             entries.append(
                 TocEntry(
@@ -591,9 +636,17 @@ def heading_positions(lines: Sequence[str], start: int = 0, stage: Optional[str]
     out = []
     for i in range(start, len(lines)):
         s = lines[i].strip()
+        # Treat some non-heading review blocks as headings to enable splitting.
+        if not s.startswith("#"):
+            plain = normalize_text(s).strip()
+            if re.match(r"^(复习参考题|复习题)\s*[一二三四五六七八九十百零〇\d]*\b", plain):
+                out.append((i, plain))
+            continue
+
         if s.startswith("#"):
-            # For high school math, only include main section headings (##), not subsections (###)
-            if stage == "高中" and s.startswith("###"):
+            # In many textbooks, "section" level may appear as ### (while ####+ are smaller units).
+            # Keep up to ### for high-school books; ignore deeper headings.
+            if stage == "高中" and s.startswith("####"):
                 continue
             out.append((i, re.sub(r"^#+\s*", "", normalize_text(s)).strip()))
     return out
@@ -874,6 +927,169 @@ def build_segments_for_index_from_toc_entries(toc_entries: Sequence[TocEntry]) -
             )
 
     return out
+
+
+def build_two_level_index_items_from_toc_entries(toc_entries: Sequence[TocEntry]) -> Tuple[List[Dict[str, str]], Dict[str, object]]:
+    """Coerce any parsed TOC into at most two levels: chapter -> section.
+
+    Rules (per user requirement):
+    - Always output at most two levels: chapter (top) and section (second).
+    - If TOC has more than two levels, ignore smaller levels by grouping them under the same section.
+    - If TOC has only one level, output chapter only (no sections).
+    - If TOC has Unit level (level=1), treat Unit as chapter, and treat Chapter (level=2) as section.
+      Any Section entries (level=3) are ignored.
+    - If there is no Unit level, treat Chapter (level=2) as chapter, and Section (level=3) as section.
+    """
+    has_unit_level = any(e.level == 1 for e in toc_entries)
+    has_section_level = any(e.level == 3 for e in toc_entries)
+
+    index_items: List[Dict[str, str]] = []
+
+    if has_unit_level:
+        # Two-level coercion when TOC contains unit level:
+        # - If TOC also has chapter level (level=2): unit -> chapter, chapter -> section (ignore level=3).
+        # - Otherwise (unit + lessons only): unit -> chapter, level=3 -> section.
+        unit_titles: Dict[str, str] = {}
+        unit_order: List[str] = []
+        for e in toc_entries:
+            if e.level == 1 and e.unit_id:
+                if e.unit_id not in unit_titles:
+                    unit_order.append(e.unit_id)
+                prev = unit_titles.get(e.unit_id, "")
+                cand = (e.title or "").strip()
+                if not prev or len(normalize_text(cand)) > len(normalize_text(prev)):
+                    unit_titles[e.unit_id] = cand
+
+        chapters_by_unit: Dict[str, List[TocEntry]] = {}
+        for e in toc_entries:
+            if e.level == 2 and e.unit_id and e.chapter_id:
+                chapters_by_unit.setdefault(e.unit_id, []).append(e)
+
+        sections_by_unit: Dict[str, List[TocEntry]] = {}
+        # Only use level=3 as sections when there is no chapter level in TOC.
+        if not chapters_by_unit:
+            for e in toc_entries:
+                if e.level == 3 and e.unit_id and e.section_id:
+                    # When TOC is unit -> (课题/实验活动...), parse_toc_entries anchors chapter_id to unit_id.
+                    sections_by_unit.setdefault(e.unit_id, []).append(e)
+
+        for uid in unit_order:
+            utitle = unit_titles.get(uid, "")
+            secs = sections_by_unit.get(uid, [])
+            chs = chapters_by_unit.get(uid, [])
+
+            if not secs and not chs:
+                # Unit-only TOC: chapter only.
+                chapter_token = sanitize_token(uid) or "chapter"
+                index_items.append(
+                    {
+                        "chapter_num": uid,
+                        "chapter_title": _with_unit_prefix(uid, utitle) if utitle else _with_chapter_prefix(uid, utitle),
+                        "section_num": "",
+                        "section_title": "",
+                        "file": f"ch{chapter_token}.md",
+                    }
+                )
+                continue
+
+            # If chapter level exists, it is our section level (ignore smaller levels).
+            if chs:
+                for ch in chs:
+                    sid = ch.chapter_id or ""
+                    stitle = (ch.title or "").strip()
+                    chapter_token = sanitize_token(uid) or "chapter"
+                    section_token = sanitize_token(sid) or sanitize_token(stitle) or "section"
+                    index_items.append(
+                        {
+                            "chapter_num": uid,
+                            "chapter_title": _with_unit_prefix(uid, utitle) if utitle else _with_chapter_prefix(uid, utitle),
+                            "section_num": sid,
+                            "section_title": stitle,
+                            "file": f"ch{chapter_token}_s{section_token}.md",
+                        }
+                    )
+                continue
+
+            # Otherwise, use level=3 lessons under unit as sections.
+            for s in secs:
+                sid = s.section_id or ""
+                stitle = (s.title or "").strip()
+                chapter_token = sanitize_token(uid) or "chapter"
+                section_token = sanitize_token(sid) or sanitize_token(stitle) or "section"
+                index_items.append(
+                    {
+                        "chapter_num": uid,
+                        "chapter_title": _with_unit_prefix(uid, utitle) if utitle else _with_chapter_prefix(uid, utitle),
+                        "section_num": sid,
+                        "section_title": stitle,
+                        "file": f"ch{chapter_token}_s{section_token}.md",
+                    }
+                )
+            continue
+
+        info = {
+            "coerced_two_levels": True,
+            "toc_has_unit_level": True,
+            "toc_has_section_level": has_section_level,
+            "chapter_kind": "unit",
+            "section_kind": "chapter" if chapters_by_unit else "section",
+        }
+        return index_items, info
+
+    # No unit level: chapter -> section (ignore deeper than section, but we only parse up to level 3).
+    chapter_titles: Dict[str, str] = {}
+    chapter_order: List[str] = []
+    for e in toc_entries:
+        if e.level == 2 and e.chapter_id:
+            if e.chapter_id not in chapter_titles:
+                chapter_order.append(e.chapter_id)
+            prev = chapter_titles.get(e.chapter_id, "")
+            cand = (e.title or "").strip()
+            if not prev or len(normalize_text(cand)) > len(normalize_text(prev)):
+                chapter_titles[e.chapter_id] = cand
+
+    sections_by_chapter: Dict[str, List[TocEntry]] = {}
+    for e in toc_entries:
+        if e.level == 3 and e.chapter_id and e.section_id:
+            sections_by_chapter.setdefault(e.chapter_id, []).append(e)
+
+    for cid in chapter_order:
+        ctitle = chapter_titles.get(cid, "")
+        secs = sections_by_chapter.get(cid, [])
+        chapter_token = sanitize_token(cid) or "chapter"
+        if not secs:
+            index_items.append(
+                {
+                    "chapter_num": cid,
+                    "chapter_title": _with_chapter_prefix(cid, ctitle),
+                    "section_num": "",
+                    "section_title": "",
+                    "file": f"ch{chapter_token}.md",
+                }
+            )
+            continue
+        for s in secs:
+            sid = s.section_id or ""
+            stitle = (s.title or "").strip()
+            section_token = sanitize_token(sid) or sanitize_token(stitle) or "section"
+            index_items.append(
+                {
+                    "chapter_num": cid,
+                    "chapter_title": _with_chapter_prefix(cid, ctitle),
+                    "section_num": sid,
+                    "section_title": stitle,
+                    "file": f"ch{chapter_token}_s{section_token}.md",
+                }
+            )
+
+    info = {
+        "coerced_two_levels": True,
+        "toc_has_unit_level": False,
+        "toc_has_section_level": has_section_level,
+        "chapter_kind": "chapter",
+        "section_kind": "section",
+    }
+    return index_items, info
 
 
 def find_source_pdf(md_path: Path) -> Optional[Path]:
@@ -1211,10 +1427,37 @@ def _find_entry_heading(
     unit_num = str(item.get("unit_num", "")).strip()
     chapter_num = str(item.get("chapter_num", "")).strip()
     section_num = str(item.get("section_num", "")).strip()
+    is_review_item = bool(re.match(r"^复习(参考)?题", normalize_text(section_num))) or bool(
+        re.match(r"^复习(参考)?题", normalize_text(title))
+    )
+
+    # If the body uses explicit "第x节" headings, prefer them and avoid
+    # matching loose numeric subheadings like "2. ..." inside a section.
+    has_explicit_section_headings = False
+    has_chapter_dot_section_headings = False
+    if section_num.isdigit():
+        for idx, heading_title in headings:
+            if idx < start_idx:
+                continue
+            if re.match(r"^第\s*[一二三四五六七八九十百零〇\d]+\s*节\b", heading_title):
+                has_explicit_section_headings = True
+                break
+            if chapter_num.isdigit() and re.match(
+                rf"^\s*{re.escape(chapter_num)}\s*[\.．。·•]\s*\d+\b", heading_title
+            ):
+                has_chapter_dot_section_headings = True
+                # don't break; still might find 第x节 which is even stronger
 
     for idx, heading_title in headings:
         if idx < start_idx:
             continue
+
+        if is_review_item and normalize_text(heading_title).strip().startswith("复习"):
+            # Avoid cross-chapter mis-match like using "复习参考题10" for chapter 9.
+            if chapter_num.isdigit():
+                m = re.search(r"(\d+)", normalize_text(heading_title))
+                if m and m.group(1) != chapter_num:
+                    continue
 
         # For math subjects with Arabic section_num, prioritize exact title match first
         if title and section_num.isdigit():
@@ -1227,7 +1470,7 @@ def _find_entry_heading(
                 return idx
             # Or if heading starts with chapter.section format like "4.1 数列的概念"
             chapter_num_int = chapter_num.isdigit() and int(chapter_num) or 0
-            if chapter_num_int and re.match(rf"^\s*{chapter_num_int}\s*\.\s*{re.escape(section_num)}\s+", heading_title):
+            if chapter_num_int and re.match(rf"^\s*{chapter_num_int}\s*\.\s*{re.escape(section_num)}\s*", heading_title):
                 return idx
             # Or if heading starts with section number followed by title
             if re.match(rf"^\s*{re.escape(section_num)}\s*[\.．。·•]?\s*{re.escape(title)}", heading_title, re.IGNORECASE):
@@ -1254,12 +1497,16 @@ def _find_entry_heading(
                 num = chinese_to_int(m.group(1))
                 if num is not None and str(num) == section_num:
                     return idx
-            # Physics-style heading: "1. 质点 参考系"
-            if re.match(rf"^\s*{re.escape(section_num)}\s*[\.．。·•]\s*", heading_title):
-                return idx
-            # Physics-style heading: "1 质点 参考系"
-            if re.match(rf"^\s*{re.escape(section_num)}\s+", heading_title):
-                return idx
+            # Only allow loose numeric headings when there are no explicit section headings:
+            # - "第x节 ..." (common in junior physics/chem)
+            # - "<chapter>.<section> ..." (common in math)
+            if not has_explicit_section_headings and not has_chapter_dot_section_headings:
+                # Physics-style heading: "1. 质点 参考系"
+                if re.match(rf"^\s*{re.escape(section_num)}\s*[\.．。·•]\s*", heading_title):
+                    return idx
+                # Physics-style heading: "1 质点 参考系"
+                if re.match(rf"^\s*{re.escape(section_num)}\s+", heading_title):
+                    return idx
 
         # Chapter numeric fallback: 第X章/单元/课/编
         if not section_num and chapter_num.isdigit():
@@ -1404,23 +1651,94 @@ def write_book_outputs(
 
     sections_dir.mkdir(parents=True, exist_ok=True)
     content = record.source_md.read_text(encoding="utf-8", errors="ignore")
-    metadata_text, segments, info = split_markdown(content, stage=record.stage)
-    if not segments:
-        return False, "no_segments", info
+    toc_entries = parse_toc_entries_from_content(content)
+    info: Dict[str, object] = {}
+
+    # Always build index as two levels (chapter -> section) when TOC is available.
+    if toc_entries:
+        index_items, idx_info = build_two_level_index_items_from_toc_entries(toc_entries)
+        info.update(idx_info)
+        # metadata: everything before TOC marker when present.
+        lines = content.splitlines()
+        toc_start = detect_toc_start(lines)
+        if toc_start < 0:
+            toc_start = detect_pseudo_toc_start(lines)
+        metadata_text = "\n".join(lines[:toc_start]) if toc_start > 0 else ""
+        info["mode"] = "toc"
+        info["toc_entries"] = len(toc_entries)
+        info["toc_found"] = True
+    else:
+        # Fallback: split by headings only, and keep chapter-only index.
+        metadata_text, segments, split_info = split_markdown(content, stage=record.stage)
+        info.update(split_info)
+        if not segments:
+            return False, "no_segments", info
+        # Build chapter-only items from fallback segments.
+        index_items = []
+        for seg in segments:
+            chapter_token = sanitize_token(seg.chapter_id) or sanitize_token(seg.chapter_title) or "chapter"
+            index_items.append(
+                {
+                    "chapter_num": seg.chapter_id,
+                    "chapter_title": _with_chapter_prefix(seg.chapter_id, seg.chapter_title),
+                    "section_num": "",
+                    "section_title": "",
+                    "file": f"ch{chapter_token}.md",
+                }
+            )
+        info["coerced_two_levels"] = True
+        info["toc_found"] = False
+
+    if not index_items:
+        return False, "empty_index_items", info
+
+    # Math-specific rule for two-level index:
+    # - Drop non-lesson columns (阅读与思考/数学活动/小结/信息技术应用/探究与发现/…)
+    # - Keep exercise-only sections like 复习题 / 复习参考题 as standalone sections.
+    if record.subject == "数学":
+        def _is_review_section(item: Dict[str, str]) -> bool:
+            t = normalize_text((item.get("section_title") or item.get("chapter_title") or "")).strip()
+            s = normalize_text((item.get("section_num") or "")).strip()
+            # Keep both "复习题11" and "复习题" style.
+            return bool(re.match(r"^复习(参考)?题", t)) or bool(re.match(r"^复习(参考)?题", s))
+
+        def _is_nonlesson_column(item: Dict[str, str]) -> bool:
+            s = normalize_text((item.get("section_num") or "")).strip()
+            if not s:
+                return False
+            # Common non-lesson columns across math textbooks
+            drop = {
+                "阅读与思考",
+                "数学活动",
+                "小结",
+                "信息技术应用",
+                "探究与发现",
+                "观察与猜想",
+                "实验与探究",
+                "探究与发现",
+                "综合与实践",
+                "课题学习",
+                "项目",
+            }
+            return s in drop
+
+        filtered: List[Dict[str, str]] = []
+        for it in index_items:
+            if _is_review_section(it):
+                filtered.append(it)
+                continue
+            if _is_nonlesson_column(it):
+                continue
+            filtered.append(it)
+        index_items = filtered
+        info["math_filtered_sections"] = True
+        info["index_items_after_filter"] = len(index_items)
 
     (book_dir / "metadata.md").write_text(cleanup_markdown(metadata_text), encoding="utf-8")
 
-    hs_physics_mode = record.stage == "高中" and record.subject == "物理"
-    force_numeric_sections = record.stage in {"初中", "高中"} and record.subject == "数学"
-    index_items = build_index_items(
-        segments,
-        has_unit_level=bool(info.get("has_unit_level", False)),
-        hs_physics_mode=hs_physics_mode,
-        force_numeric_sections=force_numeric_sections,
-    )
     index = {
         "book_prefix": record.book_prefix,
-        "textbook": record.source_md.name,
+        "textbook": record.source_input.name if record.source_input else record.source_md.name,
         "mode": info.get("mode", "unknown"),
         "subject": record.subject,
         "stage": record.stage,
@@ -1428,7 +1746,10 @@ def write_book_outputs(
         "publisher": record.publisher,
         "sections": index_items,
     }
-    (book_dir / "sections_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+    index_text = json.dumps(index, ensure_ascii=False, indent=2)
+    # Keep backward-compatible filename while also providing the singular form.
+    (book_dir / "sections_index.json").write_text(index_text, encoding="utf-8")
+    (book_dir / "section_index.json").write_text(index_text, encoding="utf-8")
 
     _, blocks, block_info = build_file_blocks_from_index(content, index_items, stage=record.stage)
     if not blocks:
@@ -1443,10 +1764,12 @@ def load_book_records(config_path: Optional[str], filter_prefixes: Optional[Sequ
     config = load_config(config_path)
     wanted = {item.strip() for item in (filter_prefixes or []) if item.strip()}
     records: List[BookRecord] = []
-    for book in config.load_books():
+    for book in config.load_books(require_source=False):
         if wanted and book["book_prefix"] not in wanted:
             continue
-        source_md = config.resolve_book_source(book)
+        source_input = config.resolve_book_source(book)
+        source_md = config.resolve_book_markdown(book)
+        book_name = source_input.stem if source_input else (source_md.stem if source_md else str(book["book_prefix"]))
         records.append(
             BookRecord(
                 book_prefix=str(book["book_prefix"]),
@@ -1455,7 +1778,8 @@ def load_book_records(config_path: Optional[str], filter_prefixes: Optional[Sequ
                 subject=str(book["subject"]),
                 publisher=str(book["publisher"]),
                 grade=str(book["grade"]),
-                book_name=source_md.stem,
+                book_name=book_name,
+                source_input=source_input,
             )
         )
     return records
@@ -1478,16 +1802,17 @@ def process_all(
     count = 0
     for rec in load_book_records(config_path, filter_prefixes):
         summary["processed"] += 1
-        if not rec.source_md.exists():
+        if rec.source_md is None or not rec.source_md.exists():
             summary["failed"] += 1
             summary["failures"].append(
                 {
                     "book_prefix": rec.book_prefix,
-                    "source_md": str(rec.source_md),
-                    "status": "missing_source",
+                    "source_input": str(rec.source_input) if rec.source_input else "",
+                    "source_md": str(rec.source_md) if rec.source_md else "",
+                    "status": "missing_book_markdown",
                 }
             )
-            print(f"[FAIL] {rec.book_prefix} (missing_source)")
+            print(f"[FAIL] {rec.book_prefix} (missing_book_markdown)")
             continue
 
         ok, status, info = write_book_outputs(rec, config.workspace_dir, overwrite=overwrite)
@@ -1499,6 +1824,7 @@ def process_all(
             summary["failed"] += 1
             failure = {
                 "book_prefix": rec.book_prefix,
+                "source_input": str(rec.source_input) if rec.source_input else "",
                 "source_md": str(rec.source_md),
                 "subject": rec.subject,
                 "stage": rec.stage,
