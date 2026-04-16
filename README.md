@@ -1,12 +1,12 @@
 # K12-Dataset（K12-GraphBench Pipeline）
 
-面向 K12 教材的 **知识图谱构建** 与 **下游数据资产**（Benchmark、SFT）生产流水线；另在仓库根目录提供与本数据集格式对齐的 **多选题评测**（`eval/`），与你在 LLaMA-Factory、lm-eval 等外部框架中的实验相互独立。
+面向 K12 教材的 **知识图谱构建** 与 **下游数据资产**（Benchmark、SFT QA）生产流水线。
 
 ---
 
 ## Modules
 
-仓库按职责拆成四条线，可单独使用，常见顺序是 **kg → benchmark / sft_qa → eval**。
+仓库按职责分为四大模块，可单独使用，推荐顺序是 **kg → benchmark / sft_qa → eval**。
 
 1. **教材图谱（`src/kg/`）**  
    从 `books.yaml` 注册的书目出发：PDF 或 Markdown → 章节切分 → 章节级 KG 抽取 → 多层级合并（book / subject_stage / subject / global）→ 课后题抽取与补全 → 合并图上的质量检测。
@@ -52,7 +52,7 @@ cp config/.env.example config/.env
 # 编辑 config/.env：OPENAI_API_KEY、OPENAI_BASE_URL 等
 ```
 
-### 跑通图谱主线
+### 运行图谱主线
 
 1. 在仓库根目录维护 **`books.yaml`**，为至少一条书目配置书目所在路径 `source_pdf` 或 `source_md`。  
 2. 在仓库根目录执行（将 `<YourBookPrefix>` 换成 `books.yaml` 里真实的 `book_prefix`）：
@@ -71,14 +71,14 @@ python src/kg/run_pipeline.py --help
 
 可查看 `--limit`、`--skip-check` 等选项。
 
-### Benchmark 与 SFT（在已有 `data/` 产物之后）
+### 构建 Benchmark 与 SFT QA（在已有 `data/` 产物之后）
 
 ```bash
 python src/benchmark/run_pipeline.py --help
 python src/sft_qa/run_pipeline.py --help
 ```
 
-### 评测（`eval/`）
+### 在 Benchmark 上进行评测（`eval/`）
 
 ```bash
 cp eval/configs/.env.example eval/configs/.env
