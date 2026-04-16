@@ -1,0 +1,16 @@
+name: gemma_4_31b_it_vllm_openai
+description: Gemma-4-31B-it 通过 vLLM 的 OpenAI 兼容 API 调用配置
+
+api:
+  base_url: "${VLLM_BASE_URL}"
+  api_key_env: ""
+  model: "gemma-4-31b-it"
+
+request:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 32
+  timeout: 120
+  extra_body:
+    chat_template_kwargs:
+      enable_thinking: false

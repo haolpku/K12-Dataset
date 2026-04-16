@@ -1,479 +1,433 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+"""Generate LLM-based SFT QA shards (node/edge tasks) from subject-stage KG JSON.
+
+Consumes merged ``subject_stage_kg`` JSON and writes intermediate JSONL parts under
+``workspace/sft_qa/<subject_stage>/parts`` for later merging.
 """
-从概念 / 技能 / 习题 / 关系类 JSON 中读取条目，结合 prompt 模板，
-调用 GPT 系列模型生成用于 SFT 的 QA 数据（JSONL）。
-"""
+
+from __future__ import annotations
 
 import argparse
 import json
-import os
-import sys
+import re
 from pathlib import Path
-from typing import Any, Dict, List, Tuple, Union
+from typing import Any, Dict, Iterable, List
 
-import requests
+from utils.bootstrap import ensure_src_on_path
 
+ensure_src_on_path(__file__)
 
-def load_items(input_path: Path) -> List[Dict[str, Any]]:
-    with open(input_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    if not isinstance(data, list):
-        raise ValueError(f"输入 JSON 不是数组: {input_path}")
-    return data
-
-
-def load_prompt_template(prompt_path: Path) -> str:
-    with open(prompt_path, "r", encoding="utf-8") as f:
-        return f.read()
+from sft_qa.common import load_openai_env, resolve_input_path, resolve_workspace_root  # noqa: E402
+from utils.config import load_config  # noqa: E402
+from utils.io import read_json  # noqa: E402
+from utils.llm_client import create_llm_client  # noqa: E402
 
 
-def build_prompt_fields(
-    item: Dict[str, Any],
-    mode: str,
-) -> Tuple[str, Dict[str, Any]]:
-    """
-    根据节点 / 关系的结构构造 prompt 占位符字典，以及用于输出 JSONL 的 name：
-    
-    - 节点模式（mode == "node"）：
-        可用占位符：
-          {{label}}      节点类型（Concept / Skill / Exercise）
-          {{name}}       节点名称（Concept/Skill 使用）
-          {{stem}}       题目题干（Exercise 使用）
-          {{answer}}     题目答案（Exercise 使用）
-          {{attributes}} 经过裁剪后的属性 dict（会被序列化为 JSON）
-    
-      裁剪规则：
-        - Concept: 从 properties 删除 name、importance、examples
-        - Skill:   从 properties 删除 examples
-        - Exercise:从 properties 删除 difficulty（stem 和 answer 单独提取）
-    
-    - 关系模式（mode == "edge"）：
-        可用占位符：
-          {{type}}         边类型（is_a / prerequisites_for / relates_to / verifies 等）
-          {{source_name}}  源节点名称（source_name 优先，其次 source id）
-          {{target_name}}  目标节点名称（target_name 优先，其次 target id）
-          {{attributes}}   关系属性（删除 page / evidence_page 等与页码相关字段）
-    """
-    properties = item.get("properties", {}) or {}
-    
-    if mode == "node":
-        label = item.get("label")
-        props = dict(properties)
-        
-        # 依据 label 裁剪属性
-        if label == "Concept":
-            for k in ("name", "importance", "examples"):
-                props.pop(k, None)
-            name = properties.get("name") or item.get("id", "")
-            fields: Dict[str, Any] = {
-                "label": label or "",
-                "name": name,
-                "attributes": props,
-            }
-        elif label == "Skill":
-            props.pop("examples", None)
-            name = properties.get("name") or item.get("id", "")
-            fields: Dict[str, Any] = {
-                "label": label or "",
-                "name": name,
-                "attributes": props,
-            }
-        elif label == "Exercise":
-            # Exercise 节点特殊处理：提取 stem 和 answer，删除 difficulty
-            props.pop("difficulty", None)
-            stem = properties.get("stem", "")
-            answer = properties.get("answer", "")
-            # 用于 JSONL 输出的 name 字段，使用 stem 的前50个字符或 id
-            name = stem[:50] if stem else item.get("id", "")
-            fields: Dict[str, Any] = {
-                "label": label or "",
-                "stem": stem,
-                "answer": answer,
-                "attributes": props,
-            }
-        else:
-            # 其他类型节点，使用默认处理
-            name = properties.get("name") or item.get("id", "")
-            fields: Dict[str, Any] = {
-                "label": label or "",
-                "name": name,
-                "attributes": props,
-            }
-        
-        return name, fields
-    
-    # 关系模式
-    edge_type = item.get("type", "Relation")
-    source_name = item.get("source_name") or item.get("source") or ""
-    target_name = item.get("target_name") or item.get("target") or ""
-    
-    attrs = dict(properties)
-    # 删除与页码相关的字段
-    attrs.pop("page", None)
-    attrs.pop("evidence_page", None)
-    
-    # 用于 JSONL 中的可读 relationship 字段，便于调试
-    arrow = "<->" if edge_type == "relates_to" else "->"
-    rel_str = ""
-    if source_name and target_name:
-        rel_str = f"{source_name} {arrow} {target_name}"
-    
-    name = f"{edge_type} | {rel_str}" if rel_str else edge_type
-    
-    fields = {
-        "type": edge_type,
-        "source_name": source_name,
-        "target_name": target_name,
-        "attributes": attrs,
-    }
-    return name, fields
+TASK_SPECS: Dict[str, Dict[str, str]] = {
+    "node_concept": {
+        "kind": "node",
+        "label": "Concept",
+        "prompt": "concept.txt",
+        "output": "node_concept.jsonl",
+        "name_prefix": "concept",
+    },
+    "node_skill": {
+        "kind": "node",
+        "label": "Skill",
+        "prompt": "skill.txt",
+        "output": "node_skill.jsonl",
+        "name_prefix": "skill",
+    },
+    "edge_is_a": {
+        "kind": "edge",
+        "type": "is_a",
+        "prompt": "is_a.txt",
+        "output": "edge_is_a.jsonl",
+    },
+    "edge_prerequisites_for": {
+        "kind": "edge",
+        "type": "prerequisites_for",
+        "prompt": "prerequisites_for.txt",
+        "output": "edge_prerequisites_for.jsonl",
+    },
+    "edge_relates_to": {
+        "kind": "edge",
+        "type": "relates_to",
+        "prompt": "relates_to.txt",
+        "output": "edge_relates_to.jsonl",
+    },
+    "edge_verifies": {
+        "kind": "edge",
+        "type": "verifies",
+        "prompt": "verifies.txt",
+        "output": "edge_verifies.jsonl",
+    },
+}
 
 
-def render_prompt(
-    template: str,
-    n: int,
-    fields: Dict[str, Any],
-) -> str:
-    """
-    将占位符字典填充进 prompt 模板。
-    
-    - {n}        用命令行参数替换
-    - 其它占位符形如 {{key}}，从 fields[key] 取值
-    - attributes 字段会以 JSON 格式嵌入，便于 LLM 精确读取
-    """
-    prompt = template.replace("{n}", str(n))
-    
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="生成 sft_qa 的 LLM 类中间 JSONL")
+    parser.add_argument("--config", type=str, default=None, help="配置文件路径，默认使用 config/default.yaml")
+    parser.add_argument("--subject-stage", required=True, help="学科学段 key，例如 math_primaryschool")
+    parser.add_argument("--input-json", type=str, default=None, help="覆盖默认输入 JSON 路径")
+    parser.add_argument("--workspace-dir", type=str, default=None, help="覆盖默认 workspace/sft_qa/<subject_stage>")
+    parser.add_argument(
+        "--tasks",
+        type=str,
+        default=",".join(TASK_SPECS.keys()),
+        help="逗号分隔的 task 列表",
+    )
+    parser.add_argument("--limit", type=int, default=None, help="每个 task 最多处理多少条")
+    parser.add_argument("--resume", action="store_true", help="若 parts 文件已存在，则跳过已处理 source_id")
+    parser.add_argument("--model", type=str, default=None, help="覆盖 config 中的模型")
+    parser.add_argument("--temperature", type=float, default=None, help="覆盖 config 中的 temperature")
+    parser.add_argument("--max-tokens", type=int, default=1200, help="单次生成 max_tokens")
+    parser.add_argument("-n", "--num-samples", type=int, default=1, help="每个输入样本生成多少条 QA")
+    parser.add_argument(
+        "--disable-json-schema",
+        action="store_true",
+        help="禁用 OpenAI Structured Outputs，改为只靠 prompt 约束输出格式",
+    )
+    return parser.parse_args()
+
+
+def load_prompt(prompt_name: str) -> str:
+    prompt_path = Path(__file__).resolve().parent / "prompts" / prompt_name
+    return prompt_path.read_text(encoding="utf-8")
+
+
+def render_prompt(template: str, fields: Dict[str, Any], num_samples: int) -> str:
+    prompt = template.replace("{n}", str(num_samples))
     for key, value in fields.items():
-        if key == "attributes":
-            value_str = json.dumps(value, ensure_ascii=False, indent=2)
-        else:
-            value_str = str(value)
         placeholder = "{{" + key + "}}"
-        prompt = prompt.replace(placeholder, value_str)
-    
+        if isinstance(value, (dict, list)):
+            value_text = json.dumps(value, ensure_ascii=False, indent=2)
+        else:
+            value_text = str(value)
+        prompt = prompt.replace(placeholder, value_text)
     return prompt
 
 
-def call_openai_chat_raw(
-    prompt: str,
-    model: str,
-    api_key: str,
-    base_url: str,
-) -> str:
-    """
-    调用 /v1/chat/completions 接口，返回模型的原始文本输出（不做 JSON 解析）。
-    """
-    base = base_url.rstrip("/")
-    if base.endswith("/v1"):
-        url = base + "/chat/completions"
-    else:
-        url = base + "/v1/chat/completions"
+def trim_node_properties(node: Dict[str, Any]) -> Dict[str, Any]:
+    props = dict(node.get("properties") or {})
+    label = str(node.get("label", "")).strip()
+    if label == "Concept":
+        for key in ("importance", "examples", "pages"):
+            props.pop(key, None)
+    elif label == "Skill":
+        for key in ("examples", "pages"):
+            props.pop(key, None)
+    return props
 
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
+
+def trim_edge_properties(edge: Dict[str, Any]) -> Dict[str, Any]:
+    props = dict(edge.get("properties") or {})
+    props.pop("page", None)
+    props.pop("evidence_page", None)
+    return props
+
+
+def get_node_name(node: Dict[str, Any]) -> str:
+    return str(node.get("name") or node.get("id") or "").strip()
+
+
+def get_edge_names(edge: Dict[str, Any], node_index: Dict[str, Dict[str, Any]]) -> tuple[str, str]:
+    source_name = str(edge.get("source_name") or "").strip()
+    target_name = str(edge.get("target_name") or "").strip()
+    if not source_name:
+        source_node = node_index.get(str(edge.get("source", "")).strip())
+        source_name = get_node_name(source_node or {})
+    if not target_name:
+        target_node = node_index.get(str(edge.get("target", "")).strip())
+        target_name = get_node_name(target_node or {})
+    return source_name, target_name
+
+
+def build_relationship(edge_type: str, source_name: str, target_name: str) -> str:
+    if edge_type == "relates_to":
+        return f"{edge_type} | {source_name} <-> {target_name}"
+    return f"{edge_type} | {source_name} -> {target_name}"
+
+
+def build_node_fields(node: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "label": str(node.get("label", "")).strip(),
+        "name": get_node_name(node),
+        "properties_json": trim_node_properties(node),
     }
-    payload = {
-        "model": model,
-        "messages": [
-            {
-                "role": "user",
-                "content": prompt,
-            }
-        ],
-        "temperature": 0.7,
+
+
+def build_edge_fields(edge: Dict[str, Any], node_index: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
+    source_name, target_name = get_edge_names(edge, node_index)
+    return {
+        "type": str(edge.get("type", "")).strip(),
+        "source_name": source_name,
+        "target_name": target_name,
+        "properties_json": trim_edge_properties(edge),
     }
 
-    try:
-        resp = requests.post(url, headers=headers, json=payload, timeout=600)
-    except Exception as e:
-        # 网络级错误（连不上 / 超时等），也返回错误文本，方便写入 raw 日志排查
-        err_text = f"[request_error] {type(e).__name__}: {e}"
-        print(f"[warn] OpenAI API 请求异常: {err_text}", file=sys.stderr)
-        return err_text
 
-    # 无论状态码如何，都尽量拿到文本内容返回，方便写入 raw 日志排查
-    if resp.status_code != 200:
-        # 打印一条简短错误信息到 stderr，但仍然返回 resp.text
-        print(
-            f"[warn] OpenAI API 调用失败: status={resp.status_code}, body={resp.text}",
-            file=sys.stderr,
-        )
-        return resp.text
+def parse_response_to_qas(text: str) -> List[Dict[str, str]]:
+    candidates: List[str] = [text.strip()]
 
-    # 200 时按正常 chat.completions 结构解析
-    data = resp.json()
-    try:
-        content = data["choices"][0]["message"]["content"]
-    except Exception as e:
-        raise RuntimeError(f"无法解析 API 返回结果: {e}; 原始数据: {data}") from e
+    fenced_matches = re.findall(r"```(?:json)?\s*(.*?)\s*```", text, flags=re.DOTALL)
+    candidates.extend(match.strip() for match in fenced_matches if match.strip())
 
-    return content
+    start = text.find("{")
+    end = text.rfind("}")
+    if start != -1 and end != -1 and end > start:
+        candidates.append(text[start : end + 1].strip())
 
+    start_arr = text.find("[")
+    end_arr = text.rfind("]")
+    if start_arr != -1 and end_arr != -1 and end_arr > start_arr:
+        candidates.append(text[start_arr : end_arr + 1].strip())
 
-def parse_model_output_text(
-    content: str,
-) -> Union[Dict[str, Any], List[Dict[str, Any]]]:
-    """
-    将模型返回的原始文本解析为 JSON（对象或数组）。
-
-    策略：
-      1. 先整体 json.loads；
-      2. 失败则在文本中截取首个 '{' 或 '[' 到最后一个 '}' 或 ']' 之间的片段再解析。
-    """
-    text = content.strip()
-    try:
-        return json.loads(text)
-    except Exception:
-        # 在返回内容中寻找首个 JSON 数组或对象
-        start_obj = text.find("{")
-        start_arr = text.find("[")
-        candidates = [p for p in (start_obj, start_arr) if p != -1]
-        if not candidates:
-            raise RuntimeError(
-                "模型返回的内容不是合法 JSON，且找不到 '{' 或 '[' 起始: "
-                f"{content}"
-            )
-        start = min(candidates)
-
-        # 粗暴从起始位置截到最后一个 '}' 或 ']'
-        end_obj = text.rfind("}")
-        end_arr = text.rfind("]")
-        end_candidates = [p for p in (end_obj, end_arr) if p != -1]
-        if not end_candidates:
-            raise RuntimeError(
-                "模型返回的内容不是合法 JSON，且找不到 '}' 或 ']' 结束: "
-                f"{content}"
-            )
-        end = max(end_candidates) + 1
-
-        snippet = text[start:end]
+    for candidate in candidates:
+        if not candidate:
+            continue
         try:
-            return json.loads(snippet)
-        except Exception as e:
-            raise RuntimeError(
-                f"模型返回的内容不是合法 JSON，截取片段解析仍失败: {e}; snippet={snippet}"
-            ) from e
-
-
-def extract_qa_list(
-    model_output: Union[Dict[str, Any], List[Any]]
-) -> List[Dict[str, str]]:
-    """
-    将模型返回结构统一转成 [{'question': ..., 'answer': ...}, ...]。
-    """
-    if isinstance(model_output, dict):
-        # 允许模型直接返回单个对象或包在某个 key 下
-        if "question" in model_output and "answer" in model_output:
+            obj = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, dict) and "question" in obj and "answer" in obj:
             return [
                 {
-                    "question": str(model_output["question"]),
-                    "answer": str(model_output["answer"]),
+                    "question": str(obj["question"]).strip(),
+                    "answer": str(obj["answer"]).strip(),
                 }
             ]
-        # 如果是 {"items": [...]} 之类的结构
-        for v in model_output.values():
-            if isinstance(v, list):
-                model_output = v
-                break
+        if isinstance(obj, dict):
+            for key in ("items", "qas", "qa_items"):
+                value = obj.get(key)
+                if not isinstance(value, list):
+                    continue
+                qas: List[Dict[str, str]] = []
+                for item in value:
+                    if not isinstance(item, dict):
+                        continue
+                    if "question" not in item or "answer" not in item:
+                        continue
+                    qas.append(
+                        {
+                            "question": str(item["question"]).strip(),
+                            "answer": str(item["answer"]).strip(),
+                        }
+                    )
+                if qas:
+                    return qas
+        if isinstance(obj, list) and obj and isinstance(obj[0], dict):
+            qas: List[Dict[str, str]] = []
+            for item in obj:
+                if not isinstance(item, dict):
+                    continue
+                if "question" not in item or "answer" not in item:
+                    continue
+                qas.append(
+                    {
+                        "question": str(item["question"]).strip(),
+                        "answer": str(item["answer"]).strip(),
+                    }
+                )
+            if qas:
+                return qas
+    raise ValueError("模型输出无法解析为 question/answer JSON")
 
-    if isinstance(model_output, list):
-        qa_list: List[Dict[str, str]] = []
-        for item in model_output:
-            if not isinstance(item, dict):
-                continue
-            q = item.get("question")
-            a = item.get("answer")
-            if q is None or a is None:
-                continue
-            qa_list.append({"question": str(q), "answer": str(a)})
-        return qa_list
 
-    raise ValueError(f"无法从模型输出中提取 QA 列表: {model_output}")
+def build_response_format(num_samples: int) -> Dict[str, Any]:
+    return {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "qa_items",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "minItems": num_samples,
+                        "maxItems": num_samples,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "properties": {
+                                "question": {"type": "string"},
+                                "answer": {"type": "string"},
+                            },
+                            "required": ["question", "answer"],
+                        },
+                    },
+                },
+                "required": ["items"],
+            },
+        },
+    }
+
+
+def load_processed_source_ids(path: Path) -> set[str]:
+    processed: set[str] = set()
+    if not path.exists():
+        return processed
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            source_id = record.get("source_id")
+            if isinstance(source_id, str) and source_id:
+                processed.add(source_id)
+    return processed
+
+
+def select_items(task_name: str, data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    spec = TASK_SPECS[task_name]
+    if spec["kind"] == "node":
+        label = spec["label"]
+        return [node for node in data.get("nodes", []) if node.get("label") == label]
+    edge_type = spec["type"]
+    return [edge for edge in data.get("edges", []) if edge.get("type") == edge_type]
+
+
+def build_source_id(task_name: str, item: Dict[str, Any]) -> str:
+    spec = TASK_SPECS[task_name]
+    if spec["kind"] == "node":
+        return str(item.get("id") or "").strip()
+    return "::".join(
+        [
+            str(item.get("type") or "").strip(),
+            str(item.get("source") or "").strip(),
+            str(item.get("target") or "").strip(),
+        ]
+    )
+
+
+def build_record(
+    task_name: str,
+    item: Dict[str, Any],
+    qa: Dict[str, str],
+    node_index: Dict[str, Dict[str, Any]],
+) -> Dict[str, Any]:
+    spec = TASK_SPECS[task_name]
+    record: Dict[str, Any] = {
+        "task": task_name,
+        "source_id": build_source_id(task_name, item),
+        "question": qa["question"],
+        "answer": qa["answer"],
+    }
+    if spec["kind"] == "node":
+        raw_name = get_node_name(item)
+        record["name"] = f"{spec['name_prefix']} | {raw_name}"
+    else:
+        source_name, target_name = get_edge_names(item, node_index)
+        record["relationship"] = build_relationship(spec["type"], source_name, target_name)
+    return record
+
+
+def append_raw_output(raw_path: Path, source_id: str, content: str) -> None:
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    with raw_path.open("a", encoding="utf-8") as f:
+        f.write(f"===== {source_id} =====\n")
+        f.write(content.rstrip())
+        f.write("\n\n")
+
+
+def write_record(out_f: Any, record: Dict[str, Any]) -> None:
+    out_f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    out_f.flush()
+
+
+def iter_task_names(raw_tasks: str) -> Iterable[str]:
+    for task_name in (part.strip() for part in raw_tasks.split(",")):
+        if not task_name:
+            continue
+        if task_name not in TASK_SPECS:
+            raise ValueError(f"未知 task: {task_name}")
+        yield task_name
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="根据图谱 JSON 与 prompt 模板生成 SFT QA 数据（JSONL）"
-    )
-    parser.add_argument(
-        "--input-json",
-        required=True,
-        help="输入 JSON 文件路径，例如 concepts.json / skills.json / exercises.json / relates_to.json 等",
-    )
-    parser.add_argument(
-        "--prompt-file",
-        required=True,
-        help="prompt 模板文件路径，例如 src/sft_qa/prompt_cpt.txt",
-    )
-    parser.add_argument(
-        "--output-jsonl",
-        required=True,
-        help=(
-            "输出 JSONL 文件路径："
-            "node 模式概念/技能为 {id,name,question,answer}；"
-            "node 模式习题为 {id,stem,question,answer}；"
-            "edge 模式为 {id,relationship,question,answer}"
-        ),
-    )
-    parser.add_argument(
-        "-n",
-        type=int,
-        default=3,
-        help="每个输入条目希望模型生成的问题数量（传给 prompt 中的 {n}）",
-    )
-    parser.add_argument(
-        "--model",
-        default="gpt-4.1-mini",
-        help="要调用的 GPT 模型名称（默认: gpt-4.1-mini，可自行修改）",
-    )
-    parser.add_argument(
-        "--mode",
-        choices=["node", "edge"],
-        default="node",
-        help="生成模式：node 表示概念/技能/习题等节点类，edge 表示关系类（is_a、prerequisites_for 等）",
-    )
-    parser.add_argument(
-        "--resume",
-        action="store_true",
-        help="开启断点续跑：如果输出 JSONL 已存在，则跳过其中已经出现过的 id，并在文件尾部追加新样本",
-    )
-    parser.add_argument(
-        "--max-items",
-        type=int,
-        default=None,
-        help="仅处理前 max-items 条（调试用）",
-    )
+    args = parse_args()
+    load_openai_env(args.config)
+    config = load_config(args.config)
+    input_path = resolve_input_path(config, args.subject_stage, args.input_json)
+    workspace_root = resolve_workspace_root(config, args.subject_stage, args.workspace_dir)
+    parts_dir = workspace_root / "parts"
+    raw_dir = workspace_root / "raw"
+    parts_dir.mkdir(parents=True, exist_ok=True)
+    raw_dir.mkdir(parents=True, exist_ok=True)
 
-    args = parser.parse_args()
+    data = read_json(input_path)
+    if not isinstance(data, dict):
+        raise ValueError(f"输入 JSON 顶层不是对象: {input_path}")
 
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        print("错误: 请先在环境变量中设置 OPENAI_API_KEY", file=sys.stderr)
-        sys.exit(1)
+    node_index = {
+        str(node.get("id") or "").strip(): node
+        for node in data.get("nodes", [])
+        if isinstance(node, dict) and str(node.get("id") or "").strip()
+    }
 
-    base_url = os.getenv("OPENAI_BASE_URL", "https://api.openai.com")
+    llm_cfg = dict(config.llm)
+    provider = str(llm_cfg.get("provider", "openai"))
+    model = args.model or str(llm_cfg.get("model", "gpt-4o")) # gpt-4.1-mini
+    api_key = str(llm_cfg.get("api_key", "") or "").strip()
+    base_url = str(llm_cfg.get("base_url", "") or "").strip() or None
+    temperature = args.temperature if args.temperature is not None else float(llm_cfg.get("temperature", 0.0))
+    client = create_llm_client(provider=provider, model=model, api_key=api_key, base_url=base_url)
 
-    input_path = Path(args.input_json)
-    prompt_path = Path(args.prompt_file)
-    output_path = Path(args.output_jsonl)
+    for task_name in iter_task_names(args.tasks):
+        spec = TASK_SPECS[task_name]
+        prompt_template = load_prompt(spec["prompt"])
+        output_path = parts_dir / spec["output"]
+        raw_path = raw_dir / output_path.name.replace(".jsonl", "_raw.txt")
+        processed = load_processed_source_ids(output_path) if args.resume else set()
+        mode = "a" if args.resume and output_path.exists() else "w"
+        if mode == "w":
+            raw_path.parent.mkdir(parents=True, exist_ok=True)
+            raw_path.write_text("", encoding="utf-8")
+        items = select_items(task_name, data)
+        if args.limit is not None:
+            items = items[: args.limit]
 
-    items = load_items(input_path)
-    if args.max_items is not None:
-        items = items[: args.max_items]
-    
-    template = load_prompt_template(prompt_path)
-    
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+        print(f"[task] {task_name}: 共 {len(items)} 条", file=sys.stderr)
 
-    # 断点续跑：收集已经写入过的 id，后续跳过
-    processed_ids = set()
-    if args.resume and output_path.exists():
-        try:
-            with output_path.open("r", encoding="utf-8") as rf:
-                for line in rf:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    try:
-                        rec = json.loads(line)
-                    except Exception:
-                        continue
-                    rec_id = rec.get("id")
-                    if rec_id:
-                        processed_ids.add(rec_id)
-        except Exception as e:
-            print(f"[warn] 读取已有输出文件失败，将不进行断点续跑: {e}", file=sys.stderr)
-            processed_ids = set()
-            args.resume = False
+        with output_path.open(mode, encoding="utf-8") as out_f:
+            for index, item in enumerate(items, start=1):
+                source_id = build_source_id(task_name, item)
+                if args.resume and source_id in processed:
+                    continue
 
-    # 写出模式：续跑时追加，否则重写
-    out_mode = "a" if args.resume and output_path.exists() else "w"
-    out_f = output_path.open(out_mode, encoding="utf-8")
-    
-    total_qa = 0
-    raw_log_path = output_path.with_suffix(output_path.suffix + ".raw.txt")
-    
-    try:
-        for idx, item in enumerate(items, start=1):
-            item_id = item.get("id", f"item_{idx}")
-    
-            if item_id in processed_ids:
-                print(f"[{idx}/{len(items)}] 跳过已处理 id={item_id}")
-                continue
-    
-            # 根据模式构造 prompt 占位符与可读 name
-            name, fields = build_prompt_fields(item, args.mode)
-            prompt = render_prompt(template, args.n, fields)
-    
-            print(f"[{idx}/{len(items)}] 调用模型生成 QA: id={item_id}, name={name}")
-            try:
-                content = call_openai_chat_raw(
-                    prompt=prompt,
-                    model=args.model,
-                    api_key=api_key,
-                    base_url=base_url,
-                )
-            except Exception as e:
-                # API 级别错误，直接跳过，并在 stderr 打印
-                print(f"  [错误] 调用模型接口失败: {e}", file=sys.stderr)
-                continue
-
-            # 先把原始输出保存下来，方便之后排查
-            try:
-                with raw_log_path.open("a", encoding="utf-8") as rf:
-                    rf.write(f"===== id={item_id} name={name} =====\n")
-                    rf.write(content)
-                    rf.write("\n\n")
-            except Exception as e:
-                print(f"  [警告] 写入原始输出日志失败: {e}", file=sys.stderr)
-
-            # 然后再尝试解析为结构化 JSON
-            try:
-                model_output = parse_model_output_text(content)
-                qa_list = extract_qa_list(model_output)
-            except Exception as e:
-                print(
-                    f"  [警告] 解析模型输出失败，将跳过本条目（原始输出已写入 {raw_log_path.name}）: {e}",
-                    file=sys.stderr,
-                )
-                continue
-
-            for qa in qa_list:
-                # 基础字段：id + QA
-                # 注意：这里显式控制键的插入顺序，以保证 JSONL 中字段顺序稳定：
-                # - 节点（非 Exercise）：id, name, question, answer
-                # - 节点（Exercise）：   id, stem, question, answer
-                # - 关系 edge：         id, relationship, question, answer
-                record: Dict[str, Any] = {"id": item_id}
-
-                if args.mode == "edge":
-                    # 关系模式：先写 relationship，再写 QA
-                    record["relationship"] = name
-                    record["question"] = qa["question"]
-                    record["answer"] = qa["answer"]
-                else:
-                    label = item.get("label")
-                    if label == "Exercise":
-                        # 习题：按要求输出 {id, stem, question, answer}
-                        stem = (item.get("properties") or {}).get("stem", "")
-                        record["stem"] = stem
-                        record["question"] = qa["question"]
-                        record["answer"] = qa["answer"]
+                try:
+                    if spec["kind"] == "node":
+                        fields = build_node_fields(item)
                     else:
-                        # 概念 / 技能等：使用 name 字段
-                        record["name"] = name
-                        record["question"] = qa["question"]
-                        record["answer"] = qa["answer"]
-
-                out_f.write(json.dumps(record, ensure_ascii=False) + "\n")
-                total_qa += 1
-
-    finally:
-        out_f.close()
-
-    print(f"\n完成！共写入 {total_qa} 条 QA 到 {output_path}")
+                        fields = build_edge_fields(item, node_index)
+                    prompt = render_prompt(prompt_template, fields, args.num_samples)
+                    extra_kwargs: Dict[str, Any] = {}
+                    if not args.disable_json_schema:
+                        extra_kwargs["response_format"] = build_response_format(args.num_samples)
+                    response = client.generate(
+                        prompt,
+                        temperature=temperature,
+                        max_tokens=args.max_tokens,
+                        **extra_kwargs,
+                    )
+                    append_raw_output(raw_path, source_id, response)
+                    qas = parse_response_to_qas(response)
+                    for qa in qas:
+                        record = build_record(task_name, item, qa, node_index)
+                        write_record(out_f, record)
+                    print(
+                        f"  [{index}/{len(items)}] 完成 {source_id}，写入 {len(qas)} 条",
+                        file=sys.stderr,
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    append_raw_output(raw_path, source_id, f"[error] {type(exc).__name__}: {exc}")
+                    print(f"  [{index}/{len(items)}] 失败 {source_id}: {exc}", file=sys.stderr)
 
 
 if __name__ == "__main__":

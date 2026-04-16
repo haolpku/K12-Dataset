@@ -1,0 +1,17 @@
+name: gpt5_openai
+description: GPT-5.2 通过 OpenAI 兼容 API 调用配置（可被脚本中的环境变量覆盖）
+
+api:
+  base_url: "${OPENAI_BASE_URL}"
+  api_key_env: "OPENAI_API_KEY"
+  model: "gpt-5.2"
+
+request:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 32
+  timeout: 120
+  reasoning_effort: "none"
+  extra_body:
+    chat_template_kwargs:
+      enable_thinking: false

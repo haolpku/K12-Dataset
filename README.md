@@ -1,116 +1,113 @@
-# K12-GraphBench Pipeline
+# K12-Dataset（K12-GraphBench Pipeline）
 
-基于 K12 教材构建知识图谱（KG），并在此基础上生成 Benchmark 评测题和 SFT 训练数据的完整流水线。
+面向 K12 教材的 **知识图谱构建** 与 **下游数据资产**（Benchmark、SFT QA）生产流水线。
 
-## Pipeline 总览
+---
 
+## Modules
+
+仓库按职责分为四大模块，可单独使用，推荐顺序是 **kg → benchmark / sft_qa → eval**。
+
+1. **教材图谱（`src/kg/`）**  
+   从 `books.yaml` 注册的书目出发：PDF 或 Markdown → 章节切分 → 章节级 KG 抽取 → 多层级合并（book / subject_stage / subject / global）→ 课后题抽取与补全 → 合并图上的质量检测。
+
+2. **Benchmark 生成（`src/benchmark/`）**  
+   基于图谱节点与关系生成结构化评测任务。
+
+3. **SFT 数据生成（`src/sft_qa/`）**  
+   基于图谱节点与关系生成 SFT 问答对，导出训练用 JSONL。
+
+4. **多选题评测（`eval/`）**  
+   对已产出的 benchmark JSONL 调用 OpenAI 兼容 API 或本地 vLLM，写入逐条预测与 `summary.json`；模型与端点通过 `eval/configs/models/*.yaml` 与本地 `.env` 配置。
+
+共享逻辑在 **`src/utils/`**（配置解析、LLM 客户端、IO 等）。格式样例见 **`demo/`**（含图谱、benchmark、SFT 的裁剪示例）。
+
+---
+
+## Quick Start
+
+### 获取代码
+
+```bash
+git clone https://github.com/haolpku/K12-Dataset.git
+cd K12-Dataset
 ```
-教材 Markdown
-    │
-    ▼
-┌─────────────┐
-│ segmentation│  ── TOC 解析 → 章节切分
-└─────┬───────┘
-      ▼
-┌─────────────┐
-│ build_graph │  ── LLM 提取知识图谱
-└─────┬───────┘
-      ▼
-┌─────────────┐
-│ merge_graph │  ── 书级合并 → 学段级 → 学科级 → 按类型拆分
-└─────┬───────┘
-      ▼
-┌─────────────┐
-│ check_graph │  ── 环检测
-└─────┬───────┘
-      ▼
-┌──────────┐     ┌───────────┐     ┌──────────┐
-│ exercise │     │ benchmark │     │  sft_qa  │
-│ 习题补全  │     │ 评测题生成 │     │ SFT 数据 │
-└──────────┘     └─────┬─────┘     └──────────┘
-                       ▼
-                ┌────────────┐
-                │ test_bench │  ── 模型评测
-                └────────────┘
+
+### 安装依赖
+
+请从仓库根目录安装依赖文件：
+
+```bash
+pip install -r requirements.txt
 ```
 
-## 各模块说明
+图谱主线若使用 **PDF → Markdown**，需额外安装并可在 shell 中调用 **MinerU**（默认命令名见 `config/default.yaml` 中 `mineru.command`）。
 
-### 1. segmentation — 教材切分
+### 配置密钥与端点
 
-分两步将教材 Markdown 切分为独立章节文件。
+主线 kg、sft_qa 等读取 `config/` 下的环境变量：
 
-| 文件 | 功能 |
-|------|------|
-| `segment_textbooks.py` | Step 1：通过 TOC 识别课本章节结构，生成 `sections_index.json` 和 `metadata.md` |
-| `split_by_sections_index.py` | Step 2：根据 `sections_index.json` 将整本书 MD 切分为分章节 MD，清理图片链接等 |
+```bash
+cp config/.env.example config/.env
+# 编辑 config/.env：OPENAI_API_KEY、OPENAI_BASE_URL 等
+```
 
-### 2. build_graph — 知识图谱提取
+### 运行图谱主线
 
-调用 LLM 从章节文本中提取结构化知识图谱（节点 + 边）。
+1. 在仓库根目录维护 **`books.yaml`**，为至少一条书目配置书目所在路径 `source_pdf` 或 `source_md`。  
+2. 在仓库根目录执行（将 `<YourBookPrefix>` 换成 `books.yaml` 里真实的 `book_prefix`）：
 
-| 文件 | 功能 |
-|------|------|
-| `extract_kg_from_textbook.py` | 主 pipeline：遍历章节、调用 LLM、解析响应、生成唯一节点 ID |
-| `llm_client.py` | LLM 客户端抽象基类及 OpenAI 实现，处理 API 调用和 JSON 响应解析 |
-| `prompt_builder.py` | 读取 prompt 模板，填充占位符（如 `{{Section_Markdown_Content}}`） |
-| `run.sh` | 批量执行脚本，支持学科/年级/章节等参数，自动跳过已完成文件 |
-| `prompt.txt` | 理科的 KG 提取 prompt 模板 |
+```bash
+python src/kg/run_pipeline.py \
+  --config config/default.yaml \
+  --filter-prefix <YourBookPrefix>
+```
 
-### 3. merge_graph — 图谱合并
+默认 **`data/`** 为图谱与课后题等最终输出，**`workspace/`** 为中间产物，路径由 `config/default.yaml` 的 `paths` 统一定义。
 
-将各章节/书级 KG 逐层合并为学段级、学科级图谱，并按类型拆分输出。
+```bash
+python src/kg/run_pipeline.py --help
+```
 
-| 文件 | 功能 |
-|------|------|
-| `merge_book_kg.py` | 书级合并：全局 ID 重编号、概念/技能去重、边去重与冲突记录 |
-| `build_merged_graph_hierarchy.py` | 层级合并：从书级 → 学科+学段级 → 学科级，同名节点去重、边重映射 |
-| `build_by_type_from_subject_graph.py` | 将学科级图谱按节点/边类型拆分为独立 JSON，并合并 `tests_*` 边 |
+可查看 `--limit`、`--skip-check` 等选项。
 
-### 4. check_graph — 图谱校验
+### 构建 Benchmark 与 SFT QA（在已有 `data/` 产物之后）
 
-| 文件 | 功能 |
-|------|------|
-| `check_cycles.py` | DFS 检测 `is_a` / `prerequisites_for` 边中的有向环 |
+```bash
+python src/benchmark/run_pipeline.py --help
+python src/sft_qa/run_pipeline.py --help
+```
 
-### 5. exercise — 习题补全
+### 在 Benchmark 上进行评测（`eval/`）
 
-调用 LLM 补全习题的答案、难度、题型、解析等字段。
+```bash
+cp eval/configs/.env.example eval/configs/.env
+# 按需填写 OPENAI_BASE_URL、本地 vLLM 地址等
 
-| 文件 | 功能 |
-|------|------|
-| `generate_exercise_json.py` | 根据习题文本和章节 KG，用 LLM 补全习题答案 |
-| `run.sh` | 加载环境变量并调用 `generate_exercise_json.py` |
+chmod +x eval/run.sh   # 若尚未可执行
+./eval/run.sh <模型配置的 stem>
+```
 
-### 6. benchmark — Benchmark 评测题生成
+`<stem>` 对应 **`eval/configs/models/<stem>.yaml`**。需先启动本地 vLLM 时，可参考 **`eval/vllm_scripts/`** 中的示例脚本。
 
-基于知识图谱结构生成多种类型的评测题。
+---
 
-| 文件 | 功能 |
-|------|------|
-| `generate_benchmark.py` | 从 `merged_data` 生成多任务 benchmark JSONL |
-| `score_candidate_similarity.py` | 用文本相似度为候选干扰项打分 |
-| `filter_candidates.py` | 过滤干扰项候选 |
-| `build_qa_tmp_for_eval.py` | 构造四选一评测格式的 QA JSONL（临时测试版） |
+## 目录结构
 
-### 7. test_bench — 模型评测
+```text
+.
+├── config/               # 管线默认配置（paths、LLM、merge）
+├── demo/                 # 格式样例（说明见 demo/README.md）
+├── eval/                 # 多选题评测脚本与模型 YAML
+├── src/kg|benchmark|sft_qa|utils/
+├── workspace/            # 默认中间产物
+├── data/                 # 默认最终数据输出
+├── books.yaml            # 书目注册表
+└── requirements.txt
+```
 
-测试模型在bench上的表现（目前只测了qwen3-32b）。
+---
 
-| 文件 | 功能 |
-|------|------|
-| `eval_multiselect.py` | 多选题评测 |
-| `configs/task_k12_multiselect.yaml` | 评测任务配置（选项标签、prompt 模板等） |
-| `configs/models/*.yaml` | 各模型的 API 端点和超参配置 |
-| `vllm_scripts/*.sh` | vLLM 服务启动脚本 |
+## 数据分发说明
 
-### 8. sft_qa — SFT 训练数据生成（还是之前测小学数学的版本）
-
-调用 LLM 基于图谱节点和关系生成问答对，用于模型微调。
-
-| 文件 | 功能 |
-|------|------|
-| `generate_qa.py` | 主生成脚本：读取节点/关系 JSON + prompt 模板，调用 API 生成 QA JSONL |
-| `tests_to_qa_jsonl.py` | 将 tests 关系转换为 QA JSONL 格式 |
-| `prompt_*.txt` | 各类型（概念/技能/习题/关系）的 QA 生成 prompt 模板 |
-
+完整数据集与版本快照见 Hugging Face：[`tunaaa126/K12-Dataset`](https://huggingface.co/datasets/tunaaa126/K12-Dataset)
