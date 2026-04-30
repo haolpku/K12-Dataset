@@ -1,61 +1,63 @@
-# K12-Dataset（K12-GraphBench Pipeline）
+# K12-Dataset (K12-GraphBench Pipeline)
 
-面向 K12 教材的 **知识图谱构建** 与 **下游数据资产**（Benchmark、SFT QA）生产流水线。
+A pipeline for **knowledge-graph construction** over K-12 textbooks and **downstream data-asset generation** (benchmark items and SFT QA pairs).
+
+> 中文版说明见 [`README_zh.md`](README_zh.md).
 
 ---
 
 ## Modules
 
-仓库按职责分为四大模块，可单独使用，推荐顺序是 **kg → benchmark / sft_qa → eval**。
+The repository is split into four modules by responsibility. They can be used independently; the recommended order is **kg → benchmark / sft_qa → eval**.
 
-1. **教材图谱（`src/kg/`）**  
-   从 `books.yaml` 注册的书目出发：PDF 或 Markdown → 章节切分 → 章节级 KG 抽取 → 多层级合并（book / subject_stage / subject / global）→ 课后题抽取与补全 → 合并图上的质量检测。
+1. **Textbook Knowledge Graph (`src/kg/`)**
+   Starting from the books registered in `books.yaml`: PDF or Markdown → section splitting → per-section KG extraction → hierarchical merging (book / subject_stage / subject / global) → exercise extraction and completion → quality checks on the merged graph.
 
-2. **Benchmark 生成（`src/benchmark/`）**  
-   基于图谱节点与关系生成结构化评测任务。
+2. **Benchmark Generation (`src/benchmark/`)**
+   Produces structured evaluation tasks from graph nodes and relations.
 
-3. **SFT 数据生成（`src/sft_qa/`）**  
-   基于图谱节点与关系生成 SFT 问答对，导出训练用 JSONL。
+3. **SFT Data Generation (`src/sft_qa/`)**
+   Produces SFT QA pairs from graph nodes and relations and exports training-ready JSONL.
 
-4. **多选题评测（`eval/`）**  
-   对已产出的 benchmark JSONL 调用 OpenAI 兼容 API 或本地 vLLM，写入逐条预测与 `summary.json`；模型与端点通过 `eval/configs/models/*.yaml` 与本地 `.env` 配置。
+4. **Multiple-Choice Evaluation (`eval/`)**
+   Runs the generated benchmark JSONL against an OpenAI-compatible API or a local vLLM endpoint, writing per-item predictions and a `summary.json`. Models and endpoints are configured via `eval/configs/models/*.yaml` together with a local `.env` file.
 
-共享逻辑在 **`src/utils/`**（配置解析、LLM 客户端、IO 等）。格式样例见 **`demo/`**（含图谱、benchmark、SFT 的裁剪示例）。
+Shared logic lives in **`src/utils/`** (configuration parsing, LLM client, I/O, etc.). Format examples are provided under **`demo/`** (trimmed samples of the graph, benchmark, and SFT data).
 
 ---
 
 ## Quick Start
 
-### 获取代码
+### Get the code
 
 ```bash
 git clone <repository-url>
 cd K12-Dataset
 ```
 
-### 安装依赖
+### Install dependencies
 
-请从仓库根目录安装依赖文件：
+Install from the repository root:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-图谱主线若使用 **PDF → Markdown**，需额外安装并可在 shell 中调用 **MinerU**（默认命令名见 `config/default.yaml` 中 `mineru.command`）。
+If the graph pipeline is run on **PDF → Markdown** inputs, **MinerU** must additionally be installed and callable from the shell (the default command name is defined under `mineru.command` in `config/default.yaml`).
 
-### 配置密钥与端点
+### Configure API keys and endpoints
 
-主线 kg、sft_qa 等读取 `config/` 下的环境变量：
+The `kg` and `sft_qa` pipelines read environment variables from `config/`:
 
 ```bash
 cp config/.env.example config/.env
-# 编辑 config/.env：OPENAI_API_KEY、OPENAI_BASE_URL 等
+# Edit config/.env: set OPENAI_API_KEY, OPENAI_BASE_URL, etc.
 ```
 
-### 运行图谱主线
+### Run the graph pipeline
 
-1. 在仓库根目录维护 **`books.yaml`**，为至少一条书目配置书目所在路径 `source_pdf` 或 `source_md`。  
-2. 在仓库根目录执行（将 `<YourBookPrefix>` 换成 `books.yaml` 里真实的 `book_prefix`）：
+1. In the repository root, maintain **`books.yaml`** and set `source_pdf` or `source_md` for at least one book entry.
+2. From the repository root, run (replace `<YourBookPrefix>` with a real `book_prefix` from `books.yaml`):
 
 ```bash
 python src/kg/run_pipeline.py \
@@ -63,51 +65,51 @@ python src/kg/run_pipeline.py \
   --filter-prefix <YourBookPrefix>
 ```
 
-默认 **`data/`** 为图谱与课后题等最终输出，**`workspace/`** 为中间产物，路径由 `config/default.yaml` 的 `paths` 统一定义。
+By default, **`data/`** stores final outputs (graph, exercises, etc.) and **`workspace/`** stores intermediate artifacts. The paths are centrally defined in `config/default.yaml` under `paths`.
 
 ```bash
 python src/kg/run_pipeline.py --help
 ```
 
-可查看 `--limit`、`--skip-check` 等选项。
+shows additional options such as `--limit` and `--skip-check`.
 
-### 构建 Benchmark 与 SFT QA（在已有 `data/` 产物之后）
+### Build Benchmark and SFT QA (after `data/` artifacts are available)
 
 ```bash
 python src/benchmark/run_pipeline.py --help
 python src/sft_qa/run_pipeline.py --help
 ```
 
-### 在 Benchmark 上进行评测（`eval/`）
+### Evaluate on the benchmark (`eval/`)
 
 ```bash
 cp eval/configs/.env.example eval/configs/.env
-# 按需填写 OPENAI_BASE_URL、本地 vLLM 地址等
+# Fill in OPENAI_BASE_URL, local vLLM address, etc., as needed.
 
-chmod +x eval/run.sh   # 若尚未可执行
-./eval/run.sh <模型配置的 stem>
+chmod +x eval/run.sh   # if not already executable
+./eval/run.sh <model-config-stem>
 ```
 
-`<stem>` 对应 **`eval/configs/models/<stem>.yaml`**。需先启动本地 vLLM 时，可参考 **`eval/vllm_scripts/`** 中的示例脚本。
+`<stem>` refers to **`eval/configs/models/<stem>.yaml`**. Example scripts for launching a local vLLM server can be found under **`eval/vllm_scripts/`**.
 
 ---
 
-## 目录结构
+## Repository layout
 
 ```text
 .
-├── config/               # 管线默认配置（paths、LLM、merge）
-├── demo/                 # 格式样例（说明见 demo/README.md）
-├── eval/                 # 多选题评测脚本与模型 YAML
+├── config/               # Default pipeline configuration (paths, LLM, merge)
+├── demo/                 # Format samples (see demo/README.md)
+├── eval/                 # Multiple-choice evaluation scripts and model YAMLs
 ├── src/kg|benchmark|sft_qa|utils/
-├── workspace/            # 默认中间产物
-├── data/                 # 默认最终数据输出
-├── books.yaml            # 书目注册表
+├── workspace/            # Default intermediate artifacts
+├── data/                 # Default final data outputs
+├── books.yaml            # Book registry
 └── requirements.txt
 ```
 
 ---
 
-## 数据分发说明
+## Data distribution
 
-完整数据集与版本快照将通过外部数据托管平台分发（链接随正式发布更新）。
+The complete dataset and versioned snapshots will be distributed through an external data-hosting platform; the link will be updated at the time of official release.
