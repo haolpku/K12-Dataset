@@ -29,7 +29,7 @@
 ### 获取代码
 
 ```bash
-git clone https://github.com/haolpku/K12-Dataset.git
+git clone <repository-url>
 cd K12-Dataset
 ```
 
@@ -110,4 +110,4 @@ chmod +x eval/run.sh   # 若尚未可执行
 
 ## 数据分发说明
 
-完整数据集与版本快照见 Hugging Face：[`tunaaa126/K12-Dataset`](https://huggingface.co/datasets/tunaaa126/K12-Dataset)
+完整数据集与版本快照将通过外部数据托管平台分发（链接随正式发布更新）。
