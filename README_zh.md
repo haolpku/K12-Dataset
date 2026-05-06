@@ -19,7 +19,7 @@
     <img alt="论文" src="https://img.shields.io/badge/%E8%AE%BA%E6%96%87-NeurIPS%202026%20D%26B-1f6feb?style=for-the-badge&logo=readthedocs&logoColor=white"/>
   </a>
   <a href="LICENSE">
-    <img alt="协议" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-CC%20BY%204.0-2ea043?style=for-the-badge&logo=creativecommons&logoColor=white"/>
+    <img alt="协议" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-CC%20BY--NC--SA%204.0-2ea043?style=for-the-badge&logo=creativecommons&logoColor=white"/>
   </a>
 </p>
 
@@ -242,7 +242,7 @@ GitHub Issue 48 小时内响应。
 
 ## 📄 许可证
 
-- **数据集**（图谱、Bench、Train）：[CC BY 4.0](LICENSE)
+- **数据集**（图谱、Bench、Train）：[CC BY-NC-SA 4.0](LICENSE)
 - **代码**（本仓库）：MIT
 
 ---

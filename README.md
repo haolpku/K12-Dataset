@@ -19,7 +19,7 @@
     <img alt="Paper" src="https://img.shields.io/badge/Paper-NeurIPS%202026%20D%26B-1f6feb?style=for-the-badge&logo=readthedocs&logoColor=white"/>
   </a>
   <a href="LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/License-CC%20BY%204.0-2ea043?style=for-the-badge&logo=creativecommons&logoColor=white"/>
+    <img alt="License" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-2ea043?style=for-the-badge&logo=creativecommons&logoColor=white"/>
   </a>
 </p>
 
@@ -247,7 +247,7 @@ If you find K12-KGraph useful in your research, please cite:
 
 ## 📄 License
 
-- **Dataset** (graph, benchmark, training data): [CC BY 4.0](LICENSE)
+- **Dataset** (graph, benchmark, training data): [CC BY-NC-SA 4.0](LICENSE)
 - **Code** (this repository): MIT
 
 ---

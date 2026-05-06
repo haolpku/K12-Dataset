@@ -1,37 +1,59 @@
-Attribution 4.0 International (CC BY 4.0)
+Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
 Copyright (c) 2026 K12-KGraph Authors
 
 =======================================================================
 
-Creative Commons Attribution 4.0 International License
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 
 You are free to:
 
   Share — copy and redistribute the material in any medium or format
   Adapt — remix, transform, and build upon the material
-          for any purpose, even commercially.
 
 Under the following terms:
 
-  Attribution — You must give appropriate credit, provide a link to the
-  license, and indicate if changes were made. You may do so in any
-  reasonable manner, but not in any way that suggests the licensor
-  endorses you or your use.
+  Attribution  — You must give appropriate credit, provide a link to
+                 the license, and indicate if changes were made. You
+                 may do so in any reasonable manner, but not in any
+                 way that suggests the licensor endorses you or your
+                 use.
 
-No additional restrictions — You may not apply legal terms or
-technological measures that legally restrict others from doing anything
-the license permits.
+  NonCommercial — You may not use the material for commercial
+                  purposes.
+
+  ShareAlike   — If you remix, transform, or build upon the material,
+                 you must distribute your contributions under the
+                 same license as the original.
+
+  No additional restrictions — You may not apply legal terms or
+  technological measures that legally restrict others from doing
+  anything the license permits.
 
 =======================================================================
 
-This license applies to the K12-KGraph **dataset** (the knowledge graph,
-K12-Bench evaluation items, and K12-Train instruction–response pairs
-released through https://huggingface.co/datasets/lhpku20010120/K12-KGraph).
+Rationale for the NonCommercial + ShareAlike clauses
+----------------------------------------------------
+
+K12-KGraph is derived from the People's Education Press (PEP) K-12
+textbook series. The NonCommercial clause prevents downstream
+repackaging as a commercial product that could expose the authors or
+PEP to licensing conflicts. The ShareAlike clause ensures that
+improvements to the graph remain open to the research community.
+
+=======================================================================
+
+Scope
+-----
+
+This license applies to the K12-KGraph **dataset** (the knowledge
+graph, K12-Bench evaluation items, and K12-Train instruction-response
+pairs released through
+https://huggingface.co/datasets/lhpku20010120/K12-KGraph).
 
 The **source code** in this repository (pipeline, evaluation scripts,
-utilities) is released separately under the **MIT License**; see
+utilities) is released separately under the MIT License; see
 LICENSE-CODE for details.
 
-Full legal code of CC BY 4.0:
-https://creativecommons.org/licenses/by/4.0/legalcode
+Full legal code of CC BY-NC-SA 4.0:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
